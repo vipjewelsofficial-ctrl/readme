@@ -1,0 +1,76 @@
+{
+  "live_shopify_tested": false,
+  "viewports": [
+    {
+      "width": 320,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 360,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 390,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 430,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 990,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 1440,
+      "arrow_updates": true,
+      "typed_updates": true,
+      "totals_and_badge": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    }
+  ],
+  "edge_cases": [
+    "rapid_clicks_coalesced",
+    "enter_saves_quantity",
+    "checkout_waits_for_update",
+    "multi_line_and_changed_keys",
+    "same_variant_distinct_properties_preserved",
+    "partial_batch_stock_error_keeps_confirmed_totals",
+    "stock_error",
+    "network_error",
+    "clamp",
+    "discount",
+    "missing_section",
+    "quantity_zero_and_empty_cart",
+    "incomplete_quantity_not_saved_or_checked_out"
+  ]
+}

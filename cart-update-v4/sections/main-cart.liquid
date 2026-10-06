@@ -1,0 +1,103 @@
+{{ 'cart-quantity.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'cart-quantity.js' | asset_url }}" defer></script>
+<section class="section main-cart-section" data-cart-section data-section-id="{{ section.id }}" data-cart-change-url="{{ routes.cart_change_url }}.js">
+  <div class="page-shell">
+    <header class="page-header">
+      <p class="page-eyebrow">Your selection</p>
+      <h1 class="page-title">Shopping Cart</h1>
+    </header>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-form">
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <caption class="visually-hidden">Products in your shopping cart</caption>
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for item in cart.items -%}
+                <tr data-cart-line data-cart-key="{{ item.key | escape }}" data-cart-variant-id="{{ item.variant.id | default: item.variant_id }}" data-cart-properties="{{ item.properties | json | escape }}" data-cart-selling-plan="{{ item.selling_plan_allocation.selling_plan.id }}">
+                  <td data-label="Product">
+                    <div class="cart-line__product">
+                      {%- if item.image -%}
+                        {%- assign cart_item_image_alt = item.image.alt | default: item.product.title -%}
+                        {{
+                          item.image
+                          | image_url: width: 160
+                          | image_tag:
+                            class: 'cart-line__image',
+                            alt: cart_item_image_alt,
+                            loading: 'lazy',
+                            width: 80,
+                            height: 80
+                        }}
+                      {%- endif -%}
+                      <div class="cart-line__details">
+                        <a class="cart-line__title" href="{{ item.url }}">{{ item.product.title | escape }}</a>
+                        {%- unless item.variant.title == 'Default Title' -%}
+                          <p class="cart-line__variant">{{ item.variant.title | escape }}</p>
+                        {%- endunless -%}
+                        <a class="cart-line__remove" href="{{ item.url_to_remove }}" aria-label="Remove {{ item.product.title | escape }} from cart">Remove</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-label="Price"><span class="cart-line__value">{{ item.final_price | money }}</span></td>
+                  <td data-label="Quantity">
+                    <label class="visually-hidden" for="updates_{{ forloop.index }}">Quantity for {{ item.product.title | escape }}</label>
+                    <div class="cart-quantity-control">
+                    <input
+                      class="cart-line__quantity"
+                      type="number"
+                      name="updates[]"
+                      id="updates_{{ forloop.index }}"
+                      value="{{ item.quantity }}"
+                      min="0"
+                      inputmode="numeric"
+                      step="1"
+                      data-cart-quantity
+                      data-saved-quantity="{{ item.quantity }}"
+                    >
+                    <div class="cart-quantity__buttons" hidden>
+                      <button type="button" class="cart-quantity__arrow" data-cart-delta="1" aria-label="Increase quantity for {{ item.product.title | escape }}" aria-controls="updates_{{ forloop.index }}"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m2 6 4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                      <button type="button" class="cart-quantity__arrow" data-cart-delta="-1" aria-label="Decrease quantity for {{ item.product.title | escape }}" aria-controls="updates_{{ forloop.index }}"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m2 2 4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    </div>
+                    </div>
+                  </td>
+                  <td data-label="Total"><strong class="cart-line__value">{{ item.final_line_price | money }}</strong></td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cart-summary">
+          <p class="cart-update-status" data-cart-status role="status" aria-live="polite" hidden></p>
+          <p class="cart-summary__subtotal" aria-live="polite" aria-atomic="true">Subtotal: {{ cart.total_price | money }}</p>
+          <p class="cart-summary__note">Taxes and shipping are calculated at checkout.</p>
+          <div class="cart-summary__actions">
+            <button type="submit" name="checkout" class="btn btn--primary">Secure Checkout</button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="empty-state">
+        <p>Your cart is ready for something special.</p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn--primary">Explore Jewellery</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
