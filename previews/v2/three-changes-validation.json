@@ -1,0 +1,67 @@
+{
+  "counts_1_to_10": true,
+  "deduplication_and_current_product_exclusion": true,
+  "collection_fallback_and_limited_catalog": true,
+  "review_widget_product_ids": true,
+  "app_block_mode_omits_automatic_widget": true,
+  "custom_footer_logo_picker": true,
+  "review_backend_live_tested": false,
+  "viewports": [
+    {
+      "width": 320,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    },
+    {
+      "width": 360,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    },
+    {
+      "width": 390,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    },
+    {
+      "width": 430,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    },
+    {
+      "width": 990,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    },
+    {
+      "width": 1440,
+      "review_controls_visible": true,
+      "sort_select_unchanged": true,
+      "horizontal_overflow": false,
+      "footer_logo_all_templates": true,
+      "page_errors": []
+    }
+  ]
+}
