@@ -3,6 +3,7 @@
   "viewports": [
     {
       "width": 320,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
@@ -11,6 +12,7 @@
     },
     {
       "width": 360,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
@@ -19,6 +21,7 @@
     },
     {
       "width": 390,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
@@ -27,6 +30,7 @@
     },
     {
       "width": 430,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
@@ -35,6 +39,7 @@
     },
     {
       "width": 768,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
@@ -43,6 +48,7 @@
     },
     {
       "width": 990,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
@@ -51,6 +57,7 @@
     },
     {
       "width": 1440,
+      "arrows_visible_without_hover": true,
       "arrow_updates": true,
       "typed_updates": true,
       "totals_and_badge": true,
