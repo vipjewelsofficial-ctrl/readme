@@ -1,0 +1,24 @@
+{
+  "csv_rows": 81,
+  "unique_products": 21,
+  "active_products": 21,
+  "product_breakdown": {
+    "Necklace Sets": 15,
+    "Maang Tikka": 1,
+    "Standalone Necklace": 1,
+    "Mangalsutras": 3,
+    "Bracelet Watch": 1
+  },
+  "collection_counts": {
+    "Necklace Sets": 15,
+    "Oxidised Jewellery": 8,
+    "Accessories": 2,
+    "Gold-Tone Jewellery": 13,
+    "Mangalsutras": 3
+  },
+  "products_with_type": 2,
+  "products_with_tags": 2,
+  "zero_price_variants": [
+    "traditional-gold-tone-chandbali-necklace-set"
+  ]
+}

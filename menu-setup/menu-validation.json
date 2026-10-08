@@ -1,0 +1,43 @@
+{
+  "local_preview_only": true,
+  "shopify_admin_updated": false,
+  "theme_files_changed": 0,
+  "viewports": [
+    {
+      "width": 320,
+      "seven_menu_links": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 390,
+      "seven_menu_links": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "seven_menu_links": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 990,
+      "seven_menu_links": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 1024,
+      "seven_menu_links": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "width": 1440,
+      "seven_menu_links": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    }
+  ]
+}

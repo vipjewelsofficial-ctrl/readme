@@ -1,0 +1,41 @@
+{
+  "note": "Setup reference only. Shopify does not natively import menus from this JSON or a theme ZIP. Create the collections first, then the menu in Shopify admin.",
+  "title": "Gujju Jewels Main Menu",
+  "items": [
+    {
+      "title": "Home",
+      "url": "/",
+      "items": []
+    },
+    {
+      "title": "Necklace Sets",
+      "url": "/collections/necklace-sets",
+      "items": []
+    },
+    {
+      "title": "Oxidised Jewellery",
+      "url": "/collections/oxidised-jewellery",
+      "items": []
+    },
+    {
+      "title": "Gold-Tone Jewellery",
+      "url": "/collections/gold-tone-jewellery",
+      "items": []
+    },
+    {
+      "title": "Mangalsutras",
+      "url": "/collections/mangalsutras",
+      "items": []
+    },
+    {
+      "title": "Accessories",
+      "url": "/collections/accessories",
+      "items": []
+    },
+    {
+      "title": "Shop All",
+      "url": "/collections/all",
+      "items": []
+    }
+  ]
+}
