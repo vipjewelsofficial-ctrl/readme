@@ -1,0 +1,65 @@
+--- original/sections/header.liquid
++++ v5/sections/header.liquid
+@@ -1,5 +1,9 @@
+ {%- liquid
+   assign header_menu = section.settings.menu
++  assign use_builtin_menu = true
++  if section.settings.use_builtin_menu == false
++    assign use_builtin_menu = false
++  endif
+   assign logo_width = section.settings.logo_width | default: 190
+   assign mobile_logo_width = section.settings.mobile_logo_width | default: 170
+   assign logo_render_width = logo_width | times: 2
+@@ -118,9 +122,12 @@
+     </div>
+   </div>
+ 
+-  {%- if header_menu != blank -%}
++  {%- if use_builtin_menu or header_menu != blank -%}
+     <nav class="header-nav" aria-label="Main navigation">
+       <ul class="header-nav__list" role="list">
++        {%- if use_builtin_menu -%}
++          {% render 'gujju-built-in-menu', mobile: false, menu_settings: section.settings %}
++        {%- else -%}
+         {%- for link in header_menu.links -%}
+           {%- assign menu_title_downcase = link.title | downcase -%}
+           <li class="header-nav__item">
+@@ -155,6 +162,7 @@
+             {%- endif -%}
+           </li>
+         {%- endfor -%}
++        {%- endif -%}
+       </ul>
+     </nav>
+   {%- endif -%}
+@@ -182,8 +190,11 @@
+     <button id="mobile-menu-close" type="button" aria-label="Close menu">✕</button>
+   </div>
+ 
+-  {%- if header_menu != blank -%}
++  {%- if use_builtin_menu or header_menu != blank -%}
+     <ul class="mobile-menu__list" role="list">
++      {%- if use_builtin_menu -%}
++        {% render 'gujju-built-in-menu', mobile: true %}
++      {%- else -%}
+       {%- for link in header_menu.links -%}
+         <li>
+           <a class="mobile-menu__link" href="{{ link.url }}">{{ link.title | escape }}</a>
+@@ -205,6 +216,7 @@
+           {%- endif -%}
+         </li>
+       {%- endfor -%}
++      {%- endif -%}
+     </ul>
+   {%- endif -%}
+ 
+@@ -264,7 +276,8 @@
+     { "type": "range", "id": "logo_width", "min": 100, "max": 300, "step": 10, "unit": "px", "label": "Desktop logo width", "default": 190 },
+     { "type": "range", "id": "mobile_logo_width", "min": 100, "max": 220, "step": 10, "unit": "px", "label": "Mobile logo width", "default": 170 },
+     { "type": "header", "content": "Navigation" },
+-    { "type": "paragraph", "content": "Select any Shopify menu here. Nested links up to three levels are supported, so you can place subcategories below each main jewellery category." },
++    { "type": "checkbox", "id": "use_builtin_menu", "label": "Use included Gujju Jewels menu", "default": true },
++    { "type": "paragraph", "content": "The included menu uses the necklace-sets, oxidised-jewellery, gold-tone-jewellery, mangalsutras and accessories collection handles. Create those collections in Shopify. Turn this option off to use the selected Shopify menu, including nested links up to three levels." },
+     { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+     { "type": "checkbox", "id": "show_sale_badge", "label": "Show sale badge above a menu item", "default": true },
+     { "type": "text", "id": "sale_menu_title", "label": "Menu item for sale badge", "default": "Hot Deals" },

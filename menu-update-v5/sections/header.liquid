@@ -1,0 +1,295 @@
+{%- liquid
+  assign header_menu = section.settings.menu
+  assign use_builtin_menu = true
+  if section.settings.use_builtin_menu == false
+    assign use_builtin_menu = false
+  endif
+  assign logo_width = section.settings.logo_width | default: 190
+  assign mobile_logo_width = section.settings.mobile_logo_width | default: 170
+  assign logo_render_width = logo_width | times: 2
+  assign mobile_logo_render_width = mobile_logo_width | times: 2
+  assign logo_text = section.settings.logo_text | default: shop.name
+  assign sale_menu_title = section.settings.sale_menu_title | downcase
+  assign logo_alt = section.settings.logo.alt | default: shop.name
+  assign mobile_logo_alt = section.settings.mobile_logo.alt | default: logo_alt
+-%}
+
+<header
+  class="site-header"
+  id="site-header"
+  role="banner"
+  style="--header-desktop-bg: {{ section.settings.desktop_bg_color }}; --header-desktop-text: {{ section.settings.desktop_text_color }}; --header-brand-color: {{ section.settings.brand_color }}; --header-mobile-bg: {{ section.settings.mobile_bg_color }}; --header-mobile-text: {{ section.settings.mobile_text_color }}; --header-border: {{ section.settings.border_color }};"
+>
+  <div class="header-inner">
+    <button class="header-hamburger" id="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+      <span class="header-hamburger__line"></span>
+      <span class="header-hamburger__line"></span>
+      <span class="header-hamburger__line"></span>
+    </button>
+
+    <div class="header-logo">
+      <a class="header-logo__link" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }} home">
+        <span class="header-logo__desktop{% if section.settings.logo == blank %} header-logo__builtin-mask{% endif %}">
+          {%- if section.settings.logo != blank -%}
+            {{
+              section.settings.logo
+              | image_url: width: logo_render_width
+              | image_tag:
+                class: 'header-logo__image header-logo__image--desktop',
+                widths: '120, 160, 200, 240, 320, 400, 480',
+                width: logo_width,
+                loading: 'eager',
+                alt: logo_alt
+            }}
+          {%- else -%}
+            <img
+              class="header-logo__image header-logo__image--desktop header-logo__image--builtin"
+              src="{{ 'gujjujewels-logo-desktop.png' | asset_url }}"
+              width="733"
+              height="510"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              alt="Gujju Jewels"
+            >
+          {%- endif -%}
+        </span>
+
+        <span class="header-logo__mobile{% if section.settings.mobile_logo == blank and section.settings.logo == blank %} header-logo__builtin-mask{% endif %}">
+          {%- if section.settings.mobile_logo != blank -%}
+            {{
+              section.settings.mobile_logo
+              | image_url: width: mobile_logo_render_width
+              | image_tag:
+                class: 'header-logo__image header-logo__image--mobile',
+                widths: '100, 130, 160, 200, 260, 320, 400',
+                width: mobile_logo_width,
+                loading: 'eager',
+                alt: mobile_logo_alt
+            }}
+          {%- elsif section.settings.logo != blank -%}
+            {{
+              section.settings.logo
+              | image_url: width: mobile_logo_render_width
+              | image_tag:
+                class: 'header-logo__image header-logo__image--mobile',
+                widths: '100, 130, 160, 200, 260, 320, 400',
+                width: mobile_logo_width,
+                loading: 'eager',
+                alt: logo_alt
+            }}
+          {%- else -%}
+            <img
+              class="header-logo__image header-logo__image--mobile header-logo__image--builtin"
+              src="{{ 'gujjujewels-logo-mobile.png' | asset_url }}"
+              width="733"
+              height="510"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              alt="Gujju Jewels"
+            >
+          {%- endif -%}
+        </span>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <button class="header-action-btn" id="search-toggle-btn" type="button" aria-controls="search-drawer" aria-expanded="false" aria-label="Open search">
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/>
+          <path d="m20 20-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      {%- if shop.customer_accounts_enabled and section.settings.show_account -%}
+        <a class="header-action-btn header-account-btn" href="{{ routes.account_url }}" aria-label="Account">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M4.5 21a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+
+      <a class="header-action-btn" href="{{ routes.cart_url }}" aria-label="Cart with {{ cart.item_count }} items">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 3h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 6H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="20" r="1.5" fill="currentColor"/>
+          <circle cx="18" cy="20" r="1.5" fill="currentColor"/>
+        </svg>
+        <span class="header-cart-count"{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+
+  {%- if use_builtin_menu or header_menu != blank -%}
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul class="header-nav__list" role="list">
+        {%- if use_builtin_menu -%}
+          {% render 'gujju-built-in-menu', mobile: false, menu_settings: section.settings %}
+        {%- else -%}
+        {%- for link in header_menu.links -%}
+          {%- assign menu_title_downcase = link.title | downcase -%}
+          <li class="header-nav__item">
+            {%- if section.settings.show_sale_badge and sale_menu_title != blank and menu_title_downcase == sale_menu_title -%}
+              <span class="header-nav__badge">{{ section.settings.sale_badge_text | escape }}</span>
+            {%- endif -%}
+            <a class="header-nav__link{% if link.current or link.child_active %} header-nav__link--active{% endif %}" href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %}>
+              {{ link.title | escape }}
+              {%- if link.links != blank -%}
+                <svg class="header-nav__chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                  <path d="m1 1.5 5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {%- endif -%}
+            </a>
+            {%- if link.links != blank -%}
+              <ul class="header-nav__dropdown{% if link.levels > 1 %} header-nav__dropdown--mega{% endif %}" role="list">
+                {%- for child_link in link.links -%}
+                  <li class="header-nav__dropdown-item{% if child_link.links != blank %} header-nav__dropdown-item--group{% endif %}">
+                    <a class="header-nav__dropdown-link" href="{{ child_link.url }}">{{ child_link.title | escape }}</a>
+                    {%- if child_link.links != blank -%}
+                      <ul class="header-nav__grandchild" role="list">
+                        {%- for grandchild_link in child_link.links -%}
+                          <li>
+                            <a class="header-nav__grandchild-link" href="{{ grandchild_link.url }}">{{ grandchild_link.title | escape }}</a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+        {%- endif -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+
+  <div class="header-search-drawer" id="search-drawer" hidden>
+    <form class="header-search-form" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="visually-hidden" for="search-input">Search products</label>
+      <input class="header-search-input" id="search-input" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search jewellery..." autocomplete="off">
+      <input type="hidden" name="type" value="product">
+      <input type="hidden" name="options[prefix]" value="last">
+      <button class="header-search-submit" type="submit" aria-label="Submit search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/>
+          <path d="m20 20-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="header-search-close" id="search-close-btn" type="button" aria-label="Close search">✕</button>
+    </form>
+  </div>
+</header>
+
+<aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
+  <div class="mobile-menu__header">
+    <span class="mobile-menu__title">Menu</span>
+    <button id="mobile-menu-close" type="button" aria-label="Close menu">✕</button>
+  </div>
+
+  {%- if use_builtin_menu or header_menu != blank -%}
+    <ul class="mobile-menu__list" role="list">
+      {%- if use_builtin_menu -%}
+        {% render 'gujju-built-in-menu', mobile: true %}
+      {%- else -%}
+      {%- for link in header_menu.links -%}
+        <li>
+          <a class="mobile-menu__link" href="{{ link.url }}">{{ link.title | escape }}</a>
+          {%- if link.links != blank -%}
+            <ul class="mobile-menu__sub" role="list">
+              {%- for child_link in link.links -%}
+                <li class="mobile-menu__sub-item">
+                  <a class="mobile-menu__sub-link" href="{{ child_link.url }}">{{ child_link.title | escape }}</a>
+                  {%- if child_link.links != blank -%}
+                    <ul class="mobile-menu__grandchild" role="list">
+                      {%- for grandchild_link in child_link.links -%}
+                        <li><a class="mobile-menu__grandchild-link" href="{{ grandchild_link.url }}">{{ grandchild_link.title | escape }}</a></li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+      {%- endif -%}
+    </ul>
+  {%- endif -%}
+
+  <div class="mobile-menu__footer">
+    {%- if shop.customer_accounts_enabled and section.settings.show_account -%}<a href="{{ routes.account_url }}">Account</a>{%- endif -%}
+    <a href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+  </div>
+</aside>
+<div class="header-overlay" id="header-overlay" aria-hidden="true"></div>
+
+<style>
+  .header-section { position: sticky; top: 0; z-index: 100; }
+  .header-section.is-menu-open { z-index: 400; }
+  .header-section .site-header { position: relative; }
+  .header-logo__desktop,
+  .header-logo__mobile { line-height: 0; }
+  .header-logo__mobile { display: none; }
+  .header-logo__image { display: block; width: auto; height: auto; object-fit: contain; }
+  .header-logo__image--desktop { max-width: {{ logo_width }}px; max-height: 70px; }
+  .header-logo__image--desktop.header-logo__image--builtin { height: 70px; }
+
+  @media (max-width: 989px) {
+    .header-logo__desktop { display: none; }
+    .header-logo__mobile { display: block; }
+    .header-logo__image--mobile {
+      max-width: min({{ mobile_logo_width }}px, calc(100vw - 170px));
+      max-height: 45px;
+    }
+    .header-logo__image--mobile.header-logo__image--builtin {
+      width: clamp(88px, 27vw, 112px);
+      height: auto;
+      max-width: calc(100vw - 170px);
+      max-height: 74px;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .header-logo__image--mobile.header-logo__image--builtin {
+      width: clamp(82px, 27vw, 96px);
+      height: auto;
+      max-width: calc(100vw - 164px);
+      max-height: 67px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "class": "header-section",
+  "settings": [
+    { "type": "header", "content": "Logo" },
+    { "type": "image_picker", "id": "logo", "label": "Desktop logo" },
+    { "type": "image_picker", "id": "mobile_logo", "label": "Mobile logo (optional)" },
+    { "type": "text", "id": "logo_text", "label": "Text logo fallback", "default": "Gujju Jewels" },
+    { "type": "range", "id": "logo_width", "min": 100, "max": 300, "step": 10, "unit": "px", "label": "Desktop logo width", "default": 190 },
+    { "type": "range", "id": "mobile_logo_width", "min": 100, "max": 220, "step": 10, "unit": "px", "label": "Mobile logo width", "default": 170 },
+    { "type": "header", "content": "Navigation" },
+    { "type": "checkbox", "id": "use_builtin_menu", "label": "Use included Gujju Jewels menu", "default": true },
+    { "type": "paragraph", "content": "The included menu uses the necklace-sets, oxidised-jewellery, gold-tone-jewellery, mangalsutras and accessories collection handles. Create those collections in Shopify. Turn this option off to use the selected Shopify menu, including nested links up to three levels." },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "checkbox", "id": "show_sale_badge", "label": "Show sale badge above a menu item", "default": true },
+    { "type": "text", "id": "sale_menu_title", "label": "Menu item for sale badge", "default": "Hot Deals" },
+    { "type": "text", "id": "sale_badge_text", "label": "Sale badge text", "default": "SALE" },
+    { "type": "checkbox", "id": "show_account", "label": "Show account icon on desktop", "default": true },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "desktop_bg_color", "label": "Desktop background", "default": "#FFFDF9" },
+    { "type": "color", "id": "desktop_text_color", "label": "Desktop icon and menu colour", "default": "#242424" },
+    { "type": "color", "id": "brand_color", "label": "Text logo and accent colour", "default": "#7A1F32" },
+    { "type": "color", "id": "mobile_bg_color", "label": "Mobile background", "default": "#FFFDF9" },
+    { "type": "color", "id": "mobile_text_color", "label": "Mobile icon and text colour", "default": "#242424" },
+    { "type": "color", "id": "border_color", "label": "Desktop divider colour", "default": "#E8E2DC" }
+  ]
+}
+{% endschema %}

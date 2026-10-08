@@ -1,0 +1,46 @@
+{%- comment -%}
+  Included launch navigation. Disable it in Header settings to use a Shopify menu.
+  Collections are Shopify store data and must be created separately.
+{%- endcomment -%}
+{%- liquid
+  assign menu_titles = 'Home|Necklace Sets|Oxidised Jewellery|Gold-Tone Jewellery|Mangalsutras|Accessories|Shop All' | split: '|'
+  assign menu_handles = 'home|necklace-sets|oxidised-jewellery|gold-tone-jewellery|mangalsutras|accessories|all' | split: '|'
+  assign collection_root = routes.root_url | append: '/' | replace: '//', '/' | append: 'collections/'
+  assign sale_title = menu_settings.sale_menu_title | downcase
+-%}
+{%- for menu_title in menu_titles -%}
+  {%- liquid
+    assign menu_handle = menu_handles[forloop.index0]
+    assign menu_active = false
+    case menu_handle
+      when 'home'
+        assign menu_url = routes.root_url
+        if request.page_type == 'index'
+          assign menu_active = true
+        endif
+      when 'all'
+        assign menu_url = routes.all_products_collection_url
+        if request.page_type == 'collection' and collection.handle == 'all'
+          assign menu_active = true
+        endif
+      else
+        assign menu_collection = collections[menu_handle]
+        assign fallback_url = collection_root | append: menu_handle
+        assign menu_url = menu_collection.url | default: fallback_url
+        if request.page_type == 'collection' and collection.handle == menu_handle
+          assign menu_active = true
+        endif
+    endcase
+  -%}
+  {%- if mobile -%}
+    <li><a class="mobile-menu__link" href="{{ menu_url | escape }}"{% if menu_active %} aria-current="page"{% endif %}>{{ menu_title | escape }}</a></li>
+  {%- else -%}
+    {%- assign title_downcase = menu_title | downcase -%}
+    <li class="header-nav__item">
+      {%- if menu_settings.show_sale_badge and sale_title != blank and title_downcase == sale_title -%}
+        <span class="header-nav__badge">{{ menu_settings.sale_badge_text | escape }}</span>
+      {%- endif -%}
+      <a class="header-nav__link{% if menu_active %} header-nav__link--active{% endif %}" href="{{ menu_url | escape }}"{% if menu_active %} aria-current="page"{% endif %}>{{ menu_title | escape }}</a>
+    </li>
+  {%- endif -%}
+{%- endfor -%}
