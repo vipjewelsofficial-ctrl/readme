@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "category-directory",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

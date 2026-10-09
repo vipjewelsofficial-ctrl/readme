@@ -1,0 +1,260 @@
+{{ 'cart-quantity.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'cart-quantity.js' | asset_url }}" defer></script>
+<section style="--section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-accent: {{ section.settings.section_accent }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px; --cart-quantity-width: {{ section.settings.quantity_width }}px; --cart-quantity-radius: {{ section.settings.quantity_radius }}px; --cart-arrow-bg: {{ section.settings.arrow_background }}; --cart-arrow-colour: {{ section.settings.arrow_colour }};" class="section main-cart-section" data-cart-section data-section-id="{{ section.id }}" data-cart-change-url="{{ routes.cart_change_url }}.js">
+  <div class="page-shell">
+    <header class="page-header">
+      <p class="page-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1 class="page-title">{{ section.settings.heading | escape }}</h1>
+    </header>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-form">
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <caption class="visually-hidden">{{ 'sections.cart.caption' | t }}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{{ section.settings.product_label | escape }}</th>
+                <th scope="col">{{ section.settings.price_label | escape }}</th>
+                <th scope="col">{{ section.settings.quantity_label | escape }}</th>
+                <th scope="col">{{ section.settings.total_label | escape }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for item in cart.items -%}
+                <tr data-cart-line data-cart-key="{{ item.key | escape }}" data-cart-variant-id="{{ item.variant.id | default: item.variant_id }}" data-cart-properties="{{ item.properties | json | escape }}" data-cart-selling-plan="{{ item.selling_plan_allocation.selling_plan.id }}">
+                  <td data-label="{{ section.settings.product_label | escape }}">
+                    <div class="cart-line__product">
+                      {%- if item.image -%}
+                        {%- assign cart_item_image_alt = item.image.alt | default: item.product.title -%}
+                        {{
+                          item.image
+                          | image_url: width: 160
+                          | image_tag:
+                            class: 'cart-line__image',
+                            alt: cart_item_image_alt,
+                            loading: 'lazy',
+                            width: 80,
+                            height: 80
+                        }}
+                      {%- endif -%}
+                      <div class="cart-line__details">
+                        <a class="cart-line__title" href="{{ item.url }}">{{ item.product.title | escape }}</a>
+                        {%- unless item.variant.title == 'Default Title' -%}
+                          <p class="cart-line__variant">{{ item.variant.title | escape }}</p>
+                        {%- endunless -%}
+                        <a class="cart-line__remove" href="{{ item.url_to_remove }}" aria-label="{{ 'sections.cart.remove_label' | t: product: item.product.title | escape }}">{{ section.settings.remove_label | escape }}</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-label="{{ section.settings.price_label | escape }}"><span class="cart-line__value">{{ item.final_price | money }}</span></td>
+                  <td data-label="{{ section.settings.quantity_label | escape }}">
+                    <label class="visually-hidden" for="updates_{{ forloop.index }}">{{ 'sections.cart.quantity_label' | t: product: item.product.title | escape }}</label>
+                    <div class="cart-quantity-control">
+                    <input
+                      class="cart-line__quantity"
+                      type="number"
+                      name="updates[]"
+                      id="updates_{{ forloop.index }}"
+                      value="{{ item.quantity }}"
+                      min="0"
+                      inputmode="numeric"
+                      step="1"
+                      data-cart-quantity
+                      data-saved-quantity="{{ item.quantity }}"
+                    >
+                    <div class="cart-quantity__buttons" hidden>
+                      <button type="button" class="cart-quantity__arrow" data-cart-delta="1" aria-label="{{ 'sections.cart.increase' | t: product: item.product.title | escape }}" aria-controls="updates_{{ forloop.index }}"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m2 6 4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                      <button type="button" class="cart-quantity__arrow" data-cart-delta="-1" aria-label="{{ 'sections.cart.decrease' | t: product: item.product.title | escape }}" aria-controls="updates_{{ forloop.index }}"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m2 2 4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    </div>
+                    </div>
+                  </td>
+                  <td data-label="{{ section.settings.total_label | escape }}" data-cart-total><strong class="cart-line__value">{{ item.final_line_price | money }}</strong></td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cart-summary">
+          <p class="cart-update-status" data-cart-status role="status" aria-live="polite" hidden></p>
+          <p class="cart-summary__subtotal" aria-live="polite" aria-atomic="true">{{ section.settings.subtotal_label | escape }}: {{ cart.total_price | money }}</p>
+          <p class="cart-summary__note">{{ section.settings.note | escape }}</p>
+          <div class="cart-summary__actions">
+            <button type="submit" name="checkout" class="btn btn--primary">{{ section.settings.checkout_label | escape }}</button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="empty-state">
+        <p>{{ section.settings.empty_text | escape }}</p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn--primary">{{ section.settings.empty_button | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small heading",
+      "default": "Your selection"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shopping Cart"
+    },
+    {
+      "type": "text",
+      "id": "product_label",
+      "label": "Product label",
+      "default": "Product"
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Price label",
+      "default": "Price"
+    },
+    {
+      "type": "text",
+      "id": "quantity_label",
+      "label": "Quantity label",
+      "default": "Quantity"
+    },
+    {
+      "type": "text",
+      "id": "total_label",
+      "label": "Total label",
+      "default": "Total"
+    },
+    {
+      "type": "text",
+      "id": "remove_label",
+      "label": "Remove link label",
+      "default": "Remove"
+    },
+    {
+      "type": "text",
+      "id": "subtotal_label",
+      "label": "Subtotal label",
+      "default": "Subtotal"
+    },
+    {
+      "type": "text",
+      "id": "checkout_label",
+      "label": "Checkout button label",
+      "default": "Secure Checkout"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Checkout note",
+      "default": "Taxes and shipping are calculated at checkout."
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Empty cart message",
+      "default": "Your cart is ready for something special."
+    },
+    {
+      "type": "text",
+      "id": "empty_button",
+      "label": "Empty cart button",
+      "default": "Explore Jewellery"
+    },
+    {
+      "type": "range",
+      "id": "quantity_width",
+      "label": "Quantity control width",
+      "min": 80,
+      "max": 136,
+      "step": 8,
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "quantity_radius",
+      "label": "Quantity control corner radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "arrow_background",
+      "label": "Quantity arrow background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "arrow_colour",
+      "label": "Quantity arrow colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "section_accent",
+      "label": "Accent colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    }
+  ]
+}
+{% endschema %}

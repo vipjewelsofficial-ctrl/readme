@@ -1,6 +1,8 @@
 # Theme downloads
 
-The latest complete theme is **[Gujju-Jewels-Shopify-Editable-v6.zip](Gujju-Jewels-Shopify-Editable-v6.zip)**, based on the uploaded 09 October 2026 evening export. It adds an editable hero slider and connects the audited theme settings to Shopify. Read the [v6 editor guide](../theme-editable-v6/README.md) for upload instructions, setting locations and validation results. All 96 theme files are included.
+The latest complete theme is **[Gujju-Jewels-Slider-Wishlist-v7.zip](Gujju-Jewels-Slider-Wishlist-v7.zip)**. It includes the editable hero slideshow, a free browser-saved wishlist and the four remaining editor fixes. Read the [v7 setup guide](../theme-slider-wishlist-v7/README.md). All 100 theme files are included. The original artwork is retained as the first Slide; select a second image in Shopify to start cycling slides.
+
+**[Gujju-Jewels-Shopify-Editable-v6.zip](Gujju-Jewels-Shopify-Editable-v6.zip)** is the earlier editor-controls package. Its [guide](../theme-editable-v6/README.md) remains available.
 
 **Gujju-Jewels-Menu-Theme-v5.zip** is the earlier menu-only package. It includes Home, Necklace Sets, Oxidised Jewellery, Gold-Tone Jewellery, Mangalsutras, Accessories and Shop All in desktop and mobile navigation. Only the header changes and one menu snippet is added; all other 89 files from the uploaded Version 4 export are identical. Read [the Version 5 guide](MENU_THEME_V5.md), create the five linked collections if missing, and upload this ZIP as an unpublished Shopify theme to preview. The Header setting can switch back to any native custom Shopify menu. Menu screenshots are under [previews/v5](../previews/v5).
 

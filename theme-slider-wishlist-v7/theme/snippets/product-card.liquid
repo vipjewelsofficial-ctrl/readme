@@ -1,0 +1,135 @@
+{%- comment -%}
+  Renders a reusable product card.
+  Usage: {% render 'product-card', product: product %}
+  Accepts:
+    - product: {Object} Shopify product object (required)
+    - show_quick_add: {Boolean} show quick add button
+    - lazy_load: {Boolean} lazy load image (default: true)
+{%- endcomment -%}
+
+{%- liquid
+  assign lazy_load = lazy_load | default: true, allow_false: true
+  assign show_quick_add = show_quick_add | default: true, allow_false: true
+  if settings.card_quick_add == false
+    assign show_quick_add = false
+  endif
+  assign card_product = product
+
+  assign first_variant = card_product.selected_or_first_available_variant
+  assign on_sale = false
+  if first_variant.compare_at_price > first_variant.price
+    assign on_sale = true
+  endif
+  assign sold_out = false
+  unless card_product.available
+    assign sold_out = true
+  endunless
+
+  assign product_image = card_product.featured_image
+  assign second_image = card_product.images[1]
+  assign product_image_alt = product_image.alt | default: card_product.title
+  assign second_image_alt = second_image.alt | default: card_product.title
+-%}
+
+<article class="product-card" aria-label="{{ card_product.title | escape }}">
+  <div class="product-card__image-wrap">
+    <a href="{{ card_product.url }}" class="product-card__image-link" tabindex="-1" aria-label="{{ card_product.title | escape }}">
+      {%- if product_image != blank -%}
+        {%- if lazy_load -%}
+          {{
+            product_image
+            | image_url: width: 600
+              | image_tag:
+                class: 'product-card__img product-card__img--primary',
+              alt: product_image_alt,
+              loading: 'lazy',
+              width: 300,
+              height: 300
+          }}
+        {%- else -%}
+          {{
+            product_image
+            | image_url: width: 600
+              | image_tag:
+                class: 'product-card__img product-card__img--primary',
+              alt: product_image_alt,
+              loading: 'eager',
+              fetchpriority: 'high',
+              width: 300,
+              height: 300
+          }}
+        {%- endif -%}
+
+        {%- if second_image != blank and settings.card_second_image != false -%}
+          {{
+            second_image
+            | image_url: width: 600
+              | image_tag:
+                class: 'product-card__img product-card__img--secondary',
+              alt: second_image_alt,
+              loading: 'lazy',
+              width: 300,
+              height: 300
+          }}
+        {%- endif -%}
+      {%- else -%}
+        <div class="product-card__img-placeholder">
+          {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </a>
+
+    {% if settings.wishlist_on_cards != false %}{% render 'wishlist-button', product: card_product, compact: true %}{% endif %}
+    <!-- Badges -->
+    <div class="product-card__badges" aria-live="polite">
+      {%- if sold_out and settings.card_sold_badge != false -%}
+        <span class="product-card__badge product-card__badge--sold-out">{{ 'products.product.sold_out_badge' | t }}</span>
+      {%- elsif on_sale and sold_out == false and settings.card_sale_badge != false -%}
+        <span class="product-card__badge product-card__badge--sale">{{ 'products.product.sale' | t }}</span>
+      {%- endif -%}
+    </div>
+
+  </div>
+
+  <div class="product-card__info">
+    <h3 class="product-card__title">
+      <a href="{{ card_product.url }}" class="product-card__title-link">
+        {{ card_product.title | escape }}
+      </a>
+    </h3>
+
+    <div class="product-card__price-wrap" aria-label="{{ 'products.product.price' | t }}">
+      {%- render 'price', product: card_product -%}
+    </div>
+
+    {%- if show_quick_add -%}
+      <div class="product-card__quick-add">
+        {%- if sold_out -%}
+          <button class="product-card__quick-add-btn" type="button" disabled>
+            <span class="product-card__action-label">{{ 'products.product.sold_out' | t }}</span>
+          </button>
+        {%- elsif card_product.variants.size == 1 -%}
+          <form action="{{ routes.cart_add_url }}" method="post" class="product-card__quick-add-form">
+            <input type="hidden" name="id" value="{{ first_variant.id }}">
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="product-card__quick-add-btn" aria-label="{{ 'products.product.quick_add_label' | t: product: card_product.title | escape }}" data-quick-add>
+              <svg class="product-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6.75 8.25h10.5l.75 12H6l.75-12Z"></path>
+                <path d="M9 9V6.75a3 3 0 0 1 6 0V9"></path>
+              </svg>
+              <span class="product-card__action-label">{{ 'products.product.add_to_cart' | t }}</span>
+            </button>
+          </form>
+        {%- else -%}
+          <a href="{{ card_product.url }}" class="product-card__quick-add-btn" aria-label="{{ 'products.product.choose_options_label' | t: product: card_product.title | escape }}">
+            <svg class="product-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.75 8.25h10.5l.75 12H6l.75-12Z"></path>
+              <path d="M9 9V6.75a3 3 0 0 1 6 0V9"></path>
+            </svg>
+            <span class="product-card__action-label">{{ 'products.product.choose_options' | t }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</article>

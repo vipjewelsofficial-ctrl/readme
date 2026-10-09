@@ -1,0 +1,412 @@
+{%- liquid
+  assign footer_menu_1 = section.settings.footer_menu_1
+  assign footer_menu_2 = section.settings.footer_menu_2
+  assign footer_menu_3 = section.settings.footer_menu_3
+  assign newsletter_heading = section.settings.newsletter_heading
+  assign footer_description = section.settings.footer_description
+  assign show_payment_icons = section.settings.show_payment_icons
+  assign newsletter_form_id = 'FooterNewsletter-' | append: section.id
+  assign newsletter_input_id = 'FooterEmail-' | append: section.id
+  assign footer_brand_text = section.settings.footer_brand_text | default: 'VIP JEWELS'
+-%}
+
+{{ 'footer-brand.css' | asset_url | stylesheet_tag }}
+<footer class="site-footer" role="contentinfo" data-product-accordion="{{ section.settings.product_footer_accordion }}" data-accordion-open="{{ section.settings.footer_accordion_open }}" id="site-footer-{{ section.id }}" style="--footer-brand-size: {{ section.settings.brand_size }}px; --footer-brand-mobile-size: {{ section.settings.brand_size_mobile }}px; --footer-brand-align: {{ section.settings.brand_alignment }}; --footer-social-align: {% if section.settings.brand_alignment == 'center' %}center{% elsif section.settings.brand_alignment == 'right' %}flex-end{% else %}flex-start{% endif %}; --footer-bg: {{ section.settings.footer_bg }}; --footer-text: {{ section.settings.footer_text }}; --footer-accent: {{ section.settings.footer_accent }}; --footer-heading: {{ section.settings.footer_heading }}; --footer-gradient: {% if section.settings.footer_gradient_enabled %}linear-gradient(135deg, {{ section.settings.footer_bg }}, {{ section.settings.footer_gradient_end }}){% else %}none{% endif %};">
+  <div class="footer-inner">
+    <!-- Top footer: text branding + menus + newsletter -->
+    <div class="footer-top">
+
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="{{ routes.root_url }}" class="footer-brand__wordmark" aria-label="{{ footer_brand_text | escape }} home">{{ footer_brand_text | escape }}</a>
+        {%- if footer_description != blank -%}
+          <p class="footer-brand__desc">{{ footer_description | escape }}</p>
+        {%- endif -%}
+        <!-- Social Links -->
+        <div class="footer-social">
+          {%- if section.settings.social_instagram != blank -%}
+            <a href="{{ section.settings.social_instagram }}" class="footer-social__link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.social_facebook != blank -%}
+            <a href="{{ section.settings.social_facebook }}" class="footer-social__link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.social_whatsapp != blank -%}
+            <a href="https://wa.me/{{ section.settings.social_whatsapp | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}" class="footer-social__link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.social_youtube != blank -%}
+            <a href="{{ section.settings.social_youtube }}" class="footer-social__link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="2"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Purpose-built footer navigation: useful even before Shopify menus are configured -->
+      <nav class="footer-nav" aria-label="Shop">
+        <h3 class="footer-nav__title">{{ section.settings.shop_heading | escape }}</h3>
+        <ul class="footer-nav__list" role="list">
+{% if section.settings.show_default_links != false %}          <li><a href="{{ routes.all_products_collection_url }}" class="footer-nav__link">{{ 'general.footer.all_jewellery' | t }}</a></li>
+          <li><a href="{{ routes.root_url }}#new-arrivals" class="footer-nav__link">{{ 'general.footer.new_arrivals' | t }}</a></li>
+          <li><a href="{{ routes.root_url }}#trending-picks" class="footer-nav__link">{{ 'general.footer.trending' | t }}</a></li>
+          <li><a href="{{ routes.collections_url }}" class="footer-nav__link">{{ 'general.footer.collections' | t }}</a></li>
+{% endif %}          {%- if footer_menu_1 != blank -%}
+            {%- for link in footer_menu_1.links limit: section.settings.menu_link_limit -%}
+              {%- unless link.title == 'Search' and section.settings.hide_search_link -%}<li><a href="{{ link.url }}" class="footer-nav__link">{{ link.title | escape }}</a></li>{%- endunless -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Help and support">
+        <h3 class="footer-nav__title">{{ section.settings.support_heading | escape }}</h3>
+        <ul class="footer-nav__list" role="list">
+{% if section.settings.show_default_links != false %}          <li><a href="{{ routes.search_url }}" class="footer-nav__link">{{ 'general.footer.search' | t }}</a></li>
+          <li><a href="{{ section.settings.contact_link | default: '/pages/contact' }}" class="footer-nav__link">{{ 'general.footer.contact' | t }}</a></li>
+{% if section.settings.show_policy_links != false %}          {%- if shop.shipping_policy != blank -%}<li><a href="{{ shop.shipping_policy.url }}" class="footer-nav__link">{{ 'general.footer.shipping' | t }}</a></li>{%- endif -%}
+          {%- if shop.refund_policy != blank -%}<li><a href="{{ shop.refund_policy.url }}" class="footer-nav__link">{{ 'general.footer.refunds' | t }}</a></li>{%- endif -%}
+          {%- if shop.privacy_policy != blank -%}<li><a href="{{ shop.privacy_policy.url }}" class="footer-nav__link">{{ 'general.footer.privacy' | t }}</a></li>{%- endif -%}
+          {%- if shop.terms_of_service != blank -%}<li><a href="{{ shop.terms_of_service.url }}" class="footer-nav__link">{{ 'general.footer.terms' | t }}</a></li>{%- endif -%}
+{% endif %}{% endif %}
+{% if footer_menu_2 != blank %}{% for link in footer_menu_2.links limit: section.settings.menu_link_limit %}<li><a class="footer-nav__link" href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}{% endif %}        </ul>
+      </nav>
+
+{% if footer_menu_3 != blank %}
+      <nav class="footer-nav" aria-label="{{ section.settings.about_heading | escape }}">
+        <h3 class="footer-nav__title">{{ section.settings.about_heading | escape }}</h3>
+        <ul class="footer-nav__list" role="list">{% for link in footer_menu_3.links limit: section.settings.menu_link_limit %}<li><a class="footer-nav__link" href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}</ul>
+      </nav>
+      {% endif %}
+      {% if section.settings.show_newsletter != false %}
+      <!-- Newsletter -->
+      <div class="footer-newsletter">
+        {%- if newsletter_heading != blank -%}
+          <h3 class="footer-nav__title">{{ newsletter_heading | escape }}</h3>
+        {%- endif -%}
+        <p class="footer-newsletter__desc">{{ section.settings.newsletter_description | escape }}</p>
+        {%- form 'customer', id: newsletter_form_id -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="footer-newsletter__form">
+            <label for="{{ newsletter_input_id }}" class="visually-hidden">{{ 'general.newsletter_form.email_label' | t }}</label>
+            <input
+              type="email"
+              name="contact[email]"
+              id="{{ newsletter_input_id }}"
+              class="footer-newsletter__input"
+              placeholder="{{ 'general.newsletter_form.email_placeholder' | t | default: 'Your email address' }}"
+              required
+              autocomplete="email"
+            >
+            <button type="submit" class="footer-newsletter__btn btn btn--primary" aria-label="{{ 'general.newsletter_form.subscribe_label' | t }}">
+              {{ 'general.newsletter_form.submit' | t }}
+            </button>
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p class="footer-newsletter__success" role="status">{{ 'general.newsletter_form.success' | t }}</p>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">
+        &copy; {{ 'now' | date: '%Y' }} {{ footer_brand_text | escape }}. {{ section.settings.copyright_text | escape }}
+      </p>
+
+      <!-- Policy Links (dynamic from Shopify) -->
+      {% if section.settings.show_policy_links != false %}<nav class="footer-policies" aria-label="{{ 'general.accessibility.legal' | t }}">
+        {%- if shop.privacy_policy != blank -%}
+          <a href="{{ shop.privacy_policy.url }}" class="footer-policy-link">{{ 'general.footer.privacy' | t }}</a>
+        {%- endif -%}
+        {%- if shop.terms_of_service != blank -%}
+          <a href="{{ shop.terms_of_service.url }}" class="footer-policy-link">{{ 'general.footer.terms' | t }}</a>
+        {%- endif -%}
+        {%- if shop.refund_policy != blank -%}
+          <a href="{{ shop.refund_policy.url }}" class="footer-policy-link">{{ 'general.footer.refund' | t }}</a>
+        {%- endif -%}
+        {%- if shop.shipping_policy != blank -%}
+          <a href="{{ shop.shipping_policy.url }}" class="footer-policy-link">{{ 'general.footer.shipping' | t }}</a>
+        {%- endif -%}
+      </nav>{% endif %}
+
+      {%- if show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+        <div class="footer-payment-icons" aria-label="{{ 'general.accessibility.payment_methods' | t }}">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'payment-icon-svg' }}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "text",
+      "id": "footer_brand_text",
+      "label": "Footer brand name",
+      "default": "VIP JEWELS"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_description",
+      "label": "Brand Description",
+      "default": "VIP JEWELS brings heritage-inspired oxidised jewellery to modern wardrobes—distinctive, versatile and made to be styled your way."
+    },
+    {
+      "type": "header",
+      "content": "Navigation Menus"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu_1",
+      "label": "Footer Menu 1",
+      "default": "footer"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu_2",
+      "label": "Footer Menu 2 (Customer Support)"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu_3",
+      "label": "Footer Menu 3 (About)"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading",
+      "default": "Stay In The Loop"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_description",
+      "label": "Newsletter description",
+      "default": "New drops, exclusive offers & style tips delivered to your inbox."
+    },
+    {
+      "type": "header",
+      "content": "Social Links"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "text",
+      "id": "social_whatsapp",
+      "label": "WhatsApp Number (with country code, e.g. +919876543210)"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "header",
+      "content": "Payment Icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "default": true,
+      "label": "Show payment icons"
+    },
+    {
+      "type": "header",
+      "content": "Footer colours"
+    },
+    {
+      "type": "color",
+      "id": "footer_bg",
+      "label": "Footer background",
+      "default": "#5C1828"
+    },
+    {
+      "type": "color",
+      "id": "footer_text",
+      "label": "Footer text",
+      "default": "#FFF9EE"
+    },
+    {
+      "type": "color",
+      "id": "footer_accent",
+      "label": "Footer accent / button",
+      "default": "#ECD39A"
+    },
+    {
+      "type": "color",
+      "id": "footer_heading",
+      "label": "Brand and heading colour",
+      "default": "#ECD39A"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_gradient_enabled",
+      "label": "Use gradient background",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "footer_gradient_end",
+      "label": "Gradient end colour",
+      "default": "#35101B"
+    },
+    {
+      "type": "text",
+      "id": "shop_heading",
+      "label": "Shop column heading",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "support_heading",
+      "label": "Support column heading",
+      "default": "Help & Support"
+    },
+    {
+      "type": "text",
+      "id": "about_heading",
+      "label": "About column heading",
+      "default": "About"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_default_links",
+      "label": "Show the included navigation links",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_search_link",
+      "label": "Hide Search from Footer Menu 1",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "menu_link_limit",
+      "label": "Maximum links per selected menu",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy_links",
+      "label": "Show policy links",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact page destination"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright suffix",
+      "default": "All rights reserved."
+    },
+    {
+      "type": "checkbox",
+      "id": "product_footer_accordion",
+      "label": "Use mobile footer accordions on product pages",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_accordion_open",
+      "label": "Open mobile footer accordions initially",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "brand_size",
+      "label": "Desktop brand text size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "brand_size_mobile",
+      "label": "Mobile brand text size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "brand_alignment",
+      "label": "Brand column alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

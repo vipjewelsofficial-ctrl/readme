@@ -1,0 +1,82 @@
+{
+  "viewports": [
+    {
+      "width": 320,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    },
+    {
+      "width": 360,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    },
+    {
+      "width": 430,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    },
+    {
+      "width": 990,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "no_overflow": true,
+      "save_remove_reload": true,
+      "card_product_sync": true,
+      "keyboard_focus_and_escape": true,
+      "variants_unchanged": true,
+      "errors": []
+    }
+  ],
+  "edge_cases": [
+    "Cross-tab save and removal synchronization",
+    "Corrupt storage handled without script errors",
+    "Unsafe URLs filtered and titles rendered as plain text",
+    "Blocked storage reports failure without a false saved state",
+    "Dynamically added recommendation cards work"
+  ],
+  "editor_fixes": [
+    "Built-in desktop logo follows selected width",
+    "Mobile heading size responds to editor setting",
+    "Banner caption and mobile panel colour controls work",
+    "Empty block layout remains empty; legacy layout remains available",
+    "Existing artwork preserved as the first editable slide"
+  ],
+  "local_fixture_only": true
+}

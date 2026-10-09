@@ -1,0 +1,428 @@
+{
+  "sections": {
+    "hero_TNVA9q": {
+      "type": "hero",
+      "name": "Hero Image Slider",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Jewellery_for_Every_Celebration.png",
+        "overlay_opacity": 30,
+        "heading": "Statement Silver, Crafted with Soul",
+        "heading_size": "large",
+        "subtext": "Oxidised jewellery inspired by Indian craft, made for modern wardrobes.",
+        "btn_primary_label": "Shop Now",
+        "btn_primary_link": "",
+        "btn_secondary_label": "New Arrivals",
+        "btn_secondary_link": "",
+        "content_position": "center",
+        "min_height": 600,
+        "overlay_color": "#000000",
+        "panel_color": "#FFFDF9",
+        "panel_opacity": 90,
+        "heading_color": "#242424",
+        "subtext_color": "#4F494B",
+        "primary_button_bg": "#7A1F32",
+        "primary_button_text": "#FFFFFF",
+        "content_width": 620,
+        "content_mode": "image",
+        "height_mode": "adapt",
+        "include_base": false,
+        "autoplay": true
+      },
+      "blocks": {
+        "original_slide": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Jewellery_for_Every_Celebration.png",
+            "overlay_opacity": 30,
+            "heading": "Statement Silver, Crafted with Soul",
+            "heading_size": "large",
+            "subtext": "Oxidised jewellery inspired by Indian craft, made for modern wardrobes.",
+            "btn_primary_label": "Shop Now",
+            "btn_primary_link": "",
+            "btn_secondary_label": "New Arrivals",
+            "btn_secondary_link": "",
+            "content_position": "center",
+            "overlay_color": "#000000",
+            "panel_color": "#FFFDF9",
+            "panel_opacity": 90,
+            "heading_color": "#242424",
+            "subtext_color": "#4F494B",
+            "primary_button_bg": "#7A1F32",
+            "primary_button_text": "#FFFFFF",
+            "content_width": 620,
+            "content_mode": "image"
+          }
+        }
+      },
+      "block_order": [
+        "original_slide"
+      ]
+    },
+    "categories": {
+      "type": "category-directory",
+      "blocks": {
+        "cat_earrings": {
+          "type": "category_group",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "title": "Earrings",
+            "description": "",
+            "badge": "",
+            "button_label": "Shop Earrings",
+            "subcategory_1": "",
+            "subcategory_1_label": "",
+            "subcategory_2": "",
+            "subcategory_2_label": "",
+            "subcategory_3": "",
+            "subcategory_3_label": "",
+            "subcategory_4": "",
+            "subcategory_4_label": ""
+          }
+        },
+        "cat_necklaces": {
+          "type": "category_group",
+          "settings": {
+            "collection": "",
+            "link": "https://gujjujewels.com/collections/all",
+            "title": "Necklaces",
+            "description": "",
+            "badge": "",
+            "button_label": "Shop Necklaces",
+            "subcategory_1": "",
+            "subcategory_1_label": "",
+            "subcategory_2": "",
+            "subcategory_2_label": "",
+            "subcategory_3": "",
+            "subcategory_3_label": "",
+            "subcategory_4": "",
+            "subcategory_4_label": ""
+          }
+        },
+        "cat_bangles": {
+          "type": "category_group",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "title": "Bangles & Bracelets",
+            "description": "",
+            "badge": "",
+            "button_label": "Shop Bangles & Bracelets",
+            "subcategory_1": "",
+            "subcategory_1_label": "",
+            "subcategory_2": "",
+            "subcategory_2_label": "",
+            "subcategory_3": "",
+            "subcategory_3_label": "",
+            "subcategory_4": "",
+            "subcategory_4_label": ""
+          }
+        },
+        "cat_rings": {
+          "type": "category_group",
+          "settings": {
+            "collection": "",
+            "link": "https://gujjujewels.com/collections/all",
+            "title": "Rings",
+            "description": "",
+            "badge": "",
+            "button_label": "Shop Rings",
+            "subcategory_1": "",
+            "subcategory_1_label": "",
+            "subcategory_2": "",
+            "subcategory_2_label": "",
+            "subcategory_3": "",
+            "subcategory_3_label": "",
+            "subcategory_4": "",
+            "subcategory_4_label": ""
+          }
+        },
+        "cat_sets": {
+          "type": "category_group",
+          "settings": {
+            "collection": "",
+            "link": "https://gujjujewels.com/collections/all",
+            "title": "Jewellery Sets",
+            "description": "",
+            "badge": "",
+            "button_label": "Shop Jewellery Sets",
+            "subcategory_1": "",
+            "subcategory_1_label": "",
+            "subcategory_2": "",
+            "subcategory_2_label": "",
+            "subcategory_3": "",
+            "subcategory_3_label": "",
+            "subcategory_4": "",
+            "subcategory_4_label": ""
+          }
+        },
+        "cat_hair": {
+          "type": "category_group",
+          "settings": {
+            "collection": "",
+            "link": "https://gujjujewels.com/collections/all",
+            "title": "Hair Accessories",
+            "description": "",
+            "badge": "",
+            "button_label": "Shop Hair Accessories",
+            "subcategory_1": "",
+            "subcategory_1_label": "",
+            "subcategory_2": "",
+            "subcategory_2_label": "",
+            "subcategory_3": "",
+            "subcategory_3_label": "",
+            "subcategory_4": "",
+            "subcategory_4_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "cat_earrings",
+        "cat_necklaces",
+        "cat_bangles",
+        "cat_rings",
+        "cat_sets",
+        "cat_hair"
+      ],
+      "settings": {
+        "eyebrow": "Explore our collection",
+        "heading": "Shop by Category",
+        "subheading": "",
+        "columns_desktop": 6,
+        "use_collection_images": false,
+        "show_descriptions": false,
+        "show_subcategories": false,
+        "show_product_counts": false,
+        "button_label": "",
+        "button_link": "",
+        "background_color": "#fffdf9",
+        "card_background": "#f7f2ec",
+        "text_color": "#242424",
+        "accent_color": "#7a1f32",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "new_arrivals": {
+      "type": "new-arrivals",
+      "settings": {
+        "heading": "New Arrivals",
+        "subheading": "Just in at Gujju Jewels",
+        "collection": "",
+        "fallback_to_all_products": true,
+        "products_to_show": 8,
+        "columns_desktop": "4",
+        "show_view_all": true,
+        "section_id": "new-arrivals",
+        "section_background": "#fffdf9",
+        "section_text": "#242424",
+        "section_accent": "#7a1f32",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "styles": {
+      "type": "collection-card-grid",
+      "blocks": {
+        "style_oxidised": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "title": "Oxidised",
+            "description": "Heritage-inspired silver-tone favourites",
+            "badge": ""
+          }
+        },
+        "style_traditional": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "title": "Traditional",
+            "description": "Classic Indian jewellery styling",
+            "badge": ""
+          }
+        },
+        "style_statement": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "title": "Statement",
+            "description": "Bold pieces that complete the look",
+            "badge": ""
+          }
+        },
+        "style_everyday": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "title": "Everyday",
+            "description": "Easy pieces for repeat wear",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "style_oxidised",
+        "style_traditional",
+        "style_statement",
+        "style_everyday"
+      ],
+      "settings": {
+        "eyebrow": "Find your look",
+        "heading": "Shop by Style",
+        "subheading": "Explore jewellery by the mood and finish you love.",
+        "card_style": "landscape",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "use_collection_images": false,
+        "show_descriptions": false,
+        "button_label": "Explore All Styles",
+        "button_link": "",
+        "background_color": "#fffdf9",
+        "card_background": "#f7f2ec",
+        "text_color": "#242424",
+        "accent_color": "#7a1f32",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "trust": {
+      "type": "benefits",
+      "blocks": {
+        "trust_quality": {
+          "type": "benefit",
+          "settings": {
+            "icon": "star",
+            "title": "Curated Designs",
+            "text": "A focused selection of jewellery chosen for distinctive, wearable style."
+          }
+        },
+        "trust_pack": {
+          "type": "benefit",
+          "settings": {
+            "icon": "heart",
+            "title": "Carefully Packed",
+            "text": "Every order is prepared with care before it leaves us."
+          }
+        },
+        "trust_secure": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout",
+            "text": "Complete your purchase through Shopify\u2019s secure checkout experience."
+          }
+        },
+        "trust_support": {
+          "type": "benefit",
+          "settings": {
+            "icon": "return",
+            "title": "Customer Support",
+            "text": "Need help with an order? Reach out and our team can assist you."
+          }
+        }
+      },
+      "block_order": [
+        "trust_quality",
+        "trust_pack",
+        "trust_secure",
+        "trust_support"
+      ],
+      "settings": {
+        "heading": "Shop with Confidence",
+        "subheading": "The Gujju Jewels experience",
+        "section_background": "#fffdf9",
+        "section_text": "#242424",
+        "section_accent": "#7a1f32",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "trending": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Trending Picks",
+        "subheading": "Pieces worth a closer look",
+        "collection": "",
+        "fallback_to_all_products": true,
+        "products_to_show": 8,
+        "columns_desktop": "4",
+        "show_view_all": true,
+        "section_id": "trending-picks",
+        "section_background": "#fffdf9",
+        "section_text": "#242424",
+        "section_accent": "#7a1f32",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "edit": {
+      "type": "collection-banner",
+      "settings": {
+        "overlay_opacity": 35,
+        "heading": "The Gujju Jewels Edit",
+        "subtext": "A curated jewellery story for your next look.",
+        "btn_label": "Explore the Edit",
+        "btn_link": "",
+        "text_position": "left"
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "What Customers Say",
+        "subheading": "Real experiences with Gujju Jewels",
+        "section_background": "#fffdf9",
+        "section_text": "#242424",
+        "section_accent": "#7a1f32",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "social": {
+      "type": "social-gallery",
+      "settings": {
+        "eyebrow": "Our community",
+        "heading": "Styled by You",
+        "subheading": "Jewellery inspiration for real looks and real moments.",
+        "columns_desktop": 6,
+        "button_label": "",
+        "button_link": "",
+        "open_new_tab": true,
+        "background_color": "#fffdf9",
+        "text_color": "#242424",
+        "accent_color": "#7a1f32",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Helpful details before you order",
+        "section_background": "#fffdf9",
+        "section_text": "#242424",
+        "section_accent": "#7a1f32",
+        "padding_top": 50,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "hero_TNVA9q",
+    "categories",
+    "new_arrivals",
+    "styles",
+    "trust",
+    "trending",
+    "edit",
+    "reviews",
+    "social",
+    "faq"
+  ]
+}

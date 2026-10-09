@@ -1,0 +1,19 @@
+{
+  "base": "Delivered v6 theme",
+  "theme_files": 100,
+  "changes_from_v6": {
+    "modified": 11,
+    "new": 4,
+    "unchanged": 85
+  },
+  "zip_bytes": 4172419,
+  "zip_sha256": "e27faafd717add0dfe32f7c6e352a86ba945a9ceb2faf85441e3e6b3733be2b3",
+  "checks": {
+    "zip_integrity": true,
+    "no_original_files_removed": true,
+    "settings_data_unchanged": true,
+    "all_image_assets_unchanged": true,
+    "homepage_and_product_section_order_preserved": true
+  },
+  "local_tests_only": true
+}

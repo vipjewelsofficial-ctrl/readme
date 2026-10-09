@@ -1,0 +1,49 @@
+/* Editable footer palette and responsive text branding. */
+footer.site-footer {
+  background: var(--footer-bg, #5c1828) !important;
+  background-image: var(--footer-gradient, none) !important;
+  color: var(--footer-text, #fff9ee);
+}
+.site-footer .footer-brand { min-width: 0; text-align: var(--footer-brand-align, left); }
+.site-footer .footer-brand__wordmark {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 18px;
+  color: var(--footer-heading, #ecd39a);
+  font: 500 var(--footer-brand-size, 36px)/1.25 var(--font-serif, Georgia, serif);
+  letter-spacing: .08em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.site-footer .footer-nav__title,
+.site-footer .product-footer-disclosure__summary { color: var(--footer-heading, #ecd39a); }
+.site-footer .footer-brand__desc,
+.site-footer .footer-newsletter__desc,
+.site-footer .footer-nav__link,
+.site-footer .footer-policy-link,
+.site-footer .footer-bottom__copy { color: var(--footer-text, #fff9ee); }
+.site-footer .footer-brand__desc,
+.site-footer .footer-newsletter__desc { opacity: .85; }
+.site-footer .footer-social__link { color: var(--footer-text, #fff9ee); border-color: currentColor; }
+.site-footer .footer-newsletter__input {
+  color: var(--footer-text, #fff9ee);
+  background: rgb(255 255 255 / 8%);
+  border-color: rgb(255 255 255 / 30%);
+}
+.site-footer .footer-newsletter__input::placeholder { color: var(--footer-text, #fff9ee); opacity: .75; }
+.site-footer .footer-newsletter__btn.btn--primary {
+  background: var(--footer-accent, #ecd39a);
+  border-color: var(--footer-accent, #ecd39a);
+  color: var(--footer-bg, #5c1828);
+}
+.site-footer .footer-nav__link:hover,
+.site-footer .footer-policy-link:hover { color: var(--footer-heading, #ecd39a); }
+.site-footer a:focus-visible,
+.site-footer button:focus-visible,
+.site-footer input:focus-visible { outline: 2px solid var(--footer-heading, #ecd39a); outline-offset: 4px; }
+@media (max-width: 989px) {
+  .site-footer .footer-brand__wordmark { font-size: var(--footer-brand-mobile-size, 32px); }
+}
+
+.site-footer .footer-social { justify-content: var(--footer-social-align, flex-start); }
+.site-footer .footer-top { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }

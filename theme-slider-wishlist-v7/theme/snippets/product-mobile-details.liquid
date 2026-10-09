@@ -1,0 +1,113 @@
+{%- comment -%}
+  Responsive product information placed immediately after the native product form.
+  Uses theme palette variables and editable Main Product section settings.
+  Offer copy is presentation; Shopify discount/shipping rules are configured separately.
+{%- endcomment -%}
+{%- liquid
+  assign has_offers = false
+  if section.settings.use_offer_blocks
+    for block in section.blocks
+      if block.type == 'offer' and block.settings.text != blank
+        assign has_offers = true
+      endif
+    endfor
+  else
+    for index in (1..4)
+      assign offer_key = 'mobile_offer_' | append: index
+      if section.settings[offer_key] != blank
+        assign has_offers = true
+      endif
+    endfor
+  endif
+-%}
+
+<div class="product-mobile-details" style="--mobile-panel-radius: {{ section.settings.panel_radius }}px; --benefit-columns: {{ section.settings.benefit_columns }}; --benefit-mobile-columns: {{ section.settings.benefit_columns_mobile }};">
+  {%- if has_offers -%}
+    <div class="product-mobile-offers"{% if section.settings.mobile_offers_heading != blank %} aria-labelledby="MobileOffers-{{ section.id }}"{% endif %}>
+      {%- if section.settings.mobile_offers_heading != blank -%}
+        <h2 class="product-mobile-offers__heading" id="MobileOffers-{{ section.id }}">{{ section.settings.mobile_offers_heading | escape }}</h2>
+      {%- endif -%}
+      <ul class="product-mobile-offers__list" role="list">
+{% if section.settings.use_offer_blocks %}
+        {% for block in section.blocks %}{% if block.type == 'offer' and block.settings.text != blank %}
+          <li class="product-mobile-offers__item" {{ block.shopify_attributes }}>
+            <span class="product-mobile-offers__icon" aria-hidden="true">{% if block.settings.icon == 'percent' %}%{% else %}{% render 'icon', icon: block.settings.icon %}{% endif %}</span>
+            <span>{{ block.settings.text | escape }}</span>
+          </li>
+        {% endif %}{% endfor %}
+      {% else %}        {%- for index in (1..4) -%}
+          {%- assign offer_key = 'mobile_offer_' | append: index -%}
+          {%- if section.settings[offer_key] != blank -%}
+            <li class="product-mobile-offers__item">
+              <span class="product-mobile-offers__icon" aria-hidden="true">%</span>
+              <span>{{ section.settings[offer_key] | escape }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+{% endif %}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  <div class="product-mobile-accordions">
+    {%- if product.description != blank and section.settings.description_display != 'plain' -%}
+      <details class="product-mobile-accordion"{% if section.settings.mobile_description_open %} open{% endif %}>
+        <summary class="product-mobile-accordion__summary">
+          <span>{{ section.settings.mobile_description_heading | default: 'Description' | escape }}</span>
+          <span class="product-mobile-accordion__toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="product-mobile-accordion__body rte">{{ product.description }}</div>
+      </details>
+    {%- endif -%}
+
+    <details class="product-mobile-accordion"{% if section.settings.shipping_open %} open{% endif %}>
+      <summary class="product-mobile-accordion__summary">
+        <span>{{ section.settings.mobile_shipping_heading | default: 'Shipping & Returns' | escape }}</span>
+        <span class="product-mobile-accordion__toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="product-mobile-accordion__body rte">
+        {{ section.settings.mobile_shipping_text }}
+        {%- if shop.shipping_policy != blank or shop.refund_policy != blank -%}
+          <ul class="product-mobile-accordion__policies" role="list">
+            {%- if shop.shipping_policy != blank -%}
+              <li><a href="{{ shop.shipping_policy.url }}">{{ 'sections.product_details.shipping' | t }}</a></li>
+            {%- endif -%}
+            {%- if shop.refund_policy != blank -%}
+              <li><a href="{{ shop.refund_policy.url }}">{{ 'sections.product_details.refunds' | t }}</a></li>
+            {%- endif -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    </details>
+  </div>
+
+  <ul class="product-mobile-benefits" role="list" aria-label="{{ 'sections.product_details.benefits' | t }}">
+{% if section.settings.use_benefit_blocks %}
+    {% for block in section.blocks %}{% if block.type == 'benefit' and block.settings.title != blank %}
+      <li class="product-mobile-benefits__item" {{ block.shopify_attributes }}>
+        <span class="product-mobile-benefits__icon" aria-hidden="true">{% render 'icon', icon: block.settings.icon %}</span>
+        <strong class="product-mobile-benefits__title">{{ block.settings.title | escape }}</strong>
+        {% if block.settings.text != blank %}<span class="product-mobile-benefits__text">{{ block.settings.text | escape }}</span>{% endif %}
+      </li>
+    {% endif %}{% endfor %}
+    {% else %}    {%- for index in (1..3) -%}
+      {%- liquid
+        assign title_key = 'mobile_benefit_' | append: index | append: '_title'
+        assign text_key = 'mobile_benefit_' | append: index | append: '_text'
+      -%}
+      {%- if section.settings[title_key] != blank -%}
+        <li class="product-mobile-benefits__item">
+          <span class="product-mobile-benefits__icon" aria-hidden="true">
+{% assign icon_key = 'benefit_' | append: index | append: '_icon' %}{% render 'icon', icon: section.settings[icon_key] %}
+          </span>
+          <strong class="product-mobile-benefits__title">{{ section.settings[title_key] | escape }}</strong>
+          {%- if section.settings[text_key] != blank -%}
+            <span class="product-mobile-benefits__text">{{ section.settings[text_key] | escape }}</span>
+          {%- endif -%}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+{% endif %}
+  </ul>
+
+</div>

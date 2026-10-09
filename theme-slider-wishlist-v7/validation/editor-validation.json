@@ -1,0 +1,61 @@
+{
+  "local_fixture_only": true,
+  "checks": [
+    {
+      "test": "All three footer menus and visibility switches",
+      "passed": true
+    },
+    {
+      "test": "Text logo and native Shopify menu",
+      "passed": true
+    },
+    {
+      "test": "Included menu titles and URLs",
+      "passed": true
+    },
+    {
+      "test": "Product card switches and explicit false parameters",
+      "passed": true
+    },
+    {
+      "test": "Reordered product blocks, five offers, four benefits, quantity and descriptions",
+      "passed": true
+    },
+    {
+      "test": "Manual product selection, sorting, recommendation count and deduplication",
+      "passed": true
+    },
+    {
+      "test": "Social gallery demo visibility",
+      "passed": true
+    },
+    {
+      "test": "Mobile-only hero image and image-only destination",
+      "passed": true
+    },
+    {
+      "test": "All schemas, ranges, saved blocks and section group references",
+      "passed": true
+    },
+    {
+      "test": "Previously ignored hero height/opacity and header colours work on mobile and desktop",
+      "passed": true
+    },
+    {
+      "test": "Header, category button/shape/columns and three footer menus at four widths",
+      "passed": true
+    },
+    {
+      "test": "Collection banner overlay opacity",
+      "passed": true
+    },
+    {
+      "test": "Nine-slide carousel: arrows, dots, keyboard, swipe, editor selection and reload without overflow",
+      "passed": true
+    },
+    {
+      "test": "Autoplay advances and respects reduced motion",
+      "passed": true
+    }
+  ]
+}

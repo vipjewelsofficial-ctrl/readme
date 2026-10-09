@@ -1,0 +1,26 @@
+{%- comment -%}
+  Accessible pagination for Shopify paginate objects.
+  Usage: {% render 'pagination', paginate: paginate %}
+{%- endcomment -%}
+
+{%- if paginate.pages > 1 -%}
+  <nav class="pagination" role="navigation" aria-label="{{ 'accessibility.pagination' | t }}">
+    {%- if paginate.previous -%}
+      <a class="pagination__link" href="{{ paginate.previous.url }}" aria-label="{{ 'accessibility.previous_page' | t }}">{{ 'general.pagination.previous' | t }}</a>
+    {%- endif -%}
+
+    {%- for part in paginate.parts -%}
+      {%- if part.is_link -%}
+        <a class="pagination__link" href="{{ part.url }}" aria-label="{{ 'accessibility.go_page' | t: number: part.title }}">{{ part.title }}</a>
+      {%- elsif part.title == paginate.current_page -%}
+        <span class="pagination__current" aria-current="page" aria-label="{{ 'accessibility.page' | t: number: part.title }}">{{ part.title }}</span>
+      {%- else -%}
+        <span class="pagination__gap" aria-hidden="true">{{ part.title }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if paginate.next -%}
+      <a class="pagination__link" href="{{ paginate.next.url }}" aria-label="{{ 'accessibility.next_page' | t }}">{{ 'general.pagination.next' | t }}</a>
+    {%- endif -%}
+  </nav>
+{%- endif -%}

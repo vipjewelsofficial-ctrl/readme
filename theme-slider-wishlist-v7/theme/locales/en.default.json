@@ -1,0 +1,173 @@
+{
+  "general": {
+    "home_page": {
+      "title": "Home"
+    },
+    "newsletter_form": {
+      "email_placeholder": "Your email address",
+      "submit": "Subscribe",
+      "success": "Thank you for subscribing.",
+      "subscribe_label": "Subscribe to newsletter",
+      "email_label": "Email address"
+    },
+    "footer": {
+      "shop": "Shop",
+      "support": "Help & Support",
+      "all_jewellery": "All Jewellery",
+      "new_arrivals": "New Arrivals",
+      "trending": "Trending Picks",
+      "collections": "Collections",
+      "search": "Search",
+      "contact": "Contact Us",
+      "shipping": "Shipping Policy",
+      "refunds": "Returns & Refunds",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "refund": "Refund Policy",
+      "legal": "Legal",
+      "payment_methods": "Accepted payment methods"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "accessibility": {
+      "legal": "Legal",
+      "payment_methods": "Accepted payment methods"
+    },
+    "search": {
+      "one_result": "{{ count }} result for \u201c{{ terms }}\u201d",
+      "many_results": "{{ count }} results for \u201c{{ terms }}\u201d"
+    },
+    "wishlist": {
+      "add": "Save to wishlist",
+      "saved": "Saved to wishlist",
+      "add_label": "Save {{ product }} to wishlist",
+      "remove_label": "Remove {{ product }} from wishlist",
+      "view": "View product",
+      "remove": "Remove",
+      "close": "Close wishlist",
+      "open": "Open wishlist",
+      "count_label": "Wishlist, {{ count }} saved products",
+      "saved_message": "Product saved to your wishlist.",
+      "removed_message": "Product removed from your wishlist.",
+      "storage_error": "Unable to save your wishlist. Allow browser storage and try again.",
+      "limit": "Your wishlist has reached its limit of 200 products."
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "close": "Close",
+    "open_menu": "Open menu",
+    "open_search": "Open search",
+    "close_search": "Close search",
+    "account": "Account",
+    "main_navigation": "Main navigation",
+    "cart_with_items": "Cart with {{ count }} items",
+    "product_images": "Product images",
+    "view_image": "View image {{ number }} of {{ count }}",
+    "pagination": "Pagination",
+    "previous_page": "Previous page",
+    "next_page": "Next page",
+    "go_page": "Go to page {{ number }}",
+    "page": "Page {{ number }}"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "sale": "Sale",
+      "sold_out_badge": "Sold Out",
+      "choose_options": "Choose options",
+      "choose_option": "Choose an option",
+      "quantity": "Quantity",
+      "no_image": "No image available",
+      "price": "Price",
+      "from_label": "From",
+      "price_from": "From {{ price }}",
+      "regular_price": "Regular price {{ price }}",
+      "percent_off": "{{ percent }}% off",
+      "quick_add_label": "Add {{ product }} to cart",
+      "choose_options_label": "Choose options for {{ product }}",
+      "adding": "Adding\u2026",
+      "added": "Added \u2713",
+      "try_again": "Try again",
+      "add_error": "Add to cart failed"
+    }
+  },
+  "sections": {
+    "cart": {
+      "cart_error": "There was an error updating your cart.",
+      "cart_quantity_error_html": "You can only add [quantity] of this item.",
+      "caption": "Products in your shopping cart",
+      "remove_label": "Remove {{ product }} from cart",
+      "quantity_label": "Quantity for {{ product }}",
+      "increase": "Increase quantity for {{ product }}",
+      "decrease": "Decrease quantity for {{ product }}",
+      "updating": "Updating cart\u2026",
+      "updated": "Cart updated.",
+      "refresh_error": "Cart display could not be refreshed.",
+      "changed": "The cart changed. Please retry this quantity.",
+      "save_error": "This quantity could not be saved. Please try again.",
+      "limited": "The requested quantity is not available. Your cart shows the available quantity.",
+      "connection_error": "Your quantity change could not be confirmed. Check your connection and try again.",
+      "invalid_quantity": "Enter a whole-number quantity of zero or more."
+    },
+    "slider": {
+      "slide": "Slide",
+      "slideshow": "Slideshow",
+      "previous": "Previous slide",
+      "next": "Next slide",
+      "go_to": "Go to slide {{ number }}",
+      "pause": "Pause",
+      "play": "Play"
+    },
+    "collection": {
+      "filtered_by": "Filtered by:",
+      "clear": "Clear all",
+      "sort_by": "Sort by",
+      "sort": "Sort",
+      "filters": "Product filters",
+      "filter_products": "Filter products",
+      "apply": "Apply filters",
+      "reset": "Reset",
+      "empty": "No products found",
+      "piece": "piece",
+      "pieces": "pieces",
+      "product": "product",
+      "products": "products"
+    },
+    "search": {
+      "label": "Search jewellery",
+      "summary": "{{ count }} results for \u201c{{ terms }}\u201d"
+    },
+    "product_details": {
+      "benefits": "Shopping benefits",
+      "description": "Description",
+      "shipping_returns": "Shipping & Returns",
+      "shipping": "Shipping policy",
+      "refunds": "Returns & refunds"
+    }
+  },
+  "collections": {
+    "general": {
+      "active_filters": "Active filters",
+      "filtered_by": "Filtered by:",
+      "clear_all": "Clear all",
+      "sort_by": "Sort by",
+      "sort": "Sort",
+      "product_filters": "Product filters",
+      "filter_products": "Filter products",
+      "minimum": "Minimum",
+      "maximum": "Maximum",
+      "apply_filters": "Apply Filters",
+      "clear_filters": "Clear Filters",
+      "empty": "No products match the selected filters.",
+      "piece": "piece",
+      "pieces": "pieces",
+      "product": "product",
+      "products": "products"
+    }
+  }
+}

@@ -1,0 +1,462 @@
+/*
+ * ============================================================
+ * theme.css — Global base styles for the Shopify theme
+ * Gujju Jewels | Custom Shopify OS 2.0 Theme
+ * ============================================================
+ */
+
+/* ============================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================================ */
+:root {
+  /* Emerald, warm beige and oxidised-silver palette */
+  --color-primary: #7A1F32;
+  --color-primary-dark: #641A2A;
+  --color-primary-deep: #4E1421;
+  --color-primary-light: #D5A9B3;
+  --color-primary-soft: #F3E7EA;
+
+  --color-beige: #F7F2EC;
+  --color-beige-soft: #EFE8E1;
+  --color-ivory: #FFFDF9;
+  --color-card: #FFFFFF;
+
+  --color-silver: #AEB6B7;
+  --color-silver-light: #D7DDDE;
+  --color-silver-dark: #687274;
+
+  --color-white: #FFFFFF;
+  --color-surface: var(--color-beige-soft);
+
+  --color-text-dark: #242424;
+  --color-text-medium: #5F5A5B;
+  --color-text-light: #7B7476;
+  --color-text-muted: #8B8586;
+
+  --color-border: #E8E2DC;
+  --color-border-light: #F0EBE6;
+  --color-border-strong: #D7CEC7;
+
+  /* Backward-compatible aliases retained for existing section classes. */
+  --color-peach: var(--color-primary);
+  --color-peach-light: var(--color-primary-light);
+  --color-peach-rose: var(--color-primary);
+  --color-peach-dark: var(--color-primary-dark);
+  --color-peach-bg: var(--color-beige);
+  --color-peach-soft: var(--color-beige-soft);
+  --color-peach-card: var(--color-ivory);
+  --color-peach-border: var(--color-primary-light);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-serif);
+
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-md: 17px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 52px;
+  --text-5xl: 64px;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Borders */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(31, 41, 37, 0.06);
+  --shadow-sm: 0 4px 16px rgba(31, 41, 37, 0.08);
+  --shadow-md: 0 10px 30px rgba(31, 41, 37, 0.11);
+  --shadow-lg: 0 20px 55px rgba(31, 41, 37, 0.14);
+  --shadow-peach: 0 8px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Layout */
+  --container-max: 1320px;
+  --container-narrow: 900px;
+  --header-height: 72px;
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--body-font-size, 16px);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--color-text-dark);
+  background-color: var(--color-peach-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+#MainContent,
+.content-for-layout,
+.shopify-section,
+.header-section,
+.footer-section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+img, video, picture {
+  display: block;
+  max-width: 100%;
+}
+
+svg,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-light);
+  opacity: 1;
+}
+
+button:disabled,
+.btn[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+p {
+  line-height: var(--leading-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-dark);
+}
+
+/* ============================================================
+   3. ACCESSIBILITY UTILITIES
+   ============================================================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-to-content-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: var(--color-peach);
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) 0;
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content-link:focus {
+  top: 0;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--color-peach);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   4. LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+}
+
+/* ============================================================
+   5. BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: var(--button-font-size, 14px);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-fast), box-shadow var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-peach);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background-color: var(--color-peach);
+  color: var(--color-white);
+  border-color: var(--color-peach);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-peach-dark);
+  border-color: var(--color-peach-dark);
+  box-shadow: var(--shadow-peach);
+  transform: translateY(-1px);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border-color: var(--color-border-strong);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  border-color: var(--color-text-dark);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-peach-dark);
+  border-color: var(--color-peach);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-peach);
+  color: var(--color-white);
+}
+
+.btn--white {
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  border-color: var(--color-white);
+}
+
+.btn--white:hover {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: var(--button-font-size, 14px);
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   6. SECTION COMMON STYLES
+   ============================================================ */
+.section {
+  padding: var(--space-20) 0;
+}
+
+.section--peach {
+  background-color: var(--color-peach-soft);
+}
+
+.section--peach-soft {
+  background-color: var(--color-peach-card);
+}
+
+.section--ivory {
+  background-color: var(--color-ivory);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.section-header::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 1px;
+  margin: var(--space-5) auto 0;
+  background: linear-gradient(90deg, transparent, var(--color-silver-dark), transparent);
+}
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-peach);
+  margin-bottom: var(--space-3);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-2xl), 4vw, var(--section-heading-size, 40px));
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: var(--leading-tight);
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+.section-empty-message {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-top: var(--space-6);
+  padding: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+}
