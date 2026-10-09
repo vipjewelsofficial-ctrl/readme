@@ -1,0 +1,373 @@
+/*
+ * Gujju Jewels — Simple Jewellery Design Layer
+ * Purpose: one brand colour + neutral surfaces; photography carries the colour.
+ * Loaded after the legacy theme styles so it can be removed safely if needed.
+ */
+
+:root {
+  --simple-brand: var(--color-primary, #7A1F32);
+  --simple-bg: var(--color-ivory, #FFFDF9);
+  --simple-soft: var(--color-beige, #F7F2EC);
+  --simple-text: var(--color-text-dark, #242424);
+  --simple-border: #E8E2DC;
+  --simple-muted: #746D6F;
+  --simple-radius: 2px;
+}
+
+body { background: var(--simple-bg); color: var(--simple-text); }
+
+/* Remove decorative chrome; use spacing, type and imagery for hierarchy. */
+.section-header::after { display: none; }
+.section-eyebrow { color: var(--simple-brand); font-size: 11px; letter-spacing: .14em; }
+.section-title { font-weight: 600; }
+
+.btn {
+  border-radius: var(--simple-radius);
+  box-shadow: none;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  min-height: 44px;
+}
+.btn--primary { background: var(--simple-brand); border-color: var(--simple-brand); }
+.btn--primary:hover { filter: brightness(.92); }
+.btn--outline { background: transparent; color: var(--simple-text); border-color: var(--simple-text); }
+.btn--outline:hover { background: var(--simple-text); color: #fff; }
+
+/* Header: quiet white canvas, one burgundy signal. */
+.site-header { background: var(--header-desktop-bg, var(--simple-bg)); border-color: var(--header-border, var(--simple-border)); }
+.site-header.is-scrolled { box-shadow: 0 6px 18px rgba(36,36,36,.06); }
+.header-inner { min-height: 88px; }
+.header-nav { border-top-color: var(--header-border, var(--simple-border)); min-height: 52px; }
+.header-nav__list { gap: 30px; }
+.header-nav__link { font-size: 13px; font-weight: 500; letter-spacing: .07em; padding: 16px 0; }
+.header-nav__dropdown { background: var(--simple-bg); border-color: var(--simple-border); border-radius: var(--simple-radius); box-shadow: 0 12px 30px rgba(36,36,36,.08); }
+.header-action-btn { border-radius: 0; }
+.header-action-btn:hover { background: transparent; color: var(--simple-brand); }
+.header-search-input { border-color: var(--simple-border); border-radius: var(--simple-radius); background: #fff; }
+
+/* Category directory: visual shopping cards instead of dense directory boxes. */
+.category-directory { background: var(--simple-bg) !important; }
+.category-directory__grid { gap: 24px 18px; }
+.category-directory__card {
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.category-directory__card:hover { transform: none; border-color: transparent; box-shadow: none; }
+.category-directory__media { aspect-ratio: 4 / 5; background: var(--simple-soft); border-radius: var(--simple-radius); }
+.category-directory__image { transition: transform .35s ease; }
+.category-directory__card:hover .category-directory__image { transform: scale(1.025); }
+.category-directory__badge { top: 10px; right: 10px; border-radius: 0; font-size: 9px; letter-spacing: .1em; }
+.category-directory__content { padding: 13px 2px 0; text-align: center; }
+.category-directory__title-row { justify-content: center; }
+.category-directory__title { font-size: 21px; font-weight: 600; }
+.category-directory__shop-link { margin-top: 6px; font-size: 10px; color: var(--simple-muted); }
+
+/* Collection cards: clean image-led merchandising. */
+.collection-card-section { background: var(--simple-soft) !important; }
+.collection-card-grid { gap: 18px; }
+.collection-card__media { border-radius: var(--simple-radius) !important; box-shadow: none; }
+.collection-card__badge { border-radius: 0; font-size: 9px; }
+.collection-card__content { text-align: center; padding-top: 12px; }
+.collection-card__title { font-size: 20px; }
+
+/* Product cards: no boxes/shadows, so products become the colour. */
+.product-card { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.product-card:hover { transform: none; box-shadow: none; }
+.product-card__image-wrap { border-radius: var(--simple-radius); overflow: hidden; background: #fff; }
+.product-card__info { padding-left: 0; padding-right: 0; }
+.product-card__title { font-family: var(--font-body); font-weight: 400; }
+.product-card__badge { border-radius: 0; letter-spacing: .06em; }
+.product-card__quick-add-btn { border-radius: 0; background: var(--simple-brand); }
+
+/* Make alternating sections subtle rather than introducing new colours. */
+.shop-by-price, .reviews-section, .faq-section { background: var(--simple-soft) !important; }
+.benefits-section, .social-gallery { background: var(--simple-bg) !important; }
+
+/* Price tiles should not introduce extra brand colours. */
+.shop-by-price [style*="background"] { border-color: var(--simple-border); }
+
+/* Cards throughout informational sections. */
+.benefit-card, .review-card, .faq-item {
+  box-shadow: none !important;
+  border-color: var(--simple-border) !important;
+  border-radius: var(--simple-radius) !important;
+}
+.faq-item[open] { box-shadow: none !important; }
+
+/* Footer stays dark/quiet and lets the burgundy remain the only brand accent. */
+.site-footer { box-shadow: none; }
+
+@media (max-width: 989px) {
+  .header-inner { min-height: 72px; padding-left: 18px; padding-right: 18px; }
+  .category-directory__grid { gap: 20px 14px; }
+}
+
+@media (max-width: 599px) {
+  .category-directory__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 10px; }
+  .category-directory__card { display: block; }
+  .category-directory__media { min-height: 0; height: auto; aspect-ratio: 4 / 5; }
+  .category-directory__content { padding: 10px 0 0; }
+  .category-directory__title { font-size: 17px; }
+  .category-directory__shop-link { display: none; }
+  .collection-card-grid { gap: 16px 10px; }
+  .collection-card__title { font-size: 17px; }
+  .section-title { font-size: clamp(28px, 8vw, 34px); }
+}
+
+/* ============================================================
+   Customizable theme controls — v6
+   ============================================================ */
+:root {
+  --simple-brand: var(--color-primary, #7A1F32);
+  --simple-bg: var(--color-ivory, #FFFDF9);
+  --simple-soft: var(--color-beige, #F7F2EC);
+  --simple-surface: var(--color-surface, #FFFFFF);
+  --simple-text: var(--color-text-dark, #242424);
+  --simple-muted: var(--color-text-muted-custom, #746D6F);
+  --simple-border: var(--color-border-custom, #E8E2DC);
+  --simple-radius: var(--custom-card-radius, 2px);
+}
+
+body { font-size: var(--body-font-size, 16px); }
+.container,
+.page-shell,
+.hero__content,
+.footer-inner { max-width: var(--container-max, 1400px); }
+
+.section {
+  padding-top: var(--custom-section-spacing, 80px);
+  padding-bottom: var(--custom-section-spacing, 80px);
+}
+.section[style*="--section-bg"] {
+  background: var(--section-bg) !important;
+  color: var(--section-text, var(--simple-text));
+  padding-top: var(--section-pt, var(--custom-section-spacing, 80px));
+  padding-bottom: var(--section-pb, var(--custom-section-spacing, 80px));
+}
+.section[style*="--section-bg"] .section-title { color: var(--section-text, var(--simple-text)); }
+.section[style*="--section-bg"] .section-eyebrow { color: var(--section-accent, var(--simple-brand)); }
+.section-header { text-align: var(--custom-heading-align, center); }
+
+.btn {
+  border-radius: var(--custom-button-radius, 2px);
+  text-transform: var(--custom-button-transform, uppercase);
+}
+.btn--primary {
+  background: var(--simple-brand);
+  border-color: var(--simple-brand);
+  color: var(--color-button-text, #fff);
+}
+.btn--primary:hover { color: var(--color-button-text, #fff); }
+
+.product-card,
+.benefit-card,
+.review-card,
+.faq-item,
+.price-shop__card { border-radius: var(--custom-card-radius, 2px) !important; }
+.product-card,
+.benefit-card,
+.review-card,
+.faq-item {
+  box-shadow: 0 8px 24px rgb(36 36 36 / var(--custom-card-shadow-opacity, 0%)) !important;
+}
+.product-card__image-wrap,
+.category-directory__media,
+.collection-card__media,
+.social-gallery__media { border-radius: var(--custom-image-radius, 2px) !important; }
+.product-card__badge,
+.product-card__quick-add-btn { background: var(--color-sale, var(--simple-brand)); }
+
+/* Hero controls */
+.hero__overlay { background-color: var(--hero-overlay, #000); }
+.hero__content-inner {
+  max-width: var(--hero-content-width, 620px);
+  background: color-mix(in srgb, var(--hero-panel, #FFFDF9) var(--hero-panel-opacity, 90%), transparent);
+  border-radius: var(--custom-card-radius, 2px);
+  border-color: color-mix(in srgb, var(--simple-brand) 20%, transparent);
+  box-shadow: 0 12px 34px rgb(36 36 36 / var(--custom-card-shadow-opacity, 0%));
+}
+.hero__heading { color: var(--hero-heading, var(--simple-text)); }
+.hero__subtext { color: var(--hero-subtext, var(--simple-muted)); }
+.hero .btn--primary {
+  background: var(--hero-primary-bg, var(--simple-brand));
+  border-color: var(--hero-primary-bg, var(--simple-brand));
+  color: var(--hero-primary-text, #fff);
+}
+
+/* Existing section-specific palette controls */
+.category-directory { background: var(--category-directory-bg, var(--simple-bg)) !important; color: var(--category-directory-text, var(--simple-text)); }
+.category-directory .section-title { color: var(--category-directory-text, var(--simple-text)); }
+.category-directory .section-eyebrow { color: var(--category-directory-accent, var(--simple-brand)); }
+.category-directory__media { background: var(--category-directory-card, var(--simple-soft)); }
+.collection-card-section { background: var(--ccg-bg, var(--simple-soft)) !important; color: var(--ccg-text, var(--simple-text)); }
+.collection-card-section .section-title { color: var(--ccg-text, var(--simple-text)); }
+.collection-card-section .section-eyebrow { color: var(--ccg-accent, var(--simple-brand)); }
+.price-shop { background: var(--price-shop-bg, var(--simple-soft)) !important; color: var(--price-shop-text, var(--simple-text)); }
+.price-shop .section-title { color: var(--price-shop-text, var(--simple-text)); }
+.price-shop .section-eyebrow { color: var(--price-shop-accent, var(--simple-brand)); }
+.social-gallery { background: var(--social-gallery-bg, var(--simple-bg)) !important; color: var(--social-gallery-text, var(--simple-text)); }
+.social-gallery .section-title { color: var(--social-gallery-text, var(--simple-text)); }
+.social-gallery .section-eyebrow { color: var(--social-gallery-accent, var(--simple-brand)); }
+
+.site-footer {
+  background: var(--footer-bg, var(--color-footer-bg, #242424));
+  color: var(--footer-text, var(--color-footer-text, #FFFFFF));
+}
+.site-footer .btn--primary {
+  background: var(--footer-accent, var(--simple-brand));
+  border-color: var(--footer-accent, var(--simple-brand));
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--custom-section-spacing-mobile, 48px);
+    padding-bottom: var(--custom-section-spacing-mobile, 48px);
+  }
+  .section[style*="--section-bg"] {
+    padding-top: min(var(--section-pt, 48px), 72px);
+    padding-bottom: min(var(--section-pb, 48px), 72px);
+  }
+}
+
+/* Keep legacy theme tokens synchronized with the editable palette. */
+:root {
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 86%, #000);
+  --color-primary-deep: color-mix(in srgb, var(--color-primary) 70%, #000);
+  --color-primary-light: color-mix(in srgb, var(--color-primary) 34%, #fff);
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 10%, var(--color-ivory));
+  --color-beige-soft: var(--color-beige);
+  --color-card: var(--color-surface);
+  --color-text-medium: color-mix(in srgb, var(--color-text-dark) 76%, #fff);
+  --color-text-light: color-mix(in srgb, var(--color-text-dark) 62%, #fff);
+  --color-text-muted: var(--color-text-muted-custom);
+  --color-border: var(--color-border-custom);
+  --color-border-light: color-mix(in srgb, var(--color-border-custom) 55%, #fff);
+  --color-border-strong: color-mix(in srgb, var(--color-border-custom) 82%, var(--color-text-dark));
+  --color-peach: var(--color-primary);
+  --color-peach-dark: var(--color-primary-dark);
+  --color-peach-light: var(--color-primary-light);
+  --color-peach-bg: var(--color-beige);
+  --color-peach-soft: var(--color-beige);
+  --color-peach-card: var(--color-ivory);
+  --color-peach-border: var(--color-primary-light);
+}
+
+
+/* ============================================================
+   Final approved homepage refinements — v20
+   ============================================================ */
+/* Shop-by-category matches the approved clean circular treatment. */
+.category-directory__grid { grid-template-columns: repeat(var(--category-directory-columns, 6), minmax(0, 1fr)); align-items: start; }
+.category-directory__media { aspect-ratio: 1 / 1 !important; border-radius: 50% !important; max-width: 150px; margin-inline: auto; }
+.category-directory__content { padding-top: 9px; }
+.category-directory__title { font-family: var(--font-body); font-size: 14px; font-weight: 500; }
+.category-directory__shop-link { display: none; }
+.category-directory__badge { border-radius: 999px; }
+
+/* Five-column desktop merchandising, collapsing safely on smaller screens. */
+.products-grid--5-col { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+/* Approved campaign image already includes a burgundy text field; keep it unobscured. */
+.collection-banner__overlay { background: var(--banner-overlay-color, #000); }
+.collection-banner__inner--right .collection-banner__content { width: 46%; max-width: 620px; padding-right: clamp(28px, 7vw, 100px); }
+.collection-banner__subtext { text-transform: uppercase; letter-spacing: .18em; font-size: 11px; }
+
+/* Burgundy trust strip. */
+.benefits[style*="--section-bg"] .section-header { margin-bottom: 24px; }
+.benefits[style*="--section-bg"] .benefits-grid { gap: 0; }
+.benefits[style*="--section-bg"] .benefit-card { background: transparent !important; border: 0 !important; border-right: 1px solid rgba(255,255,255,.38) !important; border-radius: 0 !important; color: inherit; padding: 14px 28px; box-shadow: none !important; }
+.benefits[style*="--section-bg"] .benefit-card:last-child { border-right: 0 !important; }
+.benefits[style*="--section-bg"] .benefit-card__icon { width: 42px; height: 42px; margin-bottom: 8px; background: transparent; color: inherit; }
+.benefits[style*="--section-bg"] .benefit-card__title,
+.benefits[style*="--section-bg"] .benefit-card__text { color: inherit; }
+.benefits[style*="--section-bg"] .benefit-card__text { opacity: .86; }
+.benefits[style*="--section-bg"] .benefit-card:hover { transform: none; box-shadow: none; }
+
+.social-gallery__icon { background: var(--simple-brand) !important; }
+
+@media (max-width: 989px) {
+  .products-grid--5-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .category-directory__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .benefits[style*="--section-bg"] .benefits-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .benefits[style*="--section-bg"] .benefit-card:nth-child(2) { border-right: 0 !important; }
+  .benefits[style*="--section-bg"] .benefit-card { border-bottom: 1px solid rgba(255,255,255,.26) !important; }
+  .benefits[style*="--section-bg"] .benefit-card:nth-last-child(-n+2) { border-bottom: 0 !important; }
+  .collection-banner__inner--right .collection-banner__content { width: 52%; padding-right: 30px; }
+}
+
+@media (max-width: 749px) {
+  .products-grid--5-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .category-directory__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  .category-directory__media { max-width: 155px; }
+  .hero__content { align-items: flex-end; padding: 20px 16px 24px; }
+  .hero__content-inner { background: color-mix(in srgb, var(--hero-mobile-panel, var(--hero-panel)) var(--hero-mobile-opacity, var(--hero-panel-opacity)), transparent); width: 100%; max-width: var(--hero-mobile-width, 520px); padding: 22px 18px; text-align: var(--hero-mobile-align, center); }
+  .hero__btns { justify-content: center; }
+  .collection-banner__inner { min-height: 440px; }
+  .collection-banner__inner--right .collection-banner__content { width: 100%; margin-top: auto; padding: 24px 20px; text-align: center; background: rgba(122,31,50,.94); }
+  .benefits[style*="--section-bg"] .benefits-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .benefits[style*="--section-bg"] .benefit-card { padding: 16px 10px; }
+  .social-gallery__grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+
+@media (max-width: 380px) {
+  .hero__heading--small { font-size: 27px; }
+  .hero__heading--medium { font-size: 29px; }
+  .hero__heading--large { font-size: 31px; }
+  .category-directory__grid { gap: 18px 10px; }
+}
+
+/* Configurable header alignment and mobile visibility. */
+.site-header--logo-left .header-logo { margin-right: auto; }
+.site-header--logo-left .header-inner { grid-template-columns: auto 1fr auto; }
+.header-logo__wordmark { display: block; color: var(--header-brand-color); font: 600 30px/1.1 var(--font-serif); padding-block: 8px; }
+.site-header:has(.header-logo__wordmark) .header-logo__builtin-mask { mask-image: none; -webkit-mask-image: none; }
+@media (max-width: 989px) {
+  .site-header { background: var(--header-mobile-bg, var(--simple-bg)); }
+  .site-header--mobile-account .header-account-btn { display: inline-flex; }
+  .site-header--logo-left .header-inner { grid-template-columns: auto 1fr auto; }
+  .header-logo__wordmark { font-size: 23px; }
+}
+
+/* Merchant-controlled category and campaign presentation. */
+.category-directory .category-directory__media { max-width: var(--category-image-size,150px); }
+.category-directory--square .category-directory__media { aspect-ratio: 1 !important; border-radius: var(--custom-image-radius,2px) !important; }
+.category-directory--portrait .category-directory__media { aspect-ratio: 4 / 5 !important; border-radius: var(--custom-image-radius,2px) !important; }
+.category-directory[data-category-buttons='true'] .category-directory__shop-link { display: inline-flex; }
+.collection-banner .collection-banner__inner { min-height: var(--banner-height,500px); }
+.collection-banner .collection-banner__img { object-fit: var(--banner-image-fit,cover); }
+.collection-banner--adapt .collection-banner__inner { min-height: 0; aspect-ratio: var(--banner-ratio); }
+.collection-banner .hero__image-link { position: absolute; inset: 0; z-index: 3; }
+@media (max-width: 989px) { .category-directory .category-directory__grid { grid-template-columns: repeat(var(--category-tablet-columns,3),minmax(0,1fr)); } }
+@media (max-width: 749px) {
+  .category-directory .category-directory__grid { grid-template-columns: repeat(var(--category-mobile-columns,2),minmax(0,1fr)); }
+  .category-directory .category-directory__media { max-width: var(--category-mobile-image-size,155px); }
+  .featured-products[style] .products-grid { grid-template-columns: repeat(var(--products-mobile-columns,2),minmax(0,1fr)); }
+  .social-gallery[style] .social-gallery__grid { grid-template-columns: repeat(var(--social-mobile-columns,2),minmax(0,1fr)) !important; }
+  .collection-banner .collection-banner__inner { min-height: var(--banner-mobile-height,440px); }
+  .collection-banner--adapt .collection-banner__inner { min-height: 0; aspect-ratio: var(--banner-mobile-ratio); }
+}
+
+.section[style*='--section-text'] .page-title { color: var(--section-text); }
+.section[style*='--section-text'] .page-eyebrow { color: var(--section-accent); }
+.section[style*='--section-text'] .btn--primary:not(.hero__btn) { background: var(--section-accent,var(--simple-brand)); border-color: var(--section-accent,var(--simple-brand)); }
+.main-product-section[style] .product-info__vendor, .main-product-section[style] .product-mobile-offers__heading { color: var(--section-accent); }
+.main-product-section[style] .product-mobile-offers__icon { background: var(--section-accent); }
+@media (max-width: 749px) {
+  .main-search-section[style] .products-grid, .main-blog-section[style] .products-grid { grid-template-columns: repeat(var(--products-mobile-columns,2),minmax(0,1fr)); }
+}
+
+@media (max-width: 768px) {
+  .section[style*='--section-bg'] { padding-top: var(--section-mobile-pt,var(--section-pt)); padding-bottom: var(--section-mobile-pb,var(--section-pb)); }
+}
+
+@media (min-width: 990px) { .site-header--logo-left .header-logo { grid-column: 1; justify-self: start; } }
+@media (max-width: 989px) {
+  .site-header--logo-left .header-logo { grid-column: 2; margin-right: 0; }
+  .site-header--mobile-account .header-logo__image--mobile { max-width: max(70px,calc(100vw - 210px)); }
+  .site-header--mobile-account .header-actions { gap: 6px; }
+}
+.section[style*='--section-text'] .rte a, .section[style*='--section-text'] .article-back { color: var(--section-accent, var(--simple-brand)); }
+.main-blog-section[style] article a, .main-search-section[style] article[role='listitem'] > h2 a { color: var(--section-accent, var(--simple-brand)); }

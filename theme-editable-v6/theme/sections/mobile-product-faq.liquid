@@ -1,0 +1,122 @@
+{%- if section.settings.enabled and section.blocks.size > 0 -%}
+  {{ 'product-mobile-details.css' | asset_url | stylesheet_tag }}
+  <section class="product-mobile-faq page-shell" style="--section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;" aria-labelledby="MobileFAQ-{{ section.id }}">
+    <header class="product-mobile-section-header"><h2 id="MobileFAQ-{{ section.id }}">{{ section.settings.heading | escape }}</h2></header>
+    <div class="product-mobile-accordions">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.question != blank -%}
+          <details {% if block.settings.open %}open{% endif %} class="product-mobile-accordion" {{ block.shopify_attributes }}>
+            <summary class="product-mobile-accordion__summary">
+              <span>{{ block.settings.question | escape }}</span>
+              <span class="product-mobile-accordion__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="product-mobile-accordion__body rte">{{ block.settings.answer }}</div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product FAQs",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Show product FAQs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FAQs"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Heading colour",
+      "default": "#242424"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open this question initially",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product FAQs"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "product"
+    ]
+  }
+}
+{% endschema %}

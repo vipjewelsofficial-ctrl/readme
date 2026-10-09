@@ -1,0 +1,202 @@
+{%- if section.settings.enabled -%}
+  {{ 'product-mobile-details.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'product-mobile-details.js' | asset_url }}" defer></script>
+  {%- liquid
+    assign fallback_products = product.collections.first.products
+    if section.settings.fallback_collection != blank
+      assign fallback_products = section.settings.fallback_collection.products
+    endif
+    assign fallback_count = fallback_products.size | default: 0
+    if fallback_count == 0
+      assign fallback_products = collections.all.products
+    endif
+    assign fallback_count = fallback_products.size | default: 0
+    assign source_products = fallback_products
+    if section.settings.selection_mode == 'manual' and section.settings.manual_products != blank
+      assign source_products = section.settings.manual_products
+    elsif recommendations.performed
+      assign source_products = recommendations.products
+      if fallback_count > 0
+        assign source_products = source_products | concat: fallback_products
+      endif
+    endif
+    assign card_count = 0
+    assign shown_product_ids = ''
+    capture product_cards
+      for related_product in source_products
+        assign product_key = related_product.id | prepend: '|' | append: '|'
+        if related_product.id != product.id
+          if card_count < section.settings.product_limit
+            unless shown_product_ids contains product_key
+            echo '<div role="listitem">'
+            render 'product-card', product: related_product
+            echo '</div>'
+            assign card_count = card_count | plus: 1
+            assign shown_product_ids = shown_product_ids | append: product_key
+            endunless
+          endif
+        endif
+      endfor
+    endcapture
+  -%}
+  <div class="product-mobile-recommendations" data-mobile-product-recommendations data-mode="{{ section.settings.selection_mode }}" style="--related-columns: {{ section.settings.columns_desktop }}; --related-mobile-columns: {{ section.settings.columns_mobile }}; --section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id | url_encode }}&amp;product_id={{ product.id }}&amp;limit={{ section.settings.product_limit }}&amp;intent=related">
+    {%- if card_count > 0 -%}
+      <section class="product-mobile-recommendations__content page-shell" data-recommendation-content aria-labelledby="MobileRecommendations-{{ section.id }}">
+        <header class="product-mobile-section-header">
+          <h2 id="MobileRecommendations-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+          {%- if section.settings.subheading != blank -%}<p>{{ section.settings.subheading | escape }}</p>{%- endif -%}
+        </header>
+        <div class="products-grid products-grid--2-col" role="list">{{ product_cards }}</div>
+      </section>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Related products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Show related products",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Discover more Gujju Jewels pieces for your next look."
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "label": "Products to show",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "collection",
+      "id": "fallback_collection",
+      "label": "Fallback collection"
+    },
+    {
+      "type": "paragraph",
+      "content": "This sets the total number of products, not the number of columns. Shopify recommendations appear first, then this collection fills remaining spaces. If blank, the product's first collection is used, or All products when it has no collection. Fewer cards appear if there are not enough unique products."
+    },
+    {
+      "type": "select",
+      "id": "selection_mode",
+      "label": "Product selection",
+      "options": [
+        {
+          "value": "automatic",
+          "label": "Shopify recommendations and fallback collection"
+        },
+        {
+          "value": "manual",
+          "label": "Choose individual products"
+        }
+      ],
+      "default": "automatic"
+    },
+    {
+      "type": "product_list",
+      "id": "manual_products",
+      "label": "Selected related products",
+      "limit": 10
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Mobile columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#F7F2EC"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Heading colour",
+      "default": "#242424"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related products"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "product"
+    ]
+  }
+}
+{% endschema %}

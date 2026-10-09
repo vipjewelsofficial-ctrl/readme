@@ -1,0 +1,207 @@
+{%- liquid
+  assign cb_image = section.settings.image
+  assign cb_heading = section.settings.heading
+  assign cb_subtext = section.settings.subtext
+  assign cb_btn_label = section.settings.btn_label
+  assign cb_btn_link = section.settings.btn_link
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+  assign text_position = section.settings.text_position
+-%}
+
+<section
+  class="collection-banner section collection-banner--{{ section.settings.height_mode }}" style="--banner-overlay-color: {{ section.settings.overlay_color }}; --banner-height: {{ section.settings.desktop_height }}px; --banner-mobile-height: {{ section.settings.mobile_height }}px; --banner-image-fit: {{ section.settings.image_fit }}; --banner-ratio: {{ section.settings.image.aspect_ratio | default: 2.2857 }}; --banner-mobile-ratio: {{ section.settings.mobile_image.aspect_ratio | default: section.settings.image.aspect_ratio | default: 2.2857 }};"
+  id="collection-banner-{{ section.id }}"
+  {% if cb_heading != blank %}aria-labelledby="cb-heading-{{ section.id }}"{% else %}aria-label="Featured collection"{% endif %}
+>
+  <div class="collection-banner__inner collection-banner__inner--{{ text_position }}">
+    <!-- Background Image -->
+    <div class="collection-banner__media"><picture>
+      {% if section.settings.mobile_image != blank %}<source media="(max-width: 749px)" srcset="{{ section.settings.mobile_image | image_url: width: 750 }}">{% endif %}
+      {%- if cb_image != blank -%}
+        {{
+          cb_image
+          | image_url: width: 1600
+          | image_tag:
+            class: 'collection-banner__img',
+            alt: cb_heading,
+            loading: 'lazy',
+            widths: '800, 1200, 1600',
+            sizes: '100vw'
+        }}
+      {%- else -%}
+        <img
+          class="collection-banner__img"
+          src="{{ 'demo-oxidised-banner.jpg' | asset_url }}"
+          alt="{{ cb_heading | escape }}"
+          loading="lazy"
+          width="1600"
+          height="700"
+        >
+      {%- endif -%}
+      </picture><div class="collection-banner__overlay" style="opacity: {{ overlay_opacity }};"></div>
+    </div>
+
+    {% if section.settings.show_content == false %}
+      {% if section.settings.banner_link != blank %}<a class="hero__image-link" href="{{ section.settings.banner_link }}" aria-label="{{ cb_heading | default: shop.name | escape }}"></a>{% endif %}
+    {% else %}
+    <!-- Text Content -->
+    <div class="collection-banner__content">
+      {%- if cb_heading != blank -%}
+        <h2 id="cb-heading-{{ section.id }}" class="collection-banner__heading">{{ cb_heading | escape }}</h2>
+      {%- endif -%}
+      {%- if cb_subtext != blank -%}
+        <p class="collection-banner__subtext">{{ cb_subtext | escape }}</p>
+      {%- endif -%}
+      {%- if cb_btn_label != blank -%}
+        <a href="{{ cb_btn_link | default: routes.all_products_collection_url }}" class="btn btn--white collection-banner__btn">
+          {{ cb_btn_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image (recommended: 1600×700px)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "default": 40,
+      "label": "Image overlay opacity",
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Heritage Edit"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Supporting text",
+      "default": "Bold jhumkas, sculptural necklaces and timeless details with an artisanal oxidised finish."
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile banner image"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay colour",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content",
+      "label": "Show text and button",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Whole-image link (when text is hidden)"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Fill / crop"
+        },
+        {
+          "value": "contain",
+          "label": "Show entire image"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Desktop height",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "default": 440
+    },
+    {
+      "type": "select",
+      "id": "height_mode",
+      "label": "Banner height",
+      "options": [
+        {
+          "value": "fixed",
+          "label": "Use height settings"
+        },
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        }
+      ],
+      "default": "fixed"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Banner"
+    }
+  ]
+}
+{% endschema %}

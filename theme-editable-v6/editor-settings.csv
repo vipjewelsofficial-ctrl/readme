@@ -1,0 +1,551 @@
+file,scope,setting_id,type,label,default
+sections/main-article.liquid,section,show_image,checkbox,Show article image,true
+sections/main-article.liquid,section,show_date,checkbox,Show publication date,false
+sections/main-article.liquid,section,show_author,checkbox,Show author,false
+sections/main-article.liquid,section,show_back_link,checkbox,Show link back to blog,true
+sections/main-article.liquid,section,back_label,text,Back link label,"""← Back to"""
+sections/main-article.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-article.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-article.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-article.liquid,section,padding_top,range,Top spacing,80
+sections/main-article.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-article.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-article.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/mobile-product-faq.liquid,section,enabled,checkbox,Show product FAQs,true
+sections/mobile-product-faq.liquid,section,heading,text,Heading,"""FAQs"""
+sections/mobile-product-faq.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/mobile-product-faq.liquid,section,section_text,color,Heading colour,"""#242424"""
+sections/mobile-product-faq.liquid,section,padding_top,range,Top spacing,36
+sections/mobile-product-faq.liquid,section,padding_bottom,range,Bottom spacing,48
+sections/mobile-product-faq.liquid,section,padding_top_mobile,range,Mobile top spacing,36
+sections/mobile-product-faq.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/mobile-product-faq.liquid,block: question,question,text,Question,""""""
+sections/mobile-product-faq.liquid,block: question,answer,richtext,Answer,""""""
+sections/mobile-product-faq.liquid,block: question,open,checkbox,Open this question initially,false
+sections/main-cart.liquid,section,eyebrow,text,Small heading,"""Your selection"""
+sections/main-cart.liquid,section,heading,text,Heading,"""Shopping Cart"""
+sections/main-cart.liquid,section,product_label,text,Product label,"""Product"""
+sections/main-cart.liquid,section,price_label,text,Price label,"""Price"""
+sections/main-cart.liquid,section,quantity_label,text,Quantity label,"""Quantity"""
+sections/main-cart.liquid,section,total_label,text,Total label,"""Total"""
+sections/main-cart.liquid,section,remove_label,text,Remove link label,"""Remove"""
+sections/main-cart.liquid,section,subtotal_label,text,Subtotal label,"""Subtotal"""
+sections/main-cart.liquid,section,checkout_label,text,Checkout button label,"""Secure Checkout"""
+sections/main-cart.liquid,section,note,text,Checkout note,"""Taxes and shipping are calculated at checkout."""
+sections/main-cart.liquid,section,empty_text,text,Empty cart message,"""Your cart is ready for something special."""
+sections/main-cart.liquid,section,empty_button,text,Empty cart button,"""Explore Jewellery"""
+sections/main-cart.liquid,section,quantity_width,range,Quantity control width,96
+sections/main-cart.liquid,section,quantity_radius,range,Quantity control corner radius,4
+sections/main-cart.liquid,section,arrow_background,color,Quantity arrow background,"""#FFFDF9"""
+sections/main-cart.liquid,section,arrow_colour,color,Quantity arrow colour,"""#7A1F32"""
+sections/main-cart.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-cart.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-cart.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-cart.liquid,section,padding_top,range,Top spacing,80
+sections/main-cart.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-cart.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-cart.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/announcement-bar.liquid,section,announcement_text,text,Announcement Text,"""New arrivals are here — discover the latest Gujju Jewels styles"""
+sections/announcement-bar.liquid,section,announcement_link,url,Link (optional),""""""
+sections/announcement-bar.liquid,section,show_marquee,checkbox,Scrolling marquee,true
+sections/announcement-bar.liquid,section,bg_color,color,Background Color,"""#7A1F32"""
+sections/announcement-bar.liquid,section,text_color,color,Text Color,"""#FFFFFF"""
+sections/custom-footer.liquid,section,footer_description,textarea,Brand Description,"""Gujju Jewels brings heritage-inspired oxidised jewellery to modern wardrobes—distinctive, versatile and made to be styled your way."""
+sections/custom-footer.liquid,section,footer_menu_1,link_list,Footer Menu 1,"""footer"""
+sections/custom-footer.liquid,section,footer_menu_2,link_list,Footer Menu 2 (Customer Support),""""""
+sections/custom-footer.liquid,section,footer_menu_3,link_list,Footer Menu 3 (About),""""""
+sections/custom-footer.liquid,section,newsletter_heading,text,Newsletter Heading,"""Stay In The Loop"""
+sections/custom-footer.liquid,section,newsletter_description,text,Newsletter description,"""New drops, exclusive offers & style tips delivered to your inbox."""
+sections/custom-footer.liquid,section,social_instagram,url,Instagram URL,""""""
+sections/custom-footer.liquid,section,social_facebook,url,Facebook URL,""""""
+sections/custom-footer.liquid,section,social_whatsapp,text,"WhatsApp Number (with country code, e.g. +919876543210)",""""""
+sections/custom-footer.liquid,section,social_youtube,url,YouTube URL,""""""
+sections/custom-footer.liquid,section,show_payment_icons,checkbox,Show payment icons,true
+sections/custom-liquid.liquid,section,custom_liquid,liquid,Custom Liquid,""""""
+sections/main-contact.liquid,section,heading,text,Heading override,""""""
+sections/main-contact.liquid,section,show_name,checkbox,Show name field,true
+sections/main-contact.liquid,section,show_phone,checkbox,Show phone field,true
+sections/main-contact.liquid,section,name_label,text,Name label,"""Name"""
+sections/main-contact.liquid,section,email_label,text,Email label,"""Email"""
+sections/main-contact.liquid,section,phone_label,text,Phone label,"""Phone"""
+sections/main-contact.liquid,section,message_label,text,Message label,"""Message"""
+sections/main-contact.liquid,section,button_label,text,Submit button,"""Send message"""
+sections/main-contact.liquid,section,success_text,text,Success message,"""Thanks. We’ll get back to you soon."""
+sections/main-contact.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-contact.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-contact.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-contact.liquid,section,padding_top,range,Top spacing,80
+sections/main-contact.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-contact.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-contact.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/category-directory.liquid,section,eyebrow,text,Eyebrow,"""Find your jewellery"""
+sections/category-directory.liquid,section,heading,text,Heading,"""Shop by Category"""
+sections/category-directory.liquid,section,subheading,textarea,Subheading,"""Explore jewellery by type."""
+sections/category-directory.liquid,section,columns_desktop,range,Columns on desktop,6
+sections/category-directory.liquid,section,use_collection_images,checkbox,Use collection images when no custom image is selected,false
+sections/category-directory.liquid,section,show_descriptions,checkbox,Show category descriptions,true
+sections/category-directory.liquid,section,show_subcategories,checkbox,Show subcategory links,true
+sections/category-directory.liquid,section,show_product_counts,checkbox,Show collection product counts,false
+sections/category-directory.liquid,section,button_label,text,Bottom button label,"""Shop All Jewellery"""
+sections/category-directory.liquid,section,button_link,url,Bottom button link,""""""
+sections/category-directory.liquid,section,background_color,color,Section background,"""#FFFDF9"""
+sections/category-directory.liquid,section,card_background,color,Card background,"""#F7F2EC"""
+sections/category-directory.liquid,section,text_color,color,Text colour,"""#242424"""
+sections/category-directory.liquid,section,accent_color,color,Accent colour,"""#7A1F32"""
+sections/category-directory.liquid,section,padding_top,range,Top spacing,80
+sections/category-directory.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/category-directory.liquid,section,show_category_buttons,checkbox,Show each category button,false
+sections/category-directory.liquid,section,image_shape,select,Category image shape,"""circle"""
+sections/category-directory.liquid,section,columns_mobile,select,Columns on mobile,"""2"""
+sections/category-directory.liquid,section,columns_tablet,range,Columns on tablet,3
+sections/category-directory.liquid,section,image_size,range,Desktop image size,150
+sections/category-directory.liquid,section,image_size_mobile,range,Mobile image size,155
+sections/category-directory.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/category-directory.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/category-directory.liquid,block: category_group,image,image_picker,Custom category image,""""""
+sections/category-directory.liquid,block: category_group,collection,collection,Main collection,""""""
+sections/category-directory.liquid,block: category_group,link,url,Fallback custom link,""""""
+sections/category-directory.liquid,block: category_group,title,text,Custom title,""""""
+sections/category-directory.liquid,block: category_group,description,text,Description,""""""
+sections/category-directory.liquid,block: category_group,badge,text,Badge,""""""
+sections/category-directory.liquid,block: category_group,button_label,text,Button label,"""Shop category"""
+sections/category-directory.liquid,block: category_group,subcategory_1,collection,Collection,""""""
+sections/category-directory.liquid,block: category_group,subcategory_1_label,text,Custom label,""""""
+sections/category-directory.liquid,block: category_group,subcategory_2,collection,Collection,""""""
+sections/category-directory.liquid,block: category_group,subcategory_2_label,text,Custom label,""""""
+sections/category-directory.liquid,block: category_group,subcategory_3,collection,Collection,""""""
+sections/category-directory.liquid,block: category_group,subcategory_3_label,text,Custom label,""""""
+sections/category-directory.liquid,block: category_group,subcategory_4,collection,Collection,""""""
+sections/category-directory.liquid,block: category_group,subcategory_4_label,text,Custom label,""""""
+sections/main-404.liquid,section,heading,text,Heading,"""This piece is no longer here"""
+sections/main-404.liquid,section,message,textarea,Message,"""The page may have moved, but there is plenty more jewellery to discover."""
+sections/main-404.liquid,section,button_label,text,Button label,"""Return to Home"""
+sections/main-404.liquid,section,button_link,url,Button link,""""""
+sections/main-404.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-404.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-404.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-404.liquid,section,padding_top,range,Top spacing,80
+sections/main-404.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-404.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-404.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/collection-card-grid.liquid,section,eyebrow,text,Eyebrow,"""Shop by occasion"""
+sections/collection-card-grid.liquid,section,heading,text,Heading,"""Shop by Occasion"""
+sections/collection-card-grid.liquid,section,subheading,textarea,Subheading,"""Find jewellery for weddings, celebrations, everyday styling and parties."""
+sections/collection-card-grid.liquid,section,card_style,select,Card image shape,"""circle"""
+sections/collection-card-grid.liquid,section,columns_desktop,range,Columns on desktop,6
+sections/collection-card-grid.liquid,section,columns_mobile,select,Columns on mobile,"""2"""
+sections/collection-card-grid.liquid,section,use_collection_images,checkbox,Use collection images when no custom image is selected,false
+sections/collection-card-grid.liquid,section,show_descriptions,checkbox,Show card descriptions,true
+sections/collection-card-grid.liquid,section,button_label,text,Bottom button label,"""View All Jewellery"""
+sections/collection-card-grid.liquid,section,button_link,url,Bottom button link,""""""
+sections/collection-card-grid.liquid,section,background_color,color,Section background,"""#FFFDF9"""
+sections/collection-card-grid.liquid,section,card_background,color,Card background,"""#F7F2EC"""
+sections/collection-card-grid.liquid,section,text_color,color,Text colour,"""#242424"""
+sections/collection-card-grid.liquid,section,accent_color,color,Accent colour,"""#7A1F32"""
+sections/collection-card-grid.liquid,section,padding_top,range,Top spacing,80
+sections/collection-card-grid.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/collection-card-grid.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/collection-card-grid.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/collection-card-grid.liquid,block: collection_card,image,image_picker,Custom image,""""""
+sections/collection-card-grid.liquid,block: collection_card,collection,collection,Collection,""""""
+sections/collection-card-grid.liquid,block: collection_card,link,url,Custom link (optional),""""""
+sections/collection-card-grid.liquid,block: collection_card,title,text,Title,"""Oxidised Jewellery"""
+sections/collection-card-grid.liquid,block: collection_card,description,text,Description,"""Style it your way"""
+sections/collection-card-grid.liquid,block: collection_card,badge,text,Badge (optional),""""""
+sections/header.liquid,section,logo,image_picker,Desktop logo,""""""
+sections/header.liquid,section,mobile_logo,image_picker,Mobile logo (optional),""""""
+sections/header.liquid,section,logo_text,text,Text logo (used when Logo display is Text),"""Gujju Jewels"""
+sections/header.liquid,section,logo_width,range,Desktop logo width,190
+sections/header.liquid,section,mobile_logo_width,range,Mobile logo width,170
+sections/header.liquid,section,use_builtin_menu,checkbox,Use included Gujju Jewels menu,true
+sections/header.liquid,section,menu,link_list,Menu,"""main-menu"""
+sections/header.liquid,section,show_sale_badge,checkbox,Show sale badge above a menu item,true
+sections/header.liquid,section,sale_menu_title,text,Menu item for sale badge,"""Hot Deals"""
+sections/header.liquid,section,sale_badge_text,text,Sale badge text,"""SALE"""
+sections/header.liquid,section,show_account,checkbox,Show account icon on desktop,true
+sections/header.liquid,section,desktop_bg_color,color,Desktop background,"""#FFFDF9"""
+sections/header.liquid,section,desktop_text_color,color,Desktop icon and menu colour,"""#242424"""
+sections/header.liquid,section,brand_color,color,Text logo and accent colour,"""#7A1F32"""
+sections/header.liquid,section,mobile_bg_color,color,Mobile background,"""#FFFDF9"""
+sections/header.liquid,section,mobile_text_color,color,Mobile icon and text colour,"""#242424"""
+sections/header.liquid,section,border_color,color,Desktop divider colour,"""#E8E2DC"""
+sections/header.liquid,section,logo_mode,select,Logo display,"""image"""
+sections/header.liquid,section,logo_alignment,select,Desktop logo position,"""center"""
+sections/header.liquid,section,show_search,checkbox,Show search icon,true
+sections/header.liquid,section,show_cart,checkbox,Show cart icon,true
+sections/header.liquid,section,show_account_mobile,checkbox,Show account icon on mobile,false
+sections/header.liquid,section,search_placeholder,text,Search drawer placeholder,"""Search for earrings, necklaces, rings..."""
+sections/header.liquid,section,builtin_home_title,text,Home menu label,"""Home"""
+sections/header.liquid,section,builtin_home_link,url,Home menu destination,""""""
+sections/header.liquid,section,builtin_necklace_sets_title,text,Necklace Sets menu label,"""Necklace Sets"""
+sections/header.liquid,section,builtin_necklace_sets_link,url,Necklace Sets menu destination,""""""
+sections/header.liquid,section,builtin_oxidised_jewellery_title,text,Oxidised Jewellery menu label,"""Oxidised Jewellery"""
+sections/header.liquid,section,builtin_oxidised_jewellery_link,url,Oxidised Jewellery menu destination,""""""
+sections/header.liquid,section,builtin_gold_tone_jewellery_title,text,Gold-Tone Jewellery menu label,"""Gold-Tone Jewellery"""
+sections/header.liquid,section,builtin_gold_tone_jewellery_link,url,Gold-Tone Jewellery menu destination,""""""
+sections/header.liquid,section,builtin_mangalsutras_title,text,Mangalsutras menu label,"""Mangalsutras"""
+sections/header.liquid,section,builtin_mangalsutras_link,url,Mangalsutras menu destination,""""""
+sections/header.liquid,section,builtin_accessories_title,text,Accessories menu label,"""Accessories"""
+sections/header.liquid,section,builtin_accessories_link,url,Accessories menu destination,""""""
+sections/header.liquid,section,builtin_all_title,text,Shop All menu label,"""Shop All"""
+sections/header.liquid,section,builtin_all_link,url,Shop All menu destination,""""""
+sections/footer.liquid,section,footer_brand_text,text,Footer brand name,"""VIP JEWELS"""
+sections/footer.liquid,section,footer_description,textarea,Brand Description,"""VIP JEWELS brings heritage-inspired oxidised jewellery to modern wardrobes—distinctive, versatile and made to be styled your way."""
+sections/footer.liquid,section,footer_menu_1,link_list,Footer Menu 1,"""footer"""
+sections/footer.liquid,section,footer_menu_2,link_list,Footer Menu 2 (Customer Support),""""""
+sections/footer.liquid,section,footer_menu_3,link_list,Footer Menu 3 (About),""""""
+sections/footer.liquid,section,newsletter_heading,text,Newsletter Heading,"""Stay In The Loop"""
+sections/footer.liquid,section,newsletter_description,text,Newsletter description,"""New drops, exclusive offers & style tips delivered to your inbox."""
+sections/footer.liquid,section,social_instagram,url,Instagram URL,""""""
+sections/footer.liquid,section,social_facebook,url,Facebook URL,""""""
+sections/footer.liquid,section,social_whatsapp,text,"WhatsApp Number (with country code, e.g. +919876543210)",""""""
+sections/footer.liquid,section,social_youtube,url,YouTube URL,""""""
+sections/footer.liquid,section,show_payment_icons,checkbox,Show payment icons,true
+sections/footer.liquid,section,footer_bg,color,Footer background,"""#5C1828"""
+sections/footer.liquid,section,footer_text,color,Footer text,"""#FFF9EE"""
+sections/footer.liquid,section,footer_accent,color,Footer accent / button,"""#ECD39A"""
+sections/footer.liquid,section,footer_heading,color,Brand and heading colour,"""#ECD39A"""
+sections/footer.liquid,section,footer_gradient_enabled,checkbox,Use gradient background,true
+sections/footer.liquid,section,footer_gradient_end,color,Gradient end colour,"""#35101B"""
+sections/footer.liquid,section,shop_heading,text,Shop column heading,"""Shop"""
+sections/footer.liquid,section,support_heading,text,Support column heading,"""Help & Support"""
+sections/footer.liquid,section,about_heading,text,About column heading,"""About"""
+sections/footer.liquid,section,show_default_links,checkbox,Show the included navigation links,true
+sections/footer.liquid,section,hide_search_link,checkbox,Hide Search from Footer Menu 1,true
+sections/footer.liquid,section,menu_link_limit,range,Maximum links per selected menu,4
+sections/footer.liquid,section,show_newsletter,checkbox,Show newsletter,true
+sections/footer.liquid,section,show_policy_links,checkbox,Show policy links,true
+sections/footer.liquid,section,contact_link,url,Contact page destination,""""""
+sections/footer.liquid,section,copyright_text,text,Copyright suffix,"""All rights reserved."""
+sections/footer.liquid,section,product_footer_accordion,checkbox,Use mobile footer accordions on product pages,true
+sections/footer.liquid,section,footer_accordion_open,checkbox,Open mobile footer accordions initially,false
+sections/footer.liquid,section,brand_size,range,Desktop brand text size,36
+sections/footer.liquid,section,brand_size_mobile,range,Mobile brand text size,32
+sections/footer.liquid,section,brand_alignment,select,Brand column alignment,"""left"""
+sections/benefits.liquid,section,heading,text,Heading,"""Why Choose Us"""
+sections/benefits.liquid,section,subheading,text,Subheading,"""Our promise to you"""
+sections/benefits.liquid,section,section_background,color,Section background,"""#FFFDF9"""
+sections/benefits.liquid,section,section_text,color,Heading / text colour,"""#242424"""
+sections/benefits.liquid,section,section_accent,color,Accent / eyebrow colour,"""#7A1F32"""
+sections/benefits.liquid,section,padding_top,range,Top spacing,80
+sections/benefits.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/benefits.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/benefits.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/benefits.liquid,block: benefit,icon,select,Icon,"""shield"""
+sections/benefits.liquid,block: benefit,title,text,Title,"""Artisanal Oxidised Finish"""
+sections/benefits.liquid,block: benefit,text,textarea,Description,"""Distinctive silver-tone pieces with the depth and character of a handcrafted finish."""
+sections/new-arrivals.liquid,section,heading,text,Section Heading,"""New Arrivals"""
+sections/new-arrivals.liquid,section,subheading,text,Subheading,"""Just in at Gujju Jewels"""
+sections/new-arrivals.liquid,section,collection,collection,Collection,""""""
+sections/new-arrivals.liquid,section,fallback_to_all_products,checkbox,Show all products if this collection is empty or missing,true
+sections/new-arrivals.liquid,section,products_to_show,range,Products to show,8
+sections/new-arrivals.liquid,section,columns_desktop,select,Columns on desktop,"""4"""
+sections/new-arrivals.liquid,section,show_view_all,checkbox,Show 'View All' button,true
+sections/new-arrivals.liquid,section,section_id,text,Section anchor ID (for links),"""new-arrivals"""
+sections/new-arrivals.liquid,section,section_background,color,Section background,"""#FFFDF9"""
+sections/new-arrivals.liquid,section,section_text,color,Heading / text colour,"""#242424"""
+sections/new-arrivals.liquid,section,section_accent,color,Accent / eyebrow colour,"""#7A1F32"""
+sections/new-arrivals.liquid,section,padding_top,range,Top spacing,80
+sections/new-arrivals.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/new-arrivals.liquid,section,manual_products,product_list,Choose individual products (optional),""""""
+sections/new-arrivals.liquid,section,sort_mode,select,Product order,"""collection"""
+sections/new-arrivals.liquid,section,columns_mobile,select,Columns on mobile,"""2"""
+sections/new-arrivals.liquid,section,view_all_label,text,View All button label,"""View All"""
+sections/new-arrivals.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/new-arrivals.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/main-blog.liquid,section,articles_per_page,range,Articles per page,12
+sections/main-blog.liquid,section,columns_desktop,select,Desktop columns,"""3"""
+sections/main-blog.liquid,section,columns_mobile,select,Mobile columns,"""2"""
+sections/main-blog.liquid,section,excerpt_length,range,Excerpt length,180
+sections/main-blog.liquid,section,show_excerpt,checkbox,Show excerpts,true
+sections/main-blog.liquid,section,show_images,checkbox,Show article images,false
+sections/main-blog.liquid,section,read_more_label,text,Read more label,"""Read more"""
+sections/main-blog.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-blog.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-blog.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-blog.liquid,section,padding_top,range,Top spacing,80
+sections/main-blog.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-blog.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-blog.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/hero.liquid,section,desktop_image,image_picker,Desktop Image (recommended: 1920×900px),""""""
+sections/hero.liquid,section,mobile_image,image_picker,Mobile Image (recommended: 750×900px),""""""
+sections/hero.liquid,section,overlay_opacity,range,Image overlay opacity,30
+sections/hero.liquid,section,heading,text,Heading,"""Statement Silver, Crafted with Soul"""
+sections/hero.liquid,section,heading_size,select,Heading Size,"""large"""
+sections/hero.liquid,section,subtext,text,Subtext,"""Oxidised jewellery inspired by Indian craft, made for modern wardrobes."""
+sections/hero.liquid,section,btn_primary_label,text,Primary Button Label,"""Shop Now"""
+sections/hero.liquid,section,btn_primary_link,url,Primary Button Link,""""""
+sections/hero.liquid,section,btn_secondary_label,text,Secondary Button Label,"""New Arrivals"""
+sections/hero.liquid,section,btn_secondary_link,url,Secondary Button Link,""""""
+sections/hero.liquid,section,content_position,select,Content position,"""center"""
+sections/hero.liquid,section,min_height,range,Minimum hero height,600
+sections/hero.liquid,section,overlay_color,color,Overlay colour,"""#000000"""
+sections/hero.liquid,section,panel_color,color,Text panel colour,"""#FFFDF9"""
+sections/hero.liquid,section,panel_opacity,range,Text panel opacity,90
+sections/hero.liquid,section,heading_color,color,Heading colour,"""#242424"""
+sections/hero.liquid,section,subtext_color,color,Subtext colour,"""#4F494B"""
+sections/hero.liquid,section,primary_button_bg,color,Primary button background,"""#7A1F32"""
+sections/hero.liquid,section,primary_button_text,color,Primary button text,"""#FFFFFF"""
+sections/hero.liquid,section,content_width,range,Text panel width,620
+sections/hero.liquid,section,content_mode,select,First banner content,"""overlay"""
+sections/hero.liquid,section,banner_link,url,First banner image link,""""""
+sections/hero.liquid,section,image_alt,text,First banner image description,""""""
+sections/hero.liquid,section,include_base,checkbox,Include the first banner,true
+sections/hero.liquid,section,autoplay,checkbox,Auto-rotate slides,false
+sections/hero.liquid,section,slide_interval,range,Seconds between slides,5
+sections/hero.liquid,section,show_arrows,checkbox,Show previous / next arrows,true
+sections/hero.liquid,section,show_dots,checkbox,Show slide dots,true
+sections/hero.liquid,section,height_mode,select,Banner height,"""fixed"""
+sections/hero.liquid,section,mobile_height,range,Mobile height,680
+sections/hero.liquid,section,image_fit,select,Image fit,"""cover"""
+sections/hero.liquid,section,mobile_panel_color,color,Mobile panel colour,"""#FFFDF9"""
+sections/hero.liquid,section,mobile_panel_opacity,range,Mobile panel opacity,92
+sections/hero.liquid,section,mobile_content_width,range,Mobile content width,520
+sections/hero.liquid,section,mobile_text_alignment,select,Mobile text alignment,"""center"""
+sections/hero.liquid,block: slide,desktop_image,image_picker,Desktop Image (recommended: 1920×900px),""""""
+sections/hero.liquid,block: slide,mobile_image,image_picker,Mobile Image (recommended: 750×900px),""""""
+sections/hero.liquid,block: slide,overlay_opacity,range,Image overlay opacity,30
+sections/hero.liquid,block: slide,heading,text,Heading,"""Statement Silver, Crafted with Soul"""
+sections/hero.liquid,block: slide,heading_size,select,Heading Size,"""large"""
+sections/hero.liquid,block: slide,subtext,text,Subtext,"""Oxidised jewellery inspired by Indian craft, made for modern wardrobes."""
+sections/hero.liquid,block: slide,btn_primary_label,text,Primary Button Label,"""Shop Now"""
+sections/hero.liquid,block: slide,btn_primary_link,url,Primary Button Link,""""""
+sections/hero.liquid,block: slide,btn_secondary_label,text,Secondary Button Label,"""New Arrivals"""
+sections/hero.liquid,block: slide,btn_secondary_link,url,Secondary Button Link,""""""
+sections/hero.liquid,block: slide,content_position,select,Content position,"""center"""
+sections/hero.liquid,block: slide,overlay_color,color,Overlay colour,"""#000000"""
+sections/hero.liquid,block: slide,panel_color,color,Text panel colour,"""#FFFDF9"""
+sections/hero.liquid,block: slide,panel_opacity,range,Text panel opacity,90
+sections/hero.liquid,block: slide,heading_color,color,Heading colour,"""#242424"""
+sections/hero.liquid,block: slide,subtext_color,color,Subtext colour,"""#4F494B"""
+sections/hero.liquid,block: slide,primary_button_bg,color,Primary button background,"""#7A1F32"""
+sections/hero.liquid,block: slide,primary_button_text,color,Primary button text,"""#FFFFFF"""
+sections/hero.liquid,block: slide,content_width,range,Text panel width,620
+sections/hero.liquid,block: slide,content_mode,select,Content mode,"""image"""
+sections/hero.liquid,block: slide,banner_link,url,Image link,""""""
+sections/hero.liquid,block: slide,image_alt,text,Image description,""""""
+sections/main-product.liquid,section,enable_mobile_details,checkbox,"Show offers, details and benefits below Add to Cart",true
+sections/main-product.liquid,section,mobile_offers_heading,text,Offers heading,"""Offers for you"""
+sections/main-product.liquid,section,mobile_offer_1,text,Offer 1 (clear to hide),"""Free shipping above ₹599"""
+sections/main-product.liquid,section,mobile_offer_2,text,Offer 2 (clear to hide),"""Free gift on orders above ₹699"""
+sections/main-product.liquid,section,mobile_offer_3,text,Offer 3 (clear to hide),"""Free organiser on orders above ₹1,199"""
+sections/main-product.liquid,section,mobile_offer_4,text,Offer 4 (clear to hide),"""Get ₹100 off on orders above ₹1,499"""
+sections/main-product.liquid,section,mobile_description_heading,text,Description heading,"""Description"""
+sections/main-product.liquid,section,mobile_description_open,checkbox,Open description initially,true
+sections/main-product.liquid,section,mobile_shipping_heading,text,Shipping and returns heading,"""Shipping & Returns"""
+sections/main-product.liquid,section,mobile_shipping_text,richtext,Shipping and returns information,"""<p>Shipping options and delivery estimates are shown at checkout. For return and exchange details, please refer to our store policies or contact us.</p>"""
+sections/main-product.liquid,section,mobile_benefit_1_title,text,Returns benefit title (clear to hide),"""Easy returns"""
+sections/main-product.liquid,section,mobile_benefit_1_text,text,Returns benefit detail,"""As per our policy"""
+sections/main-product.liquid,section,mobile_benefit_2_title,text,Shipping benefit title (clear to hide),"""Free shipping"""
+sections/main-product.liquid,section,mobile_benefit_2_text,text,Shipping benefit detail,"""On orders above ₹599"""
+sections/main-product.liquid,section,mobile_benefit_3_title,text,COD benefit title (clear to hide),"""COD available"""
+sections/main-product.liquid,section,mobile_benefit_3_text,text,COD benefit detail,"""Check at checkout"""
+sections/main-product.liquid,section,mobile_sticky_cart,checkbox,Show sticky mobile Add to Cart after the main button scrolls away,true
+sections/main-product.liquid,section,use_offer_blocks,checkbox,Use Offer blocks instead of legacy offer fields,false
+sections/main-product.liquid,section,use_benefit_blocks,checkbox,Use Benefit blocks instead of legacy benefit fields,false
+sections/main-product.liquid,section,show_quantity,checkbox,Show quantity selector,true
+sections/main-product.liquid,section,description_display,select,Description placement,"""accordion"""
+sections/main-product.liquid,section,shipping_open,checkbox,Open Shipping & Returns initially,false
+sections/main-product.liquid,section,gallery_position,select,Gallery position on desktop,"""left"""
+sections/main-product.liquid,section,mobile_gallery_position,select,Gallery position on mobile,"""before"""
+sections/main-product.liquid,section,panel_radius,range,Product panel corner radius,12
+sections/main-product.liquid,section,benefit_columns,range,Benefit columns on desktop,3
+sections/main-product.liquid,section,benefit_columns_mobile,select,Benefit columns on mobile,"""3"""
+sections/main-product.liquid,section,trust_1,text,Fallback benefit 1,"""Secure checkout"""
+sections/main-product.liquid,section,trust_2,text,Fallback benefit 2,"""Carefully packed"""
+sections/main-product.liquid,section,trust_3,text,Fallback benefit 3,"""Customer support"""
+sections/main-product.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-product.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-product.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-product.liquid,section,padding_top,range,Top spacing,80
+sections/main-product.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-product.liquid,section,benefit_1_icon,select,Legacy benefit 1 icon,"""return"""
+sections/main-product.liquid,section,benefit_2_icon,select,Legacy benefit 2 icon,"""truck"""
+sections/main-product.liquid,section,benefit_3_icon,select,Legacy benefit 3 icon,"""cod"""
+sections/main-product.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-product.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/main-product.liquid,block: offer,text,text,Offer text,"""Your offer"""
+sections/main-product.liquid,block: offer,icon,select,Icon,"""percent"""
+sections/main-product.liquid,block: benefit,title,text,Title,"""Shopping benefit"""
+sections/main-product.liquid,block: benefit,text,text,Description,""""""
+sections/main-product.liquid,block: benefit,icon,select,Icon,"""shield"""
+sections/main-product.liquid,block: text,text,richtext,Text,"""<p>Your product information</p>"""
+sections/featured-products.liquid,section,heading,text,Section Heading,"""Best Sellers"""
+sections/featured-products.liquid,section,subheading,text,Subheading,"""Our most loved pieces"""
+sections/featured-products.liquid,section,collection,collection,Collection,""""""
+sections/featured-products.liquid,section,fallback_to_all_products,checkbox,Show all products if this collection is empty or missing,true
+sections/featured-products.liquid,section,products_to_show,range,Products to show,8
+sections/featured-products.liquid,section,columns_desktop,select,Columns on desktop,"""4"""
+sections/featured-products.liquid,section,show_view_all,checkbox,Show 'View All' button,true
+sections/featured-products.liquid,section,section_id,text,Section anchor ID (for links),"""featured-products"""
+sections/featured-products.liquid,section,section_background,color,Section background,"""#FFFDF9"""
+sections/featured-products.liquid,section,section_text,color,Heading / text colour,"""#242424"""
+sections/featured-products.liquid,section,section_accent,color,Accent / eyebrow colour,"""#7A1F32"""
+sections/featured-products.liquid,section,padding_top,range,Top spacing,80
+sections/featured-products.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/featured-products.liquid,section,manual_products,product_list,Choose individual products (optional),""""""
+sections/featured-products.liquid,section,sort_mode,select,Product order,"""collection"""
+sections/featured-products.liquid,section,columns_mobile,select,Columns on mobile,"""2"""
+sections/featured-products.liquid,section,view_all_label,text,View All button label,"""View All"""
+sections/featured-products.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/featured-products.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/collection-banner.liquid,section,image,image_picker,Banner Image (recommended: 1600×700px),""""""
+sections/collection-banner.liquid,section,overlay_opacity,range,Image overlay opacity,40
+sections/collection-banner.liquid,section,heading,text,Heading,"""The Heritage Edit"""
+sections/collection-banner.liquid,section,subtext,textarea,Supporting text,"""Bold jhumkas, sculptural necklaces and timeless details with an artisanal oxidised finish."""
+sections/collection-banner.liquid,section,btn_label,text,Button Label,"""Explore Collection"""
+sections/collection-banner.liquid,section,btn_link,url,Button Link,""""""
+sections/collection-banner.liquid,section,text_position,select,Text position,"""left"""
+sections/collection-banner.liquid,section,mobile_image,image_picker,Mobile banner image,""""""
+sections/collection-banner.liquid,section,overlay_color,color,Overlay colour,"""#000000"""
+sections/collection-banner.liquid,section,show_content,checkbox,Show text and button,true
+sections/collection-banner.liquid,section,banner_link,url,Whole-image link (when text is hidden),""""""
+sections/collection-banner.liquid,section,image_fit,select,Image fit,"""cover"""
+sections/collection-banner.liquid,section,desktop_height,range,Desktop height,500
+sections/collection-banner.liquid,section,mobile_height,range,Mobile height,440
+sections/collection-banner.liquid,section,height_mode,select,Banner height,"""fixed"""
+sections/reviews.liquid,section,heading,text,Heading,"""What Our Customers Say"""
+sections/reviews.liquid,section,subheading,text,Subheading,"""Loved, styled and shared by our community"""
+sections/reviews.liquid,section,section_background,color,Section background,"""#FFFDF9"""
+sections/reviews.liquid,section,section_text,color,Heading / text colour,"""#242424"""
+sections/reviews.liquid,section,section_accent,color,Accent / eyebrow colour,"""#7A1F32"""
+sections/reviews.liquid,section,padding_top,range,Top spacing,80
+sections/reviews.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/reviews.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/reviews.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/reviews.liquid,block: review,rating,range,Rating (stars),5
+sections/reviews.liquid,block: review,text,textarea,Review Text,"""Add a genuine customer review here."""
+sections/reviews.liquid,block: review,author,text,Customer Name,"""Customer name"""
+sections/reviews.liquid,block: review,location,text,Location (optional),"""Customer location"""
+sections/reviews.liquid,block: review,product,text,Product name (optional),"""Purchased product"""
+sections/faq.liquid,section,heading,text,Heading,"""Frequently Asked Questions"""
+sections/faq.liquid,section,subheading,text,Subheading,"""Everything you need to know"""
+sections/faq.liquid,section,section_background,color,Section background,"""#FFFDF9"""
+sections/faq.liquid,section,section_text,color,Heading / text colour,"""#242424"""
+sections/faq.liquid,section,section_accent,color,Accent / eyebrow colour,"""#7A1F32"""
+sections/faq.liquid,section,padding_top,range,Top spacing,80
+sections/faq.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/faq.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/faq.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/faq.liquid,block: faq_item,question,text,Question,"""Is this jewellery made from pure silver?"""
+sections/faq.liquid,block: faq_item,answer,textarea,Answer,"""Unless a product page specifically states 925 sterling silver, our pieces are silver-tone oxidised fashion jewellery."""
+sections/faq.liquid,block: faq_item,open,checkbox,Open this question initially,false
+sections/shop-by-price.liquid,section,eyebrow,text,Eyebrow,"""Jewellery for every budget"""
+sections/shop-by-price.liquid,section,heading,text,Heading,"""Shop by Price"""
+sections/shop-by-price.liquid,section,subheading,textarea,Subheading,"""Find everyday favourites, statement pieces and premium picks."""
+sections/shop-by-price.liquid,section,columns_desktop,range,Columns on desktop,4
+sections/shop-by-price.liquid,section,background_color,color,Section background,"""#F7F2EC"""
+sections/shop-by-price.liquid,section,text_color,color,Heading and text colour,"""#242424"""
+sections/shop-by-price.liquid,section,accent_color,color,Accent colour,"""#7A1F32"""
+sections/shop-by-price.liquid,section,padding_top,range,Top spacing,80
+sections/shop-by-price.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/shop-by-price.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/shop-by-price.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/shop-by-price.liquid,block: price_card,kicker,text,Small label,"""QUICK PICKS"""
+sections/shop-by-price.liquid,block: price_card,label,text,Price label,"""Under ₹499"""
+sections/shop-by-price.liquid,block: price_card,description,text,Description,"""Easy everyday add-ons"""
+sections/shop-by-price.liquid,block: price_card,collection,collection,Collection,""""""
+sections/shop-by-price.liquid,block: price_card,link,url,Custom link (optional),""""""
+sections/shop-by-price.liquid,block: price_card,background_color,color,Card background,"""#FFFDF9"""
+sections/shop-by-price.liquid,block: price_card,text_color,color,Card text,"""#242424"""
+sections/main-search.liquid,section,eyebrow,text,Small heading,"""Find your next piece"""
+sections/main-search.liquid,section,heading,text,Heading,"""Search Jewellery"""
+sections/main-search.liquid,section,placeholder,text,Search placeholder,"""Search earrings, necklaces, bangles..."""
+sections/main-search.liquid,section,button_label,text,Search button,"""Search"""
+sections/main-search.liquid,section,empty_text,text,No-results message,"""No jewellery matched your search. Try a shorter or more general search."""
+sections/main-search.liquid,section,browse_label,text,Browse button,"""Browse All Jewellery"""
+sections/main-search.liquid,section,result_type,select,Search content,"""product"""
+sections/main-search.liquid,section,results_per_page,range,Results per page,24
+sections/main-search.liquid,section,columns_desktop,select,Desktop columns,"""4"""
+sections/main-search.liquid,section,columns_mobile,select,Mobile columns,"""2"""
+sections/main-search.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-search.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-search.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-search.liquid,section,padding_top,range,Top spacing,80
+sections/main-search.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-search.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-search.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/mobile-product-recommendations.liquid,section,enabled,checkbox,Show related products,true
+sections/mobile-product-recommendations.liquid,section,heading,text,Heading,"""You may also like"""
+sections/mobile-product-recommendations.liquid,section,subheading,text,Subheading,"""Discover more Gujju Jewels pieces for your next look."""
+sections/mobile-product-recommendations.liquid,section,product_limit,range,Products to show,4
+sections/mobile-product-recommendations.liquid,section,fallback_collection,collection,Fallback collection,""""""
+sections/mobile-product-recommendations.liquid,section,selection_mode,select,Product selection,"""automatic"""
+sections/mobile-product-recommendations.liquid,section,manual_products,product_list,Selected related products,""""""
+sections/mobile-product-recommendations.liquid,section,columns_desktop,range,Desktop columns,4
+sections/mobile-product-recommendations.liquid,section,columns_mobile,select,Mobile columns,"""2"""
+sections/mobile-product-recommendations.liquid,section,section_background,color,Background,"""#F7F2EC"""
+sections/mobile-product-recommendations.liquid,section,section_text,color,Heading colour,"""#242424"""
+sections/mobile-product-recommendations.liquid,section,padding_top,range,Top spacing,36
+sections/mobile-product-recommendations.liquid,section,padding_bottom,range,Bottom spacing,36
+sections/mobile-product-recommendations.liquid,section,padding_top_mobile,range,Mobile top spacing,36
+sections/mobile-product-recommendations.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,36
+sections/main-page.liquid,section,show_title,checkbox,Show page title,true
+sections/main-page.liquid,section,content_width,select,Content width,"""narrow"""
+sections/main-page.liquid,section,section_background,color,Background,"""#FFFDF9"""
+sections/main-page.liquid,section,section_text,color,Text colour,"""#242424"""
+sections/main-page.liquid,section,section_accent,color,Accent colour,"""#7A1F32"""
+sections/main-page.liquid,section,padding_top,range,Top spacing,80
+sections/main-page.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/main-page.liquid,section,padding_top_mobile,range,Mobile top spacing,48
+sections/main-page.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,48
+sections/main-collection.liquid,section,show_description,checkbox,Show collection description,true
+sections/main-collection.liquid,section,show_product_count,checkbox,Show product count above title,true
+sections/main-collection.liquid,section,enable_filtering,checkbox,Enable Shopify collection filters,true
+sections/main-collection.liquid,section,show_filter_counts,checkbox,Show product counts in filters,true
+sections/main-collection.liquid,section,enable_sorting,checkbox,Enable sorting,true
+sections/main-collection.liquid,section,columns_desktop,select,Product columns on desktop,"""3"""
+sections/main-collection.liquid,section,products_per_page,range,Products per page,24
+sections/social-gallery.liquid,section,eyebrow,text,Eyebrow,"""Wear it your way"""
+sections/social-gallery.liquid,section,heading,text,Heading,"""Wear It Your Way"""
+sections/social-gallery.liquid,section,subheading,textarea,Subheading,"""Follow us for jewellery styling inspiration and new looks."""
+sections/social-gallery.liquid,section,columns_desktop,range,Columns on desktop,4
+sections/social-gallery.liquid,section,button_label,text,Button label,"""Follow on Instagram"""
+sections/social-gallery.liquid,section,button_link,url,Instagram profile link,""""""
+sections/social-gallery.liquid,section,open_new_tab,checkbox,Open Instagram in a new tab,true
+sections/social-gallery.liquid,section,background_color,color,Section background,"""#FFFDF9"""
+sections/social-gallery.liquid,section,text_color,color,Text colour,"""#242424"""
+sections/social-gallery.liquid,section,accent_color,color,Accent colour,"""#7A1F32"""
+sections/social-gallery.liquid,section,padding_top,range,Top spacing,80
+sections/social-gallery.liquid,section,padding_bottom,range,Bottom spacing,80
+sections/social-gallery.liquid,section,show_demo,checkbox,Show demo photos when images are missing,true
+sections/social-gallery.liquid,section,columns_mobile,select,Columns on mobile,"""2"""
+sections/social-gallery.liquid,section,padding_top_mobile,range,Mobile top spacing,72
+sections/social-gallery.liquid,section,padding_bottom_mobile,range,Mobile bottom spacing,72
+sections/social-gallery.liquid,block: post,image,image_picker,Image (recommended: square),""""""
+sections/social-gallery.liquid,block: post,caption,text,Caption,"""Jewellery styling inspiration"""
+sections/social-gallery.liquid,block: post,link,url,Instagram or product link,""""""
+config/settings_schema.json,theme settings: Brand & colours,favicon,image_picker,Favicon,""""""
+config/settings_schema.json,theme settings: Brand & colours,color_primary,color,Primary colour,"""#7A1F32"""
+config/settings_schema.json,theme settings: Brand & colours,color_ivory,color,Ivory background,"""#FFFDF9"""
+config/settings_schema.json,theme settings: Brand & colours,color_beige,color,Beige background,"""#F7F2EC"""
+config/settings_schema.json,theme settings: Brand & colours,color_surface,color,Surface colour,"""#FFFFFF"""
+config/settings_schema.json,theme settings: Brand & colours,color_text,color,Text colour,"""#242424"""
+config/settings_schema.json,theme settings: Brand & colours,color_muted,color,Muted text colour,"""#746D6F"""
+config/settings_schema.json,theme settings: Brand & colours,color_border,color,Border colour,"""#E8E2DC"""
+config/settings_schema.json,theme settings: Brand & colours,color_button_text,color,Button text colour,"""#FFFFFF"""
+config/settings_schema.json,theme settings: Brand & colours,color_sale,color,Sale colour,"""#7A1F32"""
+config/settings_schema.json,theme settings: Brand & colours,color_footer_bg,color,Footer background,"""#242424"""
+config/settings_schema.json,theme settings: Brand & colours,color_footer_text,color,Footer text,"""#FFFFFF"""
+config/settings_schema.json,theme settings: Layout & typography,body_font,font_picker,Body font,"""inter_n4"""
+config/settings_schema.json,theme settings: Layout & typography,heading_font,font_picker,Heading font,"""cormorant_garamond_n6"""
+config/settings_schema.json,theme settings: Layout & typography,page_width,range,Page width,1400
+config/settings_schema.json,theme settings: Layout & typography,section_spacing_desktop,range,Desktop section spacing,80
+config/settings_schema.json,theme settings: Layout & typography,section_spacing_mobile,range,Mobile section spacing,48
+config/settings_schema.json,theme settings: Layout & typography,body_font_size,range,Body font size,16
+config/settings_schema.json,theme settings: Layout & typography,section_heading_size,range,Section heading size,38
+config/settings_schema.json,theme settings: Layout & typography,product_title_font_size,range,Product title size,16
+config/settings_schema.json,theme settings: Layout & typography,product_price_font_size,range,Product price size,15
+config/settings_schema.json,theme settings: Layout & typography,button_font_size,range,Button font size,13
+config/settings_schema.json,theme settings: Layout & typography,section_heading_alignment,select,Section heading alignment,"""center"""
+config/settings_schema.json,theme settings: Layout & typography,button_text_transform,select,Button text style,"""uppercase"""
+config/settings_schema.json,theme settings: Cards & buttons,card_radius,range,Card radius,2
+config/settings_schema.json,theme settings: Cards & buttons,image_radius,range,Image radius,2
+config/settings_schema.json,theme settings: Cards & buttons,button_radius,range,Button radius,2
+config/settings_schema.json,theme settings: Cards & buttons,card_shadow_opacity,range,Card shadow opacity,0
+config/settings_schema.json,theme settings: Product cards,card_quick_add,checkbox,Show quick add,true
+config/settings_schema.json,theme settings: Product cards,card_second_image,checkbox,Show second image on hover,true
+config/settings_schema.json,theme settings: Product cards,card_sale_badge,checkbox,Show sale badge,true
+config/settings_schema.json,theme settings: Product cards,card_sold_badge,checkbox,Show sold-out badge,true
+config/settings_schema.json,theme settings: Product cards,show_savings,checkbox,Show percentage savings,true
+config/settings_schema.json,theme settings: Product cards,show_compare_price,checkbox,Show compare-at prices,true

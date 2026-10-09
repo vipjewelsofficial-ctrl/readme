@@ -1,0 +1,136 @@
+{%- liquid
+  assign announcement_text = section.settings.announcement_text
+  assign announcement_link = section.settings.announcement_link
+  assign show_marquee = section.settings.show_marquee
+-%}
+
+<div class="announcement-bar" id="announcement-bar-{{ section.id }}" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};" role="note">
+  <div class="announcement-bar__inner">
+    {%- if show_marquee -%}
+      <div class="announcement-bar__marquee" aria-live="polite">
+        <div class="announcement-bar__marquee-inner">
+          {%- for i in (1..3) -%}
+            <span class="announcement-bar__marquee-text">
+              {%- if announcement_link != blank -%}
+                <a class="announcement-bar__link" href="{{ announcement_link }}">
+                  {{ announcement_text }}
+                </a>
+              {%- else -%}
+                {{ announcement_text }}
+              {%- endif -%}
+              <span class="announcement-bar__separator" aria-hidden="true">&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+            </span>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- else -%}
+      <p class="announcement-bar__text">
+        {%- if announcement_link != blank -%}
+          <a class="announcement-bar__link announcement-bar__link--underlined" href="{{ announcement_link }}">{{ announcement_text }}</a>
+        {%- else -%}
+          {{ announcement_text }}
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .announcement-bar {
+    width: 100%;
+    padding: 10px 16px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 200;
+  }
+  .announcement-bar__inner {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .announcement-bar__text {
+    margin: 0;
+  }
+  .announcement-bar__link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .announcement-bar__link--underlined {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  /* Marquee */
+  .announcement-bar__marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .announcement-bar__marquee-inner {
+    display: inline-flex;
+    animation: marquee-scroll 28s linear infinite;
+    white-space: nowrap;
+  }
+  .announcement-bar__marquee-inner:hover {
+    animation-play-state: paused;
+  }
+  .announcement-bar__marquee-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+  }
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .announcement-bar__marquee-inner {
+      animation: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "New arrivals are here — discover the latest Gujju Jewels styles"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Link (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_marquee",
+      "label": "Scrolling marquee",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

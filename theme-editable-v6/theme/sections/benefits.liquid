@@ -1,0 +1,201 @@
+<section class="benefits section section--ivory" id="benefits-{{ section.id }}" style="--section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-accent: {{ section.settings.section_accent }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;" {% if section.settings.heading != blank %}aria-labelledby="benefits-heading-{{ section.id }}"{% else %}aria-label="Shopping benefits"{% endif %}>
+  <div class="container">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-header">
+        {%- if section.settings.subheading != blank -%}
+          <p class="section-eyebrow">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 id="benefits-heading-{{ section.id }}" class="section-title">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="benefits-grid" role="list">
+        {%- for block in section.blocks -%}
+          <div class="benefit-card" role="listitem" {{ block.shopify_attributes }}>
+            <div class="benefit-card__icon" aria-hidden="true">
+              {%- render 'icon', icon: block.settings.icon -%}
+            </div>
+            <h3 class="benefit-card__title">{{ block.settings.title | escape }}</h3>
+            <p class="benefit-card__text">{{ block.settings.text | escape }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits / Why Choose Us",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Choose Us"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Our promise to you"
+    },
+    {
+      "type": "header",
+      "content": "Section design"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Heading / text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "section_accent",
+      "label": "Accent / eyebrow colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "shield",
+              "label": "Shield (Anti-Tarnish)"
+            },
+            {
+              "value": "star",
+              "label": "Star (Quality)"
+            },
+            {
+              "value": "truck",
+              "label": "Truck (Shipping)"
+            },
+            {
+              "value": "return",
+              "label": "Return (Easy Returns)"
+            },
+            {
+              "value": "lock",
+              "label": "Lock (Secure)"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Artisanal Oxidised Finish"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Distinctive silver-tone pieces with the depth and character of a handcrafted finish."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits / Why Choose Us",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "star",
+            "title": "Artisanal Finish",
+            "text": "Silver-tone designs selected for their detailed, heritage-inspired character."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "heart",
+            "title": "Comfortable to Style",
+            "text": "Statement pieces chosen to feel wearable for celebrations and everyday looks."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "truck",
+            "title": "Fast Shipping",
+            "text": "Orders are carefully packed and dispatched quickly across India."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "return",
+            "title": "Easy Support",
+            "text": "Clear assistance for delivery, exchanges and returns whenever you need it."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

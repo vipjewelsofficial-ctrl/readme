@@ -1,0 +1,293 @@
+[
+  {
+    "name": "Brand & colours",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "color",
+        "id": "color_ivory",
+        "label": "Ivory background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "color_beige",
+        "label": "Beige background",
+        "default": "#F7F2EC"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Surface colour",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "label": "Muted text colour",
+        "default": "#746D6F"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border colour",
+        "default": "#E8E2DC"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button text colour",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_sale",
+        "label": "Sale colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_bg",
+        "label": "Footer background",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text",
+        "label": "Footer text",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Layout & typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body font",
+        "default": "inter_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "cormorant_garamond_n6"
+      },
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 50,
+        "unit": "px",
+        "label": "Page width",
+        "default": 1400
+      },
+      {
+        "type": "range",
+        "id": "section_spacing_desktop",
+        "min": 40,
+        "max": 120,
+        "step": 4,
+        "unit": "px",
+        "label": "Desktop section spacing",
+        "default": 80
+      },
+      {
+        "type": "range",
+        "id": "section_spacing_mobile",
+        "min": 24,
+        "max": 80,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile section spacing",
+        "default": 48
+      },
+      {
+        "type": "range",
+        "id": "body_font_size",
+        "min": 12,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "label": "Body font size",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "section_heading_size",
+        "min": 24,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "label": "Section heading size",
+        "default": 38
+      },
+      {
+        "type": "range",
+        "id": "product_title_font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Product title size",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "product_price_font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Product price size",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "button_font_size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Button font size",
+        "default": 13
+      },
+      {
+        "type": "select",
+        "id": "section_heading_alignment",
+        "label": "Section heading alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "button_text_transform",
+        "label": "Button text style",
+        "default": "uppercase",
+        "options": [
+          {
+            "value": "none",
+            "label": "Normal"
+          },
+          {
+            "value": "uppercase",
+            "label": "Uppercase"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cards & buttons",
+    "settings": [
+      {
+        "type": "range",
+        "id": "card_radius",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Card radius",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "image_radius",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Image radius",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "button_radius",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Button radius",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_opacity",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "%",
+        "label": "Card shadow opacity",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "Product cards",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "card_quick_add",
+        "label": "Show quick add",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_second_image",
+        "label": "Show second image on hover",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_sale_badge",
+        "label": "Show sale badge",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_sold_badge",
+        "label": "Show sold-out badge",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_savings",
+        "label": "Show percentage savings",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_compare_price",
+        "label": "Show compare-at prices",
+        "default": true
+      }
+    ]
+  }
+]

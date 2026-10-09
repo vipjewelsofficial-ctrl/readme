@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_primary | default: '#7A1F32' }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% render 'meta-tags' %}
+
+    {{ content_for_header }}
+
+    <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+
+    {%- if settings.body_font != blank -%}
+      <style>
+        {{ settings.body_font | font_face: font_display: 'swap' }}
+        {{ settings.heading_font | font_face: font_display: 'swap' }}
+        {%- assign body_bold = settings.body_font | font_modify: 'weight', '600' -%}
+        {%- assign heading_bold = settings.heading_font | font_modify: 'weight', '700' -%}
+        {{ body_bold | font_face: font_display: 'swap' }}
+        {{ heading_bold | font_face: font_display: 'swap' }}
+      </style>
+    {%- endif -%}
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'homepage.css' | asset_url | stylesheet_tag }}
+    {{ 'simple-theme.css' | asset_url | stylesheet_tag }}
+    <style>
+      :root {
+        {%- if settings.body_font != blank %}
+        --font-body: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+        {%- endif %}
+        {%- if settings.heading_font != blank %}
+        --font-serif: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
+        --font-heading: var(--font-serif);
+        {%- endif %}
+        --color-primary: {{ settings.color_primary | default: '#7A1F32' }};
+        --color-beige: {{ settings.color_beige | default: '#F7F2EC' }};
+        --color-ivory: {{ settings.color_ivory | default: '#FFFDF9' }};
+        --color-surface: {{ settings.color_surface | default: '#FFFFFF' }};
+        --color-text-dark: {{ settings.color_text | default: '#242424' }};
+        --color-text-muted-custom: {{ settings.color_muted | default: '#746D6F' }};
+        --color-border-custom: {{ settings.color_border | default: '#E8E2DC' }};
+        --color-button-text: {{ settings.color_button_text | default: '#FFFFFF' }};
+        --color-sale: {{ settings.color_sale | default: '#7A1F32' }};
+        --color-footer-bg: {{ settings.color_footer_bg | default: '#242424' }};
+        --color-footer-text: {{ settings.color_footer_text | default: '#FFFFFF' }};
+        --container-max: {{ settings.page_width | default: 1400 }}px;
+        --custom-section-spacing: {{ settings.section_spacing_desktop | default: 80 }}px;
+        --custom-section-spacing-mobile: {{ settings.section_spacing_mobile | default: 48 }}px;
+        --custom-card-radius: {{ settings.card_radius | default: 2 }}px;
+        --custom-image-radius: {{ settings.image_radius | default: 2 }}px;
+        --custom-button-radius: {{ settings.button_radius | default: 2 }}px;
+        --custom-card-shadow-opacity: {{ settings.card_shadow_opacity | default: 0 }}%;
+        --custom-button-transform: {{ settings.button_text_transform | default: 'uppercase' }};
+        --custom-heading-align: {{ settings.section_heading_alignment | default: 'center' }};
+        --body-font-size: {{ settings.body_font_size | default: 16 }}px;
+        --section-heading-size: {{ settings.section_heading_size | default: 40 }}px;
+        --product-title-font-size: {{ settings.product_title_font_size | default: 17 }}px;
+        --product-price-font-size: {{ settings.product_price_font_size | default: 15 }}px;
+        --button-font-size: {{ settings.button_font_size | default: 14 }}px;
+      }
+    </style>
+  </head>
+
+  <body class="template-{{ request.page_type | handle }}">
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+      {{ 'accessibility.skip_to_text' | t }}
+    </a>
+
+    {% sections 'header-group' %}
+
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    <ul hidden id="a11y-refresh-page-message"></ul>
+
+    <script>
+      window.shopUrl = {{ shop.url | json }};
+      window.routes = {
+        cart_add_url: {{ routes.cart_add_url | json }},
+        cart_change_url: {{ routes.cart_change_url | json }},
+        cart_update_url: {{ routes.cart_update_url | json }},
+        cart_url: {{ routes.cart_url | json }},
+        predictive_search_url: {{ routes.predictive_search_url | json }}
+      };
+      window.cartStrings = {
+        updating: {{ 'sections.cart.updating' | t | json }},
+        updated: {{ 'sections.cart.updated' | t | json }},
+        refreshError: {{ 'sections.cart.refresh_error' | t | json }},
+        changed: {{ 'sections.cart.changed' | t | json }},
+        saveError: {{ 'sections.cart.save_error' | t | json }},
+        limited: {{ 'sections.cart.limited' | t | json }},
+        connectionError: {{ 'sections.cart.connection_error' | t | json }},
+        invalidQuantity: {{ 'sections.cart.invalid_quantity' | t | json }},
+        error: {{ 'sections.cart.cart_error'  | t | json }},
+        quantityError: {{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' | json }}
+      };
+      window.themeStrings = {
+        adding: {{ 'products.product.adding' | t | json }},
+        added: {{ 'products.product.added' | t | json }},
+        tryAgain: {{ 'products.product.try_again' | t | json }},
+        addError: {{ 'products.product.add_error' | t | json }},
+        regularPrice: {{ 'products.product.regular_price' | t: price: '[price]' | json }},
+        percentOff: {{ 'products.product.percent_off' | t: percent: '[percent]' | json }}
+      };
+      window.variantStrings = {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+      };
+    </script>
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+  </body>
+</html>

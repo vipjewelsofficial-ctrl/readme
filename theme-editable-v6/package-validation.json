@@ -1,0 +1,21 @@
+{
+  "original_theme_files": 91,
+  "theme_files": 96,
+  "file_counts": {
+    "modified": 44,
+    "new": 5,
+    "unchanged": 47
+  },
+  "editor_field_definitions": 550,
+  "zip_name": "Gujju-Jewels-Shopify-Editable-v6.zip",
+  "zip_sha256": "f6ddcc6db93cd51c937f88e9c34130e67b3b22598bbfce1419115013a96a6d75",
+  "zip_bytes": 4166158,
+  "checks": {
+    "no_source_files_deleted": true,
+    "zip_integrity_and_file_equality": true,
+    "settings_data_preserved_byte_for_byte": true,
+    "all_original_image_assets_preserved": true,
+    "homepage_and_product_template_section_order_preserved": true
+  },
+  "limits": "Local Shopify data and network adapters were used. No live Shopify Admin, real order, payment or app backend was connected."
+}
