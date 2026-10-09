@@ -1,0 +1,13 @@
+{
+  "assets_only": true,
+  "files": {
+    "assets/hero-slider.css": "7e84348377f774fb8e669c349ba7bef438fe09a37db754d2f7386f58af9e8f35",
+    "assets/wishlist.css": "5cb38e542d0241e88213d60b4e1a4e0f3abf568e9fad8f720d4dd4ad35ade98b",
+    "assets/hero-slider.js": "c4205a44d09a7f948fb26de1f7d79e573b133818b459c80590a0292439a31345",
+    "README.md": "cfcbbf4b09e639490974bb5d6f2908f28b6cdc185979aa0e7f7741f72043d9a5"
+  },
+  "zip_sha256": "057dae5ea479071fbd05863e97d7dac0653d87148e853278ba2e6b42b49a94d3",
+  "zip_bytes": 6462,
+  "zip_integrity": true,
+  "html_templates_settings_and_images_changed": false
+}

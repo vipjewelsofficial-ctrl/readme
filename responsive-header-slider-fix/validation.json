@@ -1,0 +1,96 @@
+{
+  "local_browser_tests": true,
+  "live_shopify_tested": false,
+  "header_configurations": 42,
+  "checks": [
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 320,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 360,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 390,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 430,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 768,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 990,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Header icons/logo separated; menu, search, cart link and dots-only layout work",
+      "passed": true,
+      "width": 1440,
+      "logo_modes": 3,
+      "account_variants": 2
+    },
+    {
+      "test": "Autoplay with dots only; wishlist persistence, long titles, removal, focus and Escape",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Autoplay with dots only; wishlist persistence, long titles, removal, focus and Escape",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Autoplay with dots only; wishlist persistence, long titles, removal, focus and Escape",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Autoplay with dots only; wishlist persistence, long titles, removal, focus and Escape",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Eight slide dots fit without horizontal overflow",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Eight slide dots fit without horizontal overflow",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Eight slide dots fit without horizontal overflow",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Eight slide dots fit without horizontal overflow",
+      "passed": true,
+      "width": 1440
+    }
+  ]
+}
