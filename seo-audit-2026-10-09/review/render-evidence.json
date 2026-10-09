@@ -1,0 +1,27 @@
+{
+  "local_mock_render_only": true,
+  "canonical_render_verified": true,
+  "social_tags_render_verified": true,
+  "viewports": [
+    {
+      "viewport": 390,
+      "logo_assets_requested": [
+        "gujjujewels-logo-desktop.png",
+        "gujjujewels-logo-mobile.png"
+      ],
+      "logo_bytes": 971071,
+      "h1_count": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "viewport": 1440,
+      "logo_assets_requested": [
+        "gujjujewels-logo-desktop.png",
+        "gujjujewels-logo-mobile.png"
+      ],
+      "logo_bytes": 971071,
+      "h1_count": 1,
+      "horizontal_overflow": false
+    }
+  ]
+}

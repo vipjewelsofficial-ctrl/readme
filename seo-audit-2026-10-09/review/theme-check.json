@@ -1,0 +1,217 @@
+[
+  {
+    "type": "LiquidHtml",
+    "check": "OrphanedSnippet",
+    "message": "This snippet is not referenced by any other files",
+    "uri": "file:///workspace/seo-audit-v5/theme/snippets/product-image.liquid",
+    "severity": 1,
+    "start": {
+      "index": 0,
+      "line": 0,
+      "character": 0
+    },
+    "end": {
+      "index": 1,
+      "line": 0,
+      "character": 1
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "AssetPreload",
+    "message": "For better performance, prefer using the preload argument of the stylesheet_tag filter",
+    "uri": "file:///workspace/seo-audit-v5/theme/layout/theme.liquid",
+    "severity": 1,
+    "start": {
+      "index": 1351,
+      "line": 33,
+      "character": 4
+    },
+    "end": {
+      "index": 1584,
+      "line": 33,
+      "character": 237
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "RemoteAsset",
+    "message": "Asset should be served by the Shopify CDN for better performance.",
+    "uri": "file:///workspace/seo-audit-v5/theme/layout/theme.liquid",
+    "severity": 1,
+    "start": {
+      "index": 1237,
+      "line": 31,
+      "character": 27
+    },
+    "end": {
+      "index": 1272,
+      "line": 31,
+      "character": 62
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "RemoteAsset",
+    "message": "Asset should be served by the Shopify CDN for better performance.",
+    "uri": "file:///workspace/seo-audit-v5/theme/layout/theme.liquid",
+    "severity": 1,
+    "start": {
+      "index": 1301,
+      "line": 32,
+      "character": 27
+    },
+    "end": {
+      "index": 1333,
+      "line": 32,
+      "character": 59
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "RemoteAsset",
+    "message": "Asset should be served by the Shopify CDN for better performance.",
+    "uri": "file:///workspace/seo-audit-v5/theme/layout/theme.liquid",
+    "severity": 1,
+    "start": {
+      "index": 1371,
+      "line": 33,
+      "character": 24
+    },
+    "end": {
+      "index": 1524,
+      "line": 33,
+      "character": 177
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "RemoteAsset",
+    "message": "Asset should be served by the Shopify CDN for better performance.",
+    "uri": "file:///workspace/seo-audit-v5/theme/layout/theme.liquid",
+    "severity": 1,
+    "start": {
+      "index": 1622,
+      "line": 34,
+      "character": 37
+    },
+    "end": {
+      "index": 1775,
+      "line": 34,
+      "character": 190
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "UnusedAssign",
+    "message": "The variable 'price_max' is assigned but not used",
+    "uri": "file:///workspace/seo-audit-v5/theme/snippets/price.liquid",
+    "severity": 1,
+    "start": {
+      "index": 609,
+      "line": 23,
+      "character": 2
+    },
+    "end": {
+      "index": 645,
+      "line": 23,
+      "character": 38
+    },
+    "suggest": [
+      {
+        "message": "Remove the unused variable 'price_max'"
+      }
+    ]
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "ParserBlockingScript",
+    "message": "The script_tag filter is parser-blocking. Use a <script> tag with async or defer for better performance",
+    "uri": "file:///workspace/seo-audit-v5/theme/layout/theme.liquid",
+    "severity": 0,
+    "start": {
+      "index": 5400,
+      "line": 106,
+      "character": 32
+    },
+    "end": {
+      "index": 5410,
+      "line": 106,
+      "character": 42
+    },
+    "suggest": [
+      {
+        "message": "Use an HTML script tag with the defer attribute instead"
+      },
+      {
+        "message": "Use an HTML script tag with the async attribute instead"
+      }
+    ]
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "UnusedAssign",
+    "message": "The variable 'footer_menu_2' is assigned but not used",
+    "uri": "file:///workspace/seo-audit-v5/theme/sections/footer.liquid",
+    "severity": 1,
+    "start": {
+      "index": 69,
+      "line": 2,
+      "character": 2
+    },
+    "end": {
+      "index": 122,
+      "line": 2,
+      "character": 55
+    },
+    "suggest": [
+      {
+        "message": "Remove the unused variable 'footer_menu_2'"
+      }
+    ]
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "UnusedAssign",
+    "message": "The variable 'footer_menu_3' is assigned but not used",
+    "uri": "file:///workspace/seo-audit-v5/theme/sections/footer.liquid",
+    "severity": 1,
+    "start": {
+      "index": 125,
+      "line": 3,
+      "character": 2
+    },
+    "end": {
+      "index": 178,
+      "line": 3,
+      "character": 55
+    },
+    "suggest": [
+      {
+        "message": "Remove the unused variable 'footer_menu_3'"
+      }
+    ]
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "UnusedAssign",
+    "message": "The variable 'logo_text' is assigned but not used",
+    "uri": "file:///workspace/seo-audit-v5/theme/sections/header.liquid",
+    "severity": 1,
+    "start": {
+      "index": 443,
+      "line": 10,
+      "character": 2
+    },
+    "end": {
+      "index": 509,
+      "line": 10,
+      "character": 68
+    },
+    "suggest": [
+      {
+        "message": "Remove the unused variable 'logo_text'"
+      }
+    ]
+  }
+]

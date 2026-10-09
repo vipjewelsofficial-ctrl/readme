@@ -1,0 +1,22 @@
+{
+  "source": "previously uploaded products_export_1.csv, not a fresh live export",
+  "parsed_rows": 81,
+  "nonempty_handle_rows": 81,
+  "products": 21,
+  "active_products": 21,
+  "custom_seo_title_count": 4,
+  "custom_seo_description_count": 3,
+  "image_rows": 81,
+  "image_rows_with_alt": 0,
+  "products_with_description": 21,
+  "products_with_type": 2,
+  "products_with_tags": 2,
+  "products_with_sku": 4,
+  "products_with_gtin": 0,
+  "title_character_min": 43,
+  "title_character_max": 144,
+  "titles_over_70_chars": 19,
+  "zero_price_variants": [
+    "traditional-gold-tone-chandbali-necklace-set"
+  ]
+}
