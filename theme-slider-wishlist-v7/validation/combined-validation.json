@@ -1,0 +1,57 @@
+{
+  "local_fixture_only": true,
+  "combined_viewports": [
+    {
+      "width": 320,
+      "wishlist_does_not_mutate_cart": true,
+      "cart_updates_preserve_wishlist": true,
+      "quick_add_and_badges_independent": true,
+      "checkout_waits_for_pending_quantity": true,
+      "no_overflow": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "wishlist_does_not_mutate_cart": true,
+      "cart_updates_preserve_wishlist": true,
+      "quick_add_and_badges_independent": true,
+      "checkout_waits_for_pending_quantity": true,
+      "no_overflow": true,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "wishlist_does_not_mutate_cart": true,
+      "cart_updates_preserve_wishlist": true,
+      "quick_add_and_badges_independent": true,
+      "checkout_waits_for_pending_quantity": true,
+      "no_overflow": true,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "wishlist_does_not_mutate_cart": true,
+      "cart_updates_preserve_wishlist": true,
+      "quick_add_and_badges_independent": true,
+      "checkout_waits_for_pending_quantity": true,
+      "no_overflow": true,
+      "errors": []
+    }
+  ],
+  "preservation_checks": [
+    "assets/theme.js unchanged",
+    "assets/cart-quantity.js unchanged",
+    "assets/cart-quantity.css unchanged",
+    "assets/product-mobile-details.js unchanged",
+    "assets/hero-slider.js unchanged",
+    "snippets/price.liquid unchanged",
+    "snippets/product-mobile-details.liquid unchanged",
+    "sections/footer.liquid unchanged",
+    "sections/header-group.json unchanged",
+    "sections/footer-group.json unchanged",
+    "snippets/gujju-built-in-menu.liquid unchanged",
+    "config/settings_data.json unchanged"
+  ],
+  "package_sha256": "e27faafd717add0dfe32f7c6e352a86ba945a9ceb2faf85441e3e6b3733be2b3",
+  "wishlist_disabled_hides_all_entry_points": true
+}
