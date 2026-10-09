@@ -1,0 +1,280 @@
+File,Editor section/group,Scope/block type,Setting ID,Setting type,Label,Has Add section preset
+announcement-bar.liquid,Announcement Bar,Section,announcement_text,text,Announcement Text,True
+announcement-bar.liquid,Announcement Bar,Section,announcement_link,url,Link (optional),True
+announcement-bar.liquid,Announcement Bar,Section,show_marquee,checkbox,Scrolling marquee,True
+announcement-bar.liquid,Announcement Bar,Section,bg_color,color,Background Color,True
+announcement-bar.liquid,Announcement Bar,Section,text_color,color,Text Color,True
+benefits.liquid,Benefits / Why Choose Us,Section,heading,text,Heading,True
+benefits.liquid,Benefits / Why Choose Us,Section,subheading,text,Subheading,True
+benefits.liquid,Benefits / Why Choose Us,Section,section_background,color,Section background,True
+benefits.liquid,Benefits / Why Choose Us,Section,section_text,color,Heading / text colour,True
+benefits.liquid,Benefits / Why Choose Us,Section,section_accent,color,Accent / eyebrow colour,True
+benefits.liquid,Benefits / Why Choose Us,Section,padding_top,range,Top spacing,True
+benefits.liquid,Benefits / Why Choose Us,Section,padding_bottom,range,Bottom spacing,True
+benefits.liquid,Benefits / Why Choose Us,benefit,icon,select,Icon,True
+benefits.liquid,Benefits / Why Choose Us,benefit,title,text,Title,True
+benefits.liquid,Benefits / Why Choose Us,benefit,text,textarea,Description,True
+category-directory.liquid,Shop Categories,Section,eyebrow,text,Eyebrow,True
+category-directory.liquid,Shop Categories,Section,heading,text,Heading,True
+category-directory.liquid,Shop Categories,Section,subheading,textarea,Subheading,True
+category-directory.liquid,Shop Categories,Section,columns_desktop,range,Columns on desktop,True
+category-directory.liquid,Shop Categories,Section,use_collection_images,checkbox,Use collection images when no custom image is selected,True
+category-directory.liquid,Shop Categories,Section,show_descriptions,checkbox,Show category descriptions,True
+category-directory.liquid,Shop Categories,Section,show_subcategories,checkbox,Show subcategory links,True
+category-directory.liquid,Shop Categories,Section,show_product_counts,checkbox,Show collection product counts,True
+category-directory.liquid,Shop Categories,Section,button_label,text,Bottom button label,True
+category-directory.liquid,Shop Categories,Section,button_link,url,Bottom button link,True
+category-directory.liquid,Shop Categories,Section,background_color,color,Section background,True
+category-directory.liquid,Shop Categories,Section,card_background,color,Card background,True
+category-directory.liquid,Shop Categories,Section,text_color,color,Text colour,True
+category-directory.liquid,Shop Categories,Section,accent_color,color,Accent colour,True
+category-directory.liquid,Shop Categories,Section,padding_top,range,Top spacing,True
+category-directory.liquid,Shop Categories,Section,padding_bottom,range,Bottom spacing,True
+category-directory.liquid,Shop Categories,category_group,image,image_picker,Custom category image,True
+category-directory.liquid,Shop Categories,category_group,collection,collection,Main collection,True
+category-directory.liquid,Shop Categories,category_group,link,url,Fallback custom link,True
+category-directory.liquid,Shop Categories,category_group,title,text,Custom title,True
+category-directory.liquid,Shop Categories,category_group,description,text,Description,True
+category-directory.liquid,Shop Categories,category_group,badge,text,Badge,True
+category-directory.liquid,Shop Categories,category_group,button_label,text,Button label,True
+category-directory.liquid,Shop Categories,category_group,subcategory_1,collection,Collection,True
+category-directory.liquid,Shop Categories,category_group,subcategory_1_label,text,Custom label,True
+category-directory.liquid,Shop Categories,category_group,subcategory_2,collection,Collection,True
+category-directory.liquid,Shop Categories,category_group,subcategory_2_label,text,Custom label,True
+category-directory.liquid,Shop Categories,category_group,subcategory_3,collection,Collection,True
+category-directory.liquid,Shop Categories,category_group,subcategory_3_label,text,Custom label,True
+category-directory.liquid,Shop Categories,category_group,subcategory_4,collection,Collection,True
+category-directory.liquid,Shop Categories,category_group,subcategory_4_label,text,Custom label,True
+collection-banner.liquid,Collection Banner,Section,image,image_picker,Banner Image (recommended: 1600×700px),True
+collection-banner.liquid,Collection Banner,Section,overlay_opacity,range,Image overlay opacity,True
+collection-banner.liquid,Collection Banner,Section,heading,text,Heading,True
+collection-banner.liquid,Collection Banner,Section,subtext,textarea,Supporting text,True
+collection-banner.liquid,Collection Banner,Section,btn_label,text,Button Label,True
+collection-banner.liquid,Collection Banner,Section,btn_link,url,Button Link,True
+collection-banner.liquid,Collection Banner,Section,text_position,select,Text position,True
+collection-card-grid.liquid,Collection Card Grid,Section,eyebrow,text,Eyebrow,True
+collection-card-grid.liquid,Collection Card Grid,Section,heading,text,Heading,True
+collection-card-grid.liquid,Collection Card Grid,Section,subheading,textarea,Subheading,True
+collection-card-grid.liquid,Collection Card Grid,Section,card_style,select,Card image shape,True
+collection-card-grid.liquid,Collection Card Grid,Section,columns_desktop,range,Columns on desktop,True
+collection-card-grid.liquid,Collection Card Grid,Section,columns_mobile,select,Columns on mobile,True
+collection-card-grid.liquid,Collection Card Grid,Section,use_collection_images,checkbox,Use collection images when no custom image is selected,True
+collection-card-grid.liquid,Collection Card Grid,Section,show_descriptions,checkbox,Show card descriptions,True
+collection-card-grid.liquid,Collection Card Grid,Section,button_label,text,Bottom button label,True
+collection-card-grid.liquid,Collection Card Grid,Section,button_link,url,Bottom button link,True
+collection-card-grid.liquid,Collection Card Grid,Section,background_color,color,Section background,True
+collection-card-grid.liquid,Collection Card Grid,Section,card_background,color,Card background,True
+collection-card-grid.liquid,Collection Card Grid,Section,text_color,color,Text colour,True
+collection-card-grid.liquid,Collection Card Grid,Section,accent_color,color,Accent colour,True
+collection-card-grid.liquid,Collection Card Grid,Section,padding_top,range,Top spacing,True
+collection-card-grid.liquid,Collection Card Grid,Section,padding_bottom,range,Bottom spacing,True
+collection-card-grid.liquid,Collection Card Grid,collection_card,image,image_picker,Custom image,True
+collection-card-grid.liquid,Collection Card Grid,collection_card,collection,collection,Collection,True
+collection-card-grid.liquid,Collection Card Grid,collection_card,link,url,Custom link (optional),True
+collection-card-grid.liquid,Collection Card Grid,collection_card,title,text,Title,True
+collection-card-grid.liquid,Collection Card Grid,collection_card,description,text,Description,True
+collection-card-grid.liquid,Collection Card Grid,collection_card,badge,text,Badge (optional),True
+custom-footer.liquid,Footer,Section,footer_description,textarea,Brand Description,True
+custom-footer.liquid,Footer,Section,footer_menu_1,link_list,Footer Menu 1,True
+custom-footer.liquid,Footer,Section,footer_menu_2,link_list,Footer Menu 2 (Customer Support),True
+custom-footer.liquid,Footer,Section,footer_menu_3,link_list,Footer Menu 3 (About),True
+custom-footer.liquid,Footer,Section,newsletter_heading,text,Newsletter Heading,True
+custom-footer.liquid,Footer,Section,newsletter_description,text,Newsletter description,True
+custom-footer.liquid,Footer,Section,social_instagram,url,Instagram URL,True
+custom-footer.liquid,Footer,Section,social_facebook,url,Facebook URL,True
+custom-footer.liquid,Footer,Section,social_whatsapp,text,"WhatsApp Number (with country code, e.g. +919876543210)",True
+custom-footer.liquid,Footer,Section,social_youtube,url,YouTube URL,True
+custom-footer.liquid,Footer,Section,show_payment_icons,checkbox,Show payment icons,True
+custom-liquid.liquid,Custom Liquid,Section,custom_liquid,liquid,Custom Liquid,True
+faq.liquid,FAQ,Section,heading,text,Heading,True
+faq.liquid,FAQ,Section,subheading,text,Subheading,True
+faq.liquid,FAQ,Section,section_background,color,Section background,True
+faq.liquid,FAQ,Section,section_text,color,Heading / text colour,True
+faq.liquid,FAQ,Section,section_accent,color,Accent / eyebrow colour,True
+faq.liquid,FAQ,Section,padding_top,range,Top spacing,True
+faq.liquid,FAQ,Section,padding_bottom,range,Bottom spacing,True
+faq.liquid,FAQ,faq_item,question,text,Question,True
+faq.liquid,FAQ,faq_item,answer,textarea,Answer,True
+featured-products.liquid,Featured Products,Section,heading,text,Section Heading,True
+featured-products.liquid,Featured Products,Section,subheading,text,Subheading,True
+featured-products.liquid,Featured Products,Section,collection,collection,Collection,True
+featured-products.liquid,Featured Products,Section,fallback_to_all_products,checkbox,Show all products if this collection is empty or missing,True
+featured-products.liquid,Featured Products,Section,products_to_show,range,Products to show,True
+featured-products.liquid,Featured Products,Section,columns_desktop,select,Columns on desktop,True
+featured-products.liquid,Featured Products,Section,show_view_all,checkbox,Show 'View All' button,True
+featured-products.liquid,Featured Products,Section,section_id,text,Section anchor ID (for links),True
+featured-products.liquid,Featured Products,Section,section_background,color,Section background,True
+featured-products.liquid,Featured Products,Section,section_text,color,Heading / text colour,True
+featured-products.liquid,Featured Products,Section,section_accent,color,Accent / eyebrow colour,True
+featured-products.liquid,Featured Products,Section,padding_top,range,Top spacing,True
+featured-products.liquid,Featured Products,Section,padding_bottom,range,Bottom spacing,True
+footer.liquid,Footer,Section,footer_brand_text,text,Footer brand name,True
+footer.liquid,Footer,Section,footer_description,textarea,Brand Description,True
+footer.liquid,Footer,Section,footer_menu_1,link_list,Footer Menu 1,True
+footer.liquid,Footer,Section,footer_menu_2,link_list,Footer Menu 2 (Customer Support),True
+footer.liquid,Footer,Section,footer_menu_3,link_list,Footer Menu 3 (About),True
+footer.liquid,Footer,Section,newsletter_heading,text,Newsletter Heading,True
+footer.liquid,Footer,Section,newsletter_description,text,Newsletter description,True
+footer.liquid,Footer,Section,social_instagram,url,Instagram URL,True
+footer.liquid,Footer,Section,social_facebook,url,Facebook URL,True
+footer.liquid,Footer,Section,social_whatsapp,text,"WhatsApp Number (with country code, e.g. +919876543210)",True
+footer.liquid,Footer,Section,social_youtube,url,YouTube URL,True
+footer.liquid,Footer,Section,show_payment_icons,checkbox,Show payment icons,True
+footer.liquid,Footer,Section,footer_bg,color,Footer background,True
+footer.liquid,Footer,Section,footer_text,color,Footer text,True
+footer.liquid,Footer,Section,footer_accent,color,Footer accent / button,True
+footer.liquid,Footer,Section,footer_heading,color,Brand and heading colour,True
+footer.liquid,Footer,Section,footer_gradient_enabled,checkbox,Use gradient background,True
+footer.liquid,Footer,Section,footer_gradient_end,color,Gradient end colour,True
+header.liquid,Header,Section,logo,image_picker,Desktop logo,False
+header.liquid,Header,Section,mobile_logo,image_picker,Mobile logo (optional),False
+header.liquid,Header,Section,logo_text,text,Text logo fallback,False
+header.liquid,Header,Section,logo_width,range,Desktop logo width,False
+header.liquid,Header,Section,mobile_logo_width,range,Mobile logo width,False
+header.liquid,Header,Section,use_builtin_menu,checkbox,Use included Gujju Jewels menu,False
+header.liquid,Header,Section,menu,link_list,Menu,False
+header.liquid,Header,Section,show_sale_badge,checkbox,Show sale badge above a menu item,False
+header.liquid,Header,Section,sale_menu_title,text,Menu item for sale badge,False
+header.liquid,Header,Section,sale_badge_text,text,Sale badge text,False
+header.liquid,Header,Section,show_account,checkbox,Show account icon on desktop,False
+header.liquid,Header,Section,desktop_bg_color,color,Desktop background,False
+header.liquid,Header,Section,desktop_text_color,color,Desktop icon and menu colour,False
+header.liquid,Header,Section,brand_color,color,Text logo and accent colour,False
+header.liquid,Header,Section,mobile_bg_color,color,Mobile background,False
+header.liquid,Header,Section,mobile_text_color,color,Mobile icon and text colour,False
+header.liquid,Header,Section,border_color,color,Desktop divider colour,False
+hero.liquid,Hero Banner,Section,desktop_image,image_picker,Desktop Image (recommended: 1920×900px),True
+hero.liquid,Hero Banner,Section,mobile_image,image_picker,Mobile Image (recommended: 750×900px),True
+hero.liquid,Hero Banner,Section,overlay_opacity,range,Image overlay opacity,True
+hero.liquid,Hero Banner,Section,heading,text,Heading,True
+hero.liquid,Hero Banner,Section,heading_size,select,Heading Size,True
+hero.liquid,Hero Banner,Section,subtext,text,Subtext,True
+hero.liquid,Hero Banner,Section,btn_primary_label,text,Primary Button Label,True
+hero.liquid,Hero Banner,Section,btn_primary_link,url,Primary Button Link,True
+hero.liquid,Hero Banner,Section,btn_secondary_label,text,Secondary Button Label,True
+hero.liquid,Hero Banner,Section,btn_secondary_link,url,Secondary Button Link,True
+hero.liquid,Hero Banner,Section,content_position,select,Content position,True
+hero.liquid,Hero Banner,Section,min_height,range,Minimum hero height,True
+hero.liquid,Hero Banner,Section,overlay_color,color,Overlay colour,True
+hero.liquid,Hero Banner,Section,panel_color,color,Text panel colour,True
+hero.liquid,Hero Banner,Section,panel_opacity,range,Text panel opacity,True
+hero.liquid,Hero Banner,Section,heading_color,color,Heading colour,True
+hero.liquid,Hero Banner,Section,subtext_color,color,Subtext colour,True
+hero.liquid,Hero Banner,Section,primary_button_bg,color,Primary button background,True
+hero.liquid,Hero Banner,Section,primary_button_text,color,Primary button text,True
+hero.liquid,Hero Banner,Section,content_width,range,Text panel width,True
+main-collection.liquid,Main Collection,Section,show_description,checkbox,Show collection description,False
+main-collection.liquid,Main Collection,Section,show_product_count,checkbox,Show product count above title,False
+main-collection.liquid,Main Collection,Section,enable_filtering,checkbox,Enable Shopify collection filters,False
+main-collection.liquid,Main Collection,Section,show_filter_counts,checkbox,Show product counts in filters,False
+main-collection.liquid,Main Collection,Section,enable_sorting,checkbox,Enable sorting,False
+main-collection.liquid,Main Collection,Section,columns_desktop,select,Product columns on desktop,False
+main-collection.liquid,Main Collection,Section,products_per_page,range,Products per page,False
+main-product.liquid,Main Product,Section,enable_mobile_details,checkbox,"Show offers, details and benefits below Add to Cart",False
+main-product.liquid,Main Product,Section,mobile_offers_heading,text,Offers heading,False
+main-product.liquid,Main Product,Section,mobile_offer_1,text,Offer 1 (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_offer_2,text,Offer 2 (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_offer_3,text,Offer 3 (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_offer_4,text,Offer 4 (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_description_heading,text,Description heading,False
+main-product.liquid,Main Product,Section,mobile_description_open,checkbox,Open description initially,False
+main-product.liquid,Main Product,Section,mobile_shipping_heading,text,Shipping and returns heading,False
+main-product.liquid,Main Product,Section,mobile_shipping_text,richtext,Shipping and returns information,False
+main-product.liquid,Main Product,Section,mobile_benefit_1_title,text,Returns benefit title (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_benefit_1_text,text,Returns benefit detail,False
+main-product.liquid,Main Product,Section,mobile_benefit_2_title,text,Shipping benefit title (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_benefit_2_text,text,Shipping benefit detail,False
+main-product.liquid,Main Product,Section,mobile_benefit_3_title,text,COD benefit title (clear to hide),False
+main-product.liquid,Main Product,Section,mobile_benefit_3_text,text,COD benefit detail,False
+main-product.liquid,Main Product,Section,mobile_sticky_cart,checkbox,Show sticky mobile Add to Cart after the main button scrolls away,False
+mobile-product-faq.liquid,Product FAQs,Section,enabled,checkbox,Show product FAQs,True
+mobile-product-faq.liquid,Product FAQs,Section,heading,text,Heading,True
+mobile-product-faq.liquid,Product FAQs,question,question,text,Question,True
+mobile-product-faq.liquid,Product FAQs,question,answer,richtext,Answer,True
+mobile-product-recommendations.liquid,Related products,Section,enabled,checkbox,Show related products,True
+mobile-product-recommendations.liquid,Related products,Section,heading,text,Heading,True
+mobile-product-recommendations.liquid,Related products,Section,subheading,text,Subheading,True
+mobile-product-recommendations.liquid,Related products,Section,product_limit,range,Products to show,True
+mobile-product-recommendations.liquid,Related products,Section,fallback_collection,collection,Fallback collection,True
+new-arrivals.liquid,New Arrivals,Section,heading,text,Section Heading,True
+new-arrivals.liquid,New Arrivals,Section,subheading,text,Subheading,True
+new-arrivals.liquid,New Arrivals,Section,collection,collection,Collection,True
+new-arrivals.liquid,New Arrivals,Section,fallback_to_all_products,checkbox,Show all products if this collection is empty or missing,True
+new-arrivals.liquid,New Arrivals,Section,products_to_show,range,Products to show,True
+new-arrivals.liquid,New Arrivals,Section,columns_desktop,select,Columns on desktop,True
+new-arrivals.liquid,New Arrivals,Section,show_view_all,checkbox,Show 'View All' button,True
+new-arrivals.liquid,New Arrivals,Section,section_id,text,Section anchor ID (for links),True
+new-arrivals.liquid,New Arrivals,Section,section_background,color,Section background,True
+new-arrivals.liquid,New Arrivals,Section,section_text,color,Heading / text colour,True
+new-arrivals.liquid,New Arrivals,Section,section_accent,color,Accent / eyebrow colour,True
+new-arrivals.liquid,New Arrivals,Section,padding_top,range,Top spacing,True
+new-arrivals.liquid,New Arrivals,Section,padding_bottom,range,Bottom spacing,True
+reviews.liquid,Reviews / Testimonials,Section,heading,text,Heading,True
+reviews.liquid,Reviews / Testimonials,Section,subheading,text,Subheading,True
+reviews.liquid,Reviews / Testimonials,Section,section_background,color,Section background,True
+reviews.liquid,Reviews / Testimonials,Section,section_text,color,Heading / text colour,True
+reviews.liquid,Reviews / Testimonials,Section,section_accent,color,Accent / eyebrow colour,True
+reviews.liquid,Reviews / Testimonials,Section,padding_top,range,Top spacing,True
+reviews.liquid,Reviews / Testimonials,Section,padding_bottom,range,Bottom spacing,True
+reviews.liquid,Reviews / Testimonials,review,rating,range,Rating (stars),True
+reviews.liquid,Reviews / Testimonials,review,text,textarea,Review Text,True
+reviews.liquid,Reviews / Testimonials,review,author,text,Customer Name,True
+reviews.liquid,Reviews / Testimonials,review,location,text,Location (optional),True
+reviews.liquid,Reviews / Testimonials,review,product,text,Product name (optional),True
+shop-by-price.liquid,Shop by Price,Section,eyebrow,text,Eyebrow,True
+shop-by-price.liquid,Shop by Price,Section,heading,text,Heading,True
+shop-by-price.liquid,Shop by Price,Section,subheading,textarea,Subheading,True
+shop-by-price.liquid,Shop by Price,Section,columns_desktop,range,Columns on desktop,True
+shop-by-price.liquid,Shop by Price,Section,background_color,color,Section background,True
+shop-by-price.liquid,Shop by Price,Section,text_color,color,Heading and text colour,True
+shop-by-price.liquid,Shop by Price,Section,accent_color,color,Accent colour,True
+shop-by-price.liquid,Shop by Price,Section,padding_top,range,Top spacing,True
+shop-by-price.liquid,Shop by Price,Section,padding_bottom,range,Bottom spacing,True
+shop-by-price.liquid,Shop by Price,price_card,kicker,text,Small label,True
+shop-by-price.liquid,Shop by Price,price_card,label,text,Price label,True
+shop-by-price.liquid,Shop by Price,price_card,description,text,Description,True
+shop-by-price.liquid,Shop by Price,price_card,collection,collection,Collection,True
+shop-by-price.liquid,Shop by Price,price_card,link,url,Custom link (optional),True
+shop-by-price.liquid,Shop by Price,price_card,background_color,color,Card background,True
+shop-by-price.liquid,Shop by Price,price_card,text_color,color,Card text,True
+social-gallery.liquid,Social Styling Gallery,Section,eyebrow,text,Eyebrow,True
+social-gallery.liquid,Social Styling Gallery,Section,heading,text,Heading,True
+social-gallery.liquid,Social Styling Gallery,Section,subheading,textarea,Subheading,True
+social-gallery.liquid,Social Styling Gallery,Section,columns_desktop,range,Columns on desktop,True
+social-gallery.liquid,Social Styling Gallery,Section,button_label,text,Button label,True
+social-gallery.liquid,Social Styling Gallery,Section,button_link,url,Instagram profile link,True
+social-gallery.liquid,Social Styling Gallery,Section,open_new_tab,checkbox,Open Instagram in a new tab,True
+social-gallery.liquid,Social Styling Gallery,Section,background_color,color,Section background,True
+social-gallery.liquid,Social Styling Gallery,Section,text_color,color,Text colour,True
+social-gallery.liquid,Social Styling Gallery,Section,accent_color,color,Accent colour,True
+social-gallery.liquid,Social Styling Gallery,Section,padding_top,range,Top spacing,True
+social-gallery.liquid,Social Styling Gallery,Section,padding_bottom,range,Bottom spacing,True
+social-gallery.liquid,Social Styling Gallery,post,image,image_picker,Image (recommended: square),True
+social-gallery.liquid,Social Styling Gallery,post,caption,text,Caption,True
+social-gallery.liquid,Social Styling Gallery,post,link,url,Instagram or product link,True
+config/settings_schema.json,Brand & colours,Global,favicon,image_picker,Favicon,True
+config/settings_schema.json,Brand & colours,Global,color_primary,color,Primary colour,True
+config/settings_schema.json,Brand & colours,Global,color_ivory,color,Ivory background,True
+config/settings_schema.json,Brand & colours,Global,color_beige,color,Beige background,True
+config/settings_schema.json,Brand & colours,Global,color_surface,color,Surface colour,True
+config/settings_schema.json,Brand & colours,Global,color_text,color,Text colour,True
+config/settings_schema.json,Brand & colours,Global,color_muted,color,Muted text colour,True
+config/settings_schema.json,Brand & colours,Global,color_border,color,Border colour,True
+config/settings_schema.json,Brand & colours,Global,color_button_text,color,Button text colour,True
+config/settings_schema.json,Brand & colours,Global,color_sale,color,Sale colour,True
+config/settings_schema.json,Brand & colours,Global,color_footer_bg,color,Footer background,True
+config/settings_schema.json,Brand & colours,Global,color_footer_text,color,Footer text,True
+config/settings_schema.json,Layout & typography,Global,page_width,range,Page width,True
+config/settings_schema.json,Layout & typography,Global,section_spacing_desktop,range,Desktop section spacing,True
+config/settings_schema.json,Layout & typography,Global,section_spacing_mobile,range,Mobile section spacing,True
+config/settings_schema.json,Layout & typography,Global,body_font_size,range,Body font size,True
+config/settings_schema.json,Layout & typography,Global,section_heading_size,range,Section heading size,True
+config/settings_schema.json,Layout & typography,Global,product_title_font_size,range,Product title size,True
+config/settings_schema.json,Layout & typography,Global,product_price_font_size,range,Product price size,True
+config/settings_schema.json,Layout & typography,Global,button_font_size,range,Button font size,True
+config/settings_schema.json,Layout & typography,Global,section_heading_alignment,select,Section heading alignment,True
+config/settings_schema.json,Layout & typography,Global,button_text_transform,select,Button text style,True
+config/settings_schema.json,Cards & buttons,Global,card_radius,range,Card radius,True
+config/settings_schema.json,Cards & buttons,Global,image_radius,range,Image radius,True
+config/settings_schema.json,Cards & buttons,Global,button_radius,range,Button radius,True
+config/settings_schema.json,Cards & buttons,Global,card_shadow_opacity,range,Card shadow opacity,True

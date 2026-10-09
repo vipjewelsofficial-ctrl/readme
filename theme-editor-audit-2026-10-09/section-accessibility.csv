@@ -1,0 +1,28 @@
+section_file,editor_name,section_controls,block_types,accessibility_summary
+sections/announcement-bar.liquid,Announcement Bar,5,,"Text, destination, marquee switch and colours are exposed."
+sections/benefits.liquid,Benefits / Why Choose Us,7,benefit,"Heading, palette, spacing and benefit blocks with icon/title/description are exposed."
+sections/category-directory.liquid,Shop Categories,16,category_group,"Category/subcategory blocks, images, collections, links, text, desktop columns, counts and palette are exposed; category button hidden and circle shape fixed."
+sections/collection-banner.liquid,Collection Banner,7,,Image/text/link/position exposed; opacity overridden; separate mobile image absent.
+sections/collection-card-grid.liquid,Collection Card Grid,16,collection_card,Collection-card blocks with image/title/link/badge/description and section controls are exposed.
+sections/custom-footer.liquid,Footer,11,,"Older alternative Footer, not the footer used by the layout; do not confuse with active Footer."
+sections/custom-liquid.liquid,Custom Liquid,1,,"Liquid text input is exposed; advanced code entry, not merchant controls for existing components."
+sections/faq.liquid,FAQ,7,faq_item,"Questions/answers, heading, palette and spacing exposed; native accordion defaults fixed."
+sections/featured-products.liquid,Featured Products,13,,"Collection, 2–16 products, 2–5 desktop columns, headings, View All visibility, palette, spacing and anchor exposed."
+sections/footer.liquid,Footer,18,,"Wordmark, description, colours/gradient, socials, newsletter copy and payment-icon visibility exposed; Menu 2/3 unused, base links fixed."
+sections/header.liquid,Header,17,,"Native menu available with built-in mode disabled; uploaded logos/account/badge controls exposed; text fallback unused, backgrounds/divider overridden."
+sections/hero.liquid,Hero Banner,20,,"Desktop/mobile image, headings, CTA labels/links, colour and position controls exist; no slideshow or image-only mode; height/mobile panel controls overridden."
+sections/main-404.liquid,Main 404,0,,No section settings; error-page text and layout literal.
+sections/main-article.liquid,Article,0,,No section settings; article content comes from Shopify.
+sections/main-blog.liquid,Blog,0,,No section settings; Shopify supplies blog/article content; listing layout fixed.
+sections/main-cart.liquid,Main Cart,0,,No section settings; Shopify supplies cart contents; existing arrow/autosave behaviour is code-driven.
+sections/main-collection.liquid,Main Collection,7,,"Description/count/filter/sort switches, 3–4 desktop columns and 12–36 products per page (steps of 4) exposed."
+sections/main-contact.liquid,Contact page,0,,"No section settings; page title/content from Shopify, form fields fixed."
+sections/main-page.liquid,Main Page,0,,No section settings; page title/content from Shopify Pages.
+sections/main-product.liquid,Main Product,17,,"17 settings including details visibility, four offer texts, three benefit title/text pairs and sticky-cart visibility; main component order fixed."
+sections/main-search.liquid,Main Search,0,,"No section settings; search text, result type/count and layout fixed."
+sections/mobile-product-faq.liquid,Product FAQs,2,question,"Enable, heading and question/answer blocks exposed; also appears on larger screens despite its internal filename."
+sections/mobile-product-recommendations.liquid,Related products,5,,"Enable, heading/subheading, 1–10 related products and fallback collection exposed; responsive layout fixed."
+sections/new-arrivals.liquid,New Arrivals,13,,"Collection, 2–16 products, 2–5 desktop columns, headings, View All visibility, palette, spacing and anchor exposed."
+sections/reviews.liquid,Reviews / Testimonials,7,review,Manual testimonial blocks with rating/text/customer/location/product and palette/spacing exposed; not customer-submitted product reviews.
+sections/shop-by-price.liquid,Shop by Price,9,price_card,Price-card blocks with labels/description/collection/link/colours exposed; labels do not generate real price-filter rules.
+sections/social-gallery.liquid,Social Styling Gallery,12,post,Manual post blocks and section controls exposed; empty blocks trigger six demo images; not a live Instagram feed.

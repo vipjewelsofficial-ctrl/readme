@@ -1,0 +1,119 @@
+{
+  "local_fixture_only": true,
+  "theme_modified": false,
+  "results": [
+    {
+      "test": "footer_menu_2_3_not_rendered",
+      "confirmed": true
+    },
+    {
+      "test": "header_text_logo_setting_not_rendered",
+      "confirmed": true
+    },
+    {
+      "test": "native_menu_accessible_by_disabling_builtin",
+      "confirmed": true
+    },
+    {
+      "test": "explicit_false_quick_add_and_lazy_parameters_overwritten_by_default",
+      "confirmed": true
+    },
+    {
+      "test": "mobile_hero_image_requires_desktop_image",
+      "confirmed": true
+    },
+    {
+      "test": "empty_hero_retains_panel_markup",
+      "confirmed": true
+    },
+    {
+      "test": "dynamic_product_offer_and_benefit_controls_work",
+      "confirmed": true
+    },
+    {
+      "test": "hero_min_height_control_overridden",
+      "width": 390,
+      "setting_300": {
+        "min-height": "680px"
+      },
+      "setting_800": {
+        "min-height": "680px"
+      }
+    },
+    {
+      "test": "hero_panel_opacity",
+      "width": 390,
+      "setting_0": {
+        "background-color": "rgba(255, 253, 249, 0.92)"
+      },
+      "setting_100": {
+        "background-color": "rgba(255, 253, 249, 0.92)"
+      },
+      "overridden": true
+    },
+    {
+      "test": "header_colour_controls_overridden",
+      "width": 390,
+      "computed": {
+        "background-color": "rgb(255, 253, 249)",
+        "border-bottom-color": "rgb(232, 226, 220)"
+      }
+    },
+    {
+      "test": "hero_min_height_control_overridden",
+      "width": 1440,
+      "setting_300": {
+        "min-height": "648px"
+      },
+      "setting_800": {
+        "min-height": "648px"
+      }
+    },
+    {
+      "test": "hero_panel_opacity",
+      "width": 1440,
+      "setting_0": {
+        "background-color": "color(srgb 0 0 0 / 0)"
+      },
+      "setting_100": {
+        "background-color": "color(srgb 1 0.992157 0.976471)"
+      },
+      "overridden": false
+    },
+    {
+      "test": "header_colour_controls_overridden",
+      "width": 1440,
+      "computed": {
+        "background-color": "rgb(255, 253, 249)",
+        "border-bottom-color": "rgb(232, 226, 220)"
+      }
+    },
+    {
+      "test": "category_button_label_hidden_by_css",
+      "confirmed": true
+    },
+    {
+      "test": "collection_banner_overlay_control_ineffective",
+      "confirmed": true,
+      "computed": {
+        "background-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "test": "empty_social_gallery_shows_six_demo_images",
+      "confirmed": true
+    },
+    {
+      "test": "font_picker_absent",
+      "confirmed": true
+    },
+    {
+      "test": "featured_products_collection_and_count_work",
+      "confirmed": true
+    },
+    {
+      "test": "new_arrivals_collection_and_count_work",
+      "confirmed": true
+    }
+  ]
+}

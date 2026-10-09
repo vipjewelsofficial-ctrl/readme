@@ -1,0 +1,2060 @@
+{
+  "announcement-bar": {
+    "name": "Announcement Bar",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement Text",
+        "default": "New arrivals are here \u2014 discover the latest Gujju Jewels styles"
+      },
+      {
+        "type": "url",
+        "id": "announcement_link",
+        "label": "Link (optional)"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_marquee",
+        "label": "Scrolling marquee",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "benefits": {
+    "name": "Benefits / Why Choose Us",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Why Choose Us"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Our promise to you"
+      },
+      {
+        "type": "color",
+        "id": "section_background",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "section_text",
+        "label": "Heading / text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "section_accent",
+        "label": "Accent / eyebrow colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "benefit",
+        "name": "Benefit",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "shield",
+                "label": "Shield (Anti-Tarnish)"
+              },
+              {
+                "value": "star",
+                "label": "Star (Quality)"
+              },
+              {
+                "value": "truck",
+                "label": "Truck (Shipping)"
+              },
+              {
+                "value": "return",
+                "label": "Return (Easy Returns)"
+              },
+              {
+                "value": "lock",
+                "label": "Lock (Secure)"
+              },
+              {
+                "value": "heart",
+                "label": "Heart"
+              }
+            ],
+            "default": "shield"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Artisanal Oxidised Finish"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Description",
+            "default": "Distinctive silver-tone pieces with the depth and character of a handcrafted finish."
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "category-directory": {
+    "name": "Shop Categories",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow",
+        "default": "Find your jewellery"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Shop by Category"
+      },
+      {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Explore jewellery by type."
+      },
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "default": 6,
+        "label": "Columns on desktop"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_collection_images",
+        "label": "Use collection images when no custom image is selected",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_descriptions",
+        "label": "Show category descriptions",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_subcategories",
+        "label": "Show subcategory links",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_counts",
+        "label": "Show collection product counts",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Bottom button label",
+        "default": "Shop All Jewellery"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Bottom button link"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "card_background",
+        "label": "Card background",
+        "default": "#F7F2EC"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category_group",
+        "name": "Category group",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Main category"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Custom category image"
+          },
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Main collection"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Fallback custom link"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Custom title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "badge",
+            "label": "Badge"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Shop category"
+          },
+          {
+            "type": "header",
+            "content": "Subcategory 1"
+          },
+          {
+            "type": "collection",
+            "id": "subcategory_1",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "subcategory_1_label",
+            "label": "Custom label"
+          },
+          {
+            "type": "header",
+            "content": "Subcategory 2"
+          },
+          {
+            "type": "collection",
+            "id": "subcategory_2",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "subcategory_2_label",
+            "label": "Custom label"
+          },
+          {
+            "type": "header",
+            "content": "Subcategory 3"
+          },
+          {
+            "type": "collection",
+            "id": "subcategory_3",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "subcategory_3_label",
+            "label": "Custom label"
+          },
+          {
+            "type": "header",
+            "content": "Subcategory 4"
+          },
+          {
+            "type": "collection",
+            "id": "subcategory_4",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "subcategory_4_label",
+            "label": "Custom label"
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "collection-banner": {
+    "name": "Collection Banner",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Banner Image (recommended: 1600\u00d7700px)"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "min": 10,
+        "max": 80,
+        "step": 5,
+        "default": 40,
+        "label": "Image overlay opacity",
+        "unit": "%"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "The Heritage Edit"
+      },
+      {
+        "type": "textarea",
+        "id": "subtext",
+        "label": "Supporting text",
+        "default": "Bold jhumkas, sculptural necklaces and timeless details with an artisanal oxidised finish."
+      },
+      {
+        "type": "text",
+        "id": "btn_label",
+        "label": "Button Label",
+        "default": "Explore Collection"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "Text position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "collection-card-grid": {
+    "name": "Collection Card Grid",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow",
+        "default": "Shop by occasion"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Shop by Occasion"
+      },
+      {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Find jewellery for weddings, celebrations, everyday styling and parties."
+      },
+      {
+        "type": "select",
+        "id": "card_style",
+        "label": "Card image shape",
+        "options": [
+          {
+            "value": "circle",
+            "label": "Circle"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait"
+          },
+          {
+            "value": "landscape",
+            "label": "Landscape"
+          }
+        ],
+        "default": "circle"
+      },
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "default": 6,
+        "label": "Columns on desktop"
+      },
+      {
+        "type": "select",
+        "id": "columns_mobile",
+        "label": "Columns on mobile",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 column"
+          },
+          {
+            "value": "2",
+            "label": "2 columns"
+          }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_collection_images",
+        "label": "Use collection images when no custom image is selected",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_descriptions",
+        "label": "Show card descriptions",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Bottom button label",
+        "default": "View All Jewellery"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Bottom button link"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "card_background",
+        "label": "Card background",
+        "default": "#F7F2EC"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection_card",
+        "name": "Collection card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Custom image"
+          },
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Custom link (optional)"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Oxidised Jewellery"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default": "Style it your way"
+          },
+          {
+            "type": "text",
+            "id": "badge",
+            "label": "Badge (optional)"
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "custom-footer": {
+    "name": "Footer",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "footer_description",
+        "label": "Brand Description",
+        "default": "Gujju Jewels brings heritage-inspired oxidised jewellery to modern wardrobes\u2014distinctive, versatile and made to be styled your way."
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_1",
+        "label": "Footer Menu 1",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Footer Menu 2 (Customer Support)"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_3",
+        "label": "Footer Menu 3 (About)"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_heading",
+        "label": "Newsletter Heading",
+        "default": "Stay In The Loop"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_description",
+        "label": "Newsletter description",
+        "default": "New drops, exclusive offers & style tips delivered to your inbox."
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_whatsapp",
+        "label": "WhatsApp Number (with country code, e.g. +919876543210)"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "default": true,
+        "label": "Show payment icons"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "custom-liquid": {
+    "name": "Custom Liquid",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "liquid",
+        "id": "custom_liquid",
+        "label": "Custom Liquid",
+        "info": "Add app snippets or custom Liquid markup."
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "faq": {
+    "name": "FAQ",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Frequently Asked Questions"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Everything you need to know"
+      },
+      {
+        "type": "color",
+        "id": "section_background",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "section_text",
+        "label": "Heading / text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "section_accent",
+        "label": "Accent / eyebrow colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq_item",
+        "name": "FAQ Item",
+        "limit": 15,
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Is this jewellery made from pure silver?"
+          },
+          {
+            "type": "textarea",
+            "id": "answer",
+            "label": "Answer",
+            "default": "Unless a product page specifically states 925 sterling silver, our pieces are silver-tone oxidised fashion jewellery."
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "featured-products": {
+    "name": "Featured Products",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Best Sellers"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Our most loved pieces"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "fallback_to_all_products",
+        "label": "Show all products if this collection is empty or missing",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 2,
+        "max": 16,
+        "step": 1,
+        "default": 8,
+        "label": "Products to show"
+      },
+      {
+        "type": "select",
+        "id": "columns_desktop",
+        "label": "Columns on desktop",
+        "options": [
+          {
+            "value": "2",
+            "label": "2 columns"
+          },
+          {
+            "value": "3",
+            "label": "3 columns"
+          },
+          {
+            "value": "4",
+            "label": "4 columns"
+          },
+          {
+            "value": "5",
+            "label": "5 columns"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "default": true,
+        "label": "Show 'View All' button"
+      },
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section anchor ID (for links)",
+        "default": "featured-products"
+      },
+      {
+        "type": "color",
+        "id": "section_background",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "section_text",
+        "label": "Heading / text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "section_accent",
+        "label": "Accent / eyebrow colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "footer": {
+    "name": "Footer",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_brand_text",
+        "label": "Footer brand name",
+        "default": "VIP JEWELS"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_description",
+        "label": "Brand Description",
+        "default": "VIP JEWELS brings heritage-inspired oxidised jewellery to modern wardrobes\u2014distinctive, versatile and made to be styled your way."
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_1",
+        "label": "Footer Menu 1",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Footer Menu 2 (Customer Support)"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_3",
+        "label": "Footer Menu 3 (About)"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_heading",
+        "label": "Newsletter Heading",
+        "default": "Stay In The Loop"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_description",
+        "label": "Newsletter description",
+        "default": "New drops, exclusive offers & style tips delivered to your inbox."
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_whatsapp",
+        "label": "WhatsApp Number (with country code, e.g. +919876543210)"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "default": true,
+        "label": "Show payment icons"
+      },
+      {
+        "type": "color",
+        "id": "footer_bg",
+        "label": "Footer background",
+        "default": "#5C1828"
+      },
+      {
+        "type": "color",
+        "id": "footer_text",
+        "label": "Footer text",
+        "default": "#FFF9EE"
+      },
+      {
+        "type": "color",
+        "id": "footer_accent",
+        "label": "Footer accent / button",
+        "default": "#ECD39A"
+      },
+      {
+        "type": "color",
+        "id": "footer_heading",
+        "label": "Brand and heading colour",
+        "default": "#ECD39A"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_gradient_enabled",
+        "label": "Use gradient background",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "footer_gradient_end",
+        "label": "Gradient end colour",
+        "default": "#35101B"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "header": {
+    "name": "Header",
+    "has_preset": false,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Desktop logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_logo",
+        "label": "Mobile logo (optional)"
+      },
+      {
+        "type": "text",
+        "id": "logo_text",
+        "label": "Text logo fallback",
+        "default": "Gujju Jewels"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 100,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Desktop logo width",
+        "default": 190
+      },
+      {
+        "type": "range",
+        "id": "mobile_logo_width",
+        "min": 100,
+        "max": 220,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile logo width",
+        "default": 170
+      },
+      {
+        "type": "checkbox",
+        "id": "use_builtin_menu",
+        "label": "Use included Gujju Jewels menu",
+        "default": true
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sale_badge",
+        "label": "Show sale badge above a menu item",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "sale_menu_title",
+        "label": "Menu item for sale badge",
+        "default": "Hot Deals"
+      },
+      {
+        "type": "text",
+        "id": "sale_badge_text",
+        "label": "Sale badge text",
+        "default": "SALE"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_account",
+        "label": "Show account icon on desktop",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "desktop_bg_color",
+        "label": "Desktop background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "desktop_text_color",
+        "label": "Desktop icon and menu colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "brand_color",
+        "label": "Text logo and accent colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "color",
+        "id": "mobile_bg_color",
+        "label": "Mobile background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "mobile_text_color",
+        "label": "Mobile icon and text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Desktop divider colour",
+        "default": "#E8E2DC"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "hero": {
+    "name": "Hero Banner",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image (recommended: 1920\u00d7900px)"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image (recommended: 750\u00d7900px)"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "min": 0,
+        "max": 70,
+        "step": 5,
+        "default": 30,
+        "label": "Image overlay opacity",
+        "unit": "%"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Statement Silver, Crafted with Soul"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "label": "Heading Size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
+      },
+      {
+        "type": "text",
+        "id": "subtext",
+        "label": "Subtext",
+        "default": "Oxidised jewellery inspired by Indian craft, made for modern wardrobes."
+      },
+      {
+        "type": "text",
+        "id": "btn_primary_label",
+        "label": "Primary Button Label",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "id": "btn_primary_link",
+        "label": "Primary Button Link"
+      },
+      {
+        "type": "text",
+        "id": "btn_secondary_label",
+        "label": "Secondary Button Label",
+        "default": "New Arrivals"
+      },
+      {
+        "type": "url",
+        "id": "btn_secondary_link",
+        "label": "Secondary Button Link"
+      },
+      {
+        "type": "select",
+        "id": "content_position",
+        "label": "Content position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centre"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "min_height",
+        "min": 300,
+        "max": 800,
+        "step": 50,
+        "default": 600,
+        "label": "Minimum hero height",
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay colour",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "panel_color",
+        "label": "Text panel colour",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "range",
+        "id": "panel_opacity",
+        "label": "Text panel opacity",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "default": 90,
+        "unit": "%"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "subtext_color",
+        "label": "Subtext colour",
+        "default": "#4F494B"
+      },
+      {
+        "type": "color",
+        "id": "primary_button_bg",
+        "label": "Primary button background",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "color",
+        "id": "primary_button_text",
+        "label": "Primary button text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "range",
+        "id": "content_width",
+        "label": "Text panel width",
+        "min": 360,
+        "max": 760,
+        "step": 20,
+        "default": 620,
+        "unit": "px"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-404": {
+    "name": "Main 404",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-article": {
+    "name": "Article",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-blog": {
+    "name": "Blog",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-cart": {
+    "name": "Main Cart",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-collection": {
+    "name": "Main Collection",
+    "has_preset": false,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_description",
+        "label": "Show collection description",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_count",
+        "label": "Show product count above title",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_filtering",
+        "label": "Enable Shopify collection filters",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_filter_counts",
+        "label": "Show product counts in filters",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sorting",
+        "label": "Enable sorting",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "columns_desktop",
+        "label": "Product columns on desktop",
+        "options": [
+          {
+            "value": "3",
+            "label": "3 columns"
+          },
+          {
+            "value": "4",
+            "label": "4 columns"
+          }
+        ],
+        "default": "3"
+      },
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 12,
+        "max": 36,
+        "step": 4,
+        "default": 24,
+        "label": "Products per page"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-contact": {
+    "name": "Contact page",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-page": {
+    "name": "Main Page",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "main-product": {
+    "name": "Main Product",
+    "has_preset": false,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_mobile_details",
+        "label": "Show offers, details and benefits below Add to Cart",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "mobile_offers_heading",
+        "label": "Offers heading",
+        "default": "Offers for you"
+      },
+      {
+        "type": "text",
+        "id": "mobile_offer_1",
+        "label": "Offer 1 (clear to hide)",
+        "default": "Free shipping above \u20b9599"
+      },
+      {
+        "type": "text",
+        "id": "mobile_offer_2",
+        "label": "Offer 2 (clear to hide)",
+        "default": "Free gift on orders above \u20b9699"
+      },
+      {
+        "type": "text",
+        "id": "mobile_offer_3",
+        "label": "Offer 3 (clear to hide)",
+        "default": "Free organiser on orders above \u20b91,199"
+      },
+      {
+        "type": "text",
+        "id": "mobile_offer_4",
+        "label": "Offer 4 (clear to hide)",
+        "default": "Get \u20b9100 off on orders above \u20b91,499"
+      },
+      {
+        "type": "text",
+        "id": "mobile_description_heading",
+        "label": "Description heading",
+        "default": "Description"
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_description_open",
+        "label": "Open description initially",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "mobile_shipping_heading",
+        "label": "Shipping and returns heading",
+        "default": "Shipping & Returns"
+      },
+      {
+        "type": "richtext",
+        "id": "mobile_shipping_text",
+        "label": "Shipping and returns information",
+        "default": "<p>Shipping options and delivery estimates are shown at checkout. For return and exchange details, please refer to our store policies or contact us.</p>"
+      },
+      {
+        "type": "text",
+        "id": "mobile_benefit_1_title",
+        "label": "Returns benefit title (clear to hide)",
+        "default": "Easy returns"
+      },
+      {
+        "type": "text",
+        "id": "mobile_benefit_1_text",
+        "label": "Returns benefit detail",
+        "default": "As per our policy"
+      },
+      {
+        "type": "text",
+        "id": "mobile_benefit_2_title",
+        "label": "Shipping benefit title (clear to hide)",
+        "default": "Free shipping"
+      },
+      {
+        "type": "text",
+        "id": "mobile_benefit_2_text",
+        "label": "Shipping benefit detail",
+        "default": "On orders above \u20b9599"
+      },
+      {
+        "type": "text",
+        "id": "mobile_benefit_3_title",
+        "label": "COD benefit title (clear to hide)",
+        "default": "COD available"
+      },
+      {
+        "type": "text",
+        "id": "mobile_benefit_3_text",
+        "label": "COD benefit detail",
+        "default": "Check at checkout"
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_sticky_cart",
+        "label": "Show sticky mobile Add to Cart after the main button scrolls away",
+        "default": true
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [
+      "mobile_offer_1",
+      "mobile_offer_2",
+      "mobile_offer_3",
+      "mobile_offer_4",
+      "mobile_benefit_1_title",
+      "mobile_benefit_1_text",
+      "mobile_benefit_2_title",
+      "mobile_benefit_2_text",
+      "mobile_benefit_3_title",
+      "mobile_benefit_3_text"
+    ],
+    "undeclared_direct_references": []
+  },
+  "main-search": {
+    "name": "Main Search",
+    "has_preset": false,
+    "settings": [],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "mobile-product-faq": {
+    "name": "Product FAQs",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enabled",
+        "label": "Show product FAQs",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "FAQs"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "mobile-product-recommendations": {
+    "name": "Related products",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enabled",
+        "label": "Show related products",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "You may also like"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Discover more Gujju Jewels pieces for your next look."
+      },
+      {
+        "type": "range",
+        "id": "product_limit",
+        "label": "Products to show",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "collection",
+        "id": "fallback_collection",
+        "label": "Fallback collection"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "new-arrivals": {
+    "name": "New Arrivals",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "New Arrivals"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Just in at Gujju Jewels"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "fallback_to_all_products",
+        "label": "Show all products if this collection is empty or missing",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 2,
+        "max": 16,
+        "step": 1,
+        "default": 8,
+        "label": "Products to show"
+      },
+      {
+        "type": "select",
+        "id": "columns_desktop",
+        "label": "Columns on desktop",
+        "options": [
+          {
+            "value": "2",
+            "label": "2 columns"
+          },
+          {
+            "value": "3",
+            "label": "3 columns"
+          },
+          {
+            "value": "4",
+            "label": "4 columns"
+          },
+          {
+            "value": "5",
+            "label": "5 columns"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "default": true,
+        "label": "Show 'View All' button"
+      },
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section anchor ID (for links)",
+        "default": "new-arrivals"
+      },
+      {
+        "type": "color",
+        "id": "section_background",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "section_text",
+        "label": "Heading / text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "section_accent",
+        "label": "Accent / eyebrow colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "reviews": {
+    "name": "Reviews / Testimonials",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "What Our Customers Say"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Loved, styled and shared by our community"
+      },
+      {
+        "type": "color",
+        "id": "section_background",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "section_text",
+        "label": "Heading / text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "section_accent",
+        "label": "Accent / eyebrow colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "limit": 9,
+        "settings": [
+          {
+            "type": "range",
+            "id": "rating",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 5,
+            "label": "Rating (stars)"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Review Text",
+            "default": "Add a genuine customer review here."
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Customer Name",
+            "default": "Customer name"
+          },
+          {
+            "type": "text",
+            "id": "location",
+            "label": "Location (optional)",
+            "default": "Customer location"
+          },
+          {
+            "type": "text",
+            "id": "product",
+            "label": "Product name (optional)",
+            "default": "Purchased product"
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "shop-by-price": {
+    "name": "Shop by Price",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow",
+        "default": "Jewellery for every budget"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Shop by Price"
+      },
+      {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Find everyday favourites, statement pieces and premium picks."
+      },
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 2,
+        "max": 4,
+        "step": 1,
+        "default": 4,
+        "label": "Columns on desktop"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background",
+        "default": "#F7F2EC"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Heading and text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "price_card",
+        "name": "Price card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "kicker",
+            "label": "Small label",
+            "default": "QUICK PICKS"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Price label",
+            "default": "Under \u20b9499"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default": "Easy everyday add-ons"
+          },
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Custom link (optional)"
+          },
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Card background",
+            "default": "#FFFDF9"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Card text",
+            "default": "#242424"
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  },
+  "social-gallery": {
+    "name": "Social Styling Gallery",
+    "has_preset": true,
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow",
+        "default": "Wear it your way"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Wear It Your Way"
+      },
+      {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Follow us for jewellery styling inspiration and new looks."
+      },
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "default": 4,
+        "label": "Columns on desktop"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Follow on Instagram"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Instagram profile link"
+      },
+      {
+        "type": "checkbox",
+        "id": "open_new_tab",
+        "label": "Open Instagram in a new tab",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background",
+        "default": "#FFFDF9"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text colour",
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent colour",
+        "default": "#7A1F32"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 20,
+        "max": 140,
+        "step": 10,
+        "default": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "post",
+        "name": "Gallery post",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image (recommended: square)"
+          },
+          {
+            "type": "text",
+            "id": "caption",
+            "label": "Caption",
+            "default": "Jewellery styling inspiration"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Instagram or product link"
+          }
+        ]
+      }
+    ],
+    "direct_unused": [],
+    "undeclared_direct_references": []
+  }
+}

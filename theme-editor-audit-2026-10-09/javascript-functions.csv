@@ -1,0 +1,40 @@
+file,line,function,merchant_control_status
+assets/cart-quantity.js,7,properties,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,11,identity,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,14,rowIdentity,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,17,itemIdentity,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,20,enhance,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,29,message,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,36,busy,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,44,restoreInputs,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,47,quantity,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,50,queue,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,70,render,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,79,sectionHTML,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,81,valid,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/cart-quantity.js,91,flush,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,6,initStickyCart,Main Product has sticky-cart switch; visibility threshold fixed.
+assets/product-mobile-details.js,17,syncButton,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,22,updateVisibility,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,25,onScroll,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,37,onUnload,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,50,initRecommendations,Related section has enable/count/fallback fields; load behaviour fixed.
+assets/product-mobile-details.js,55,load,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,69,onUnload,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,78,initFooter,Product-page responsive footer disclosure behaviour fixed.
+assets/product-mobile-details.js,99,onChange,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,100,onUnload,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/product-mobile-details.js,110,init,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,6,initTheme,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,20,initStickyHeader,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,35,initMobileMenu,Menu source configurable; drawer behaviour fixed.
+assets/theme.js,47,openMenu,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,57,closeMenu,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,84,initSearchDrawer,Drawer behaviour and labels fixed.
+assets/theme.js,95,openSearch,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,102,closeSearch,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,124,initQuickAdd,No merchant quick-add toggle; card Boolean parameter currently overwrites false.
+assets/theme.js,185,updateCartCount,Technical helper: no dedicated editor control; not itself a missing merchant feature.
+assets/theme.js,202,initProductMedia,Product images editable in admin; thumbnail behaviour fixed.
+assets/theme.js,230,initProductVariants,Product variants editable in admin; sync behaviour fixed.
+assets/theme.js,290,initCollectionFilters,Collection has filter enable switch; responsive drawer behaviour fixed.
