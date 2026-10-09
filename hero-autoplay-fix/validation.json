@@ -1,0 +1,94 @@
+{
+  "local_browser_tests": true,
+  "live_shopify_tested": false,
+  "checks": [
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 320,
+      "shopify_editor": false
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 320,
+      "shopify_editor": true
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 390,
+      "shopify_editor": false
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 390,
+      "shopify_editor": true
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 768,
+      "shopify_editor": false
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 768,
+      "shopify_editor": true
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 1440,
+      "shopify_editor": false
+    },
+    {
+      "test": "Dots-only autoplay with pointer over banner and after dot click",
+      "passed": true,
+      "width": 1440,
+      "shopify_editor": true
+    },
+    {
+      "test": "Autoplay OFF stays manual with functioning dots",
+      "passed": true
+    },
+    {
+      "test": "Single slide stays static without errors",
+      "passed": true
+    },
+    {
+      "test": "Editor selection pauses selected slide; deselection resumes",
+      "passed": true
+    },
+    {
+      "test": "Keyboard focus pauses; arrow navigation works; leaving resumes",
+      "passed": true
+    },
+    {
+      "test": "Reduced motion is respected and preference changes recover",
+      "passed": true
+    },
+    {
+      "test": "Optional pause/play works and manual pause survives motion preference changes",
+      "passed": true
+    },
+    {
+      "test": "Explicit play can start reduced-motion slider",
+      "passed": true
+    },
+    {
+      "test": "Hidden tab pauses and visible tab resumes",
+      "passed": true
+    },
+    {
+      "test": "Editor reload has single listeners and reloaded autoplay setting works",
+      "passed": true
+    },
+    {
+      "test": "Swipe navigation preserved",
+      "passed": true
+    }
+  ]
+}
