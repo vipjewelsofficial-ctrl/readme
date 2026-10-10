@@ -1,0 +1,13 @@
+{
+  "full_theme_files": 104,
+  "full_zip_sha256": "ad7976d4b0609e00d9768c55ec3fd628b661959219425717cfec0c133a8510c9",
+  "full_zip_bytes": 4180194,
+  "required_product_files_present": true,
+  "zip_crc_and_source_roundtrip_passed": true,
+  "manual_update_files": [
+    "sections/new-arrivals.liquid",
+    "sections/featured-products.liquid",
+    "sections/collection-card-grid.liquid",
+    "templates/index.json"
+  ]
+}

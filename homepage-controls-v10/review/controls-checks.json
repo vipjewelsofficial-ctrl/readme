@@ -1,0 +1,132 @@
+{
+  "live_shopify_tested": false,
+  "mock_catalog_and_cart": true,
+  "checks": [
+    {
+      "check": "Manual products take priority and preserve selected order and count",
+      "passed": true,
+      "section": "new-arrivals"
+    },
+    {
+      "check": "Product order control sorts only the selected products",
+      "passed": true,
+      "section": "new-arrivals"
+    },
+    {
+      "check": "Manual-selection button uses the chosen destination and hides without one",
+      "passed": true,
+      "section": "new-arrivals"
+    },
+    {
+      "check": "Collection picker provides products and collection button destination",
+      "passed": true,
+      "section": "new-arrivals"
+    },
+    {
+      "check": "Unconfigured section shows setup placeholders only in the Shopify editor",
+      "passed": true,
+      "section": "new-arrivals"
+    },
+    {
+      "check": "Optional all-products fallback remains available",
+      "passed": true,
+      "section": "new-arrivals"
+    },
+    {
+      "check": "Manual products take priority and preserve selected order and count",
+      "passed": true,
+      "section": "featured-products"
+    },
+    {
+      "check": "Product order control sorts only the selected products",
+      "passed": true,
+      "section": "featured-products"
+    },
+    {
+      "check": "Manual-selection button uses the chosen destination and hides without one",
+      "passed": true,
+      "section": "featured-products"
+    },
+    {
+      "check": "Collection picker provides products and collection button destination",
+      "passed": true,
+      "section": "featured-products"
+    },
+    {
+      "check": "Unconfigured section shows setup placeholders only in the Shopify editor",
+      "passed": true,
+      "section": "featured-products"
+    },
+    {
+      "check": "Optional all-products fallback remains available",
+      "passed": true,
+      "section": "featured-products"
+    },
+    {
+      "check": "New Arrivals, Best Sellers and Trending Picks have independent selected products",
+      "passed": true
+    },
+    {
+      "check": "Style card product, collection, custom image and custom link priorities",
+      "passed": true
+    },
+    {
+      "check": "Sample style imagery can be disabled through Shopify",
+      "passed": true
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 320,
+      "gap_px": 24
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 360,
+      "gap_px": 24
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 390,
+      "gap_px": 24
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 430,
+      "gap_px": 24
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 768,
+      "gap_px": 24
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 989,
+      "gap_px": 40
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 990,
+      "gap_px": 40
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 1440,
+      "gap_px": 40
+    },
+    {
+      "check": "Responsive homepage keeps original sections; Best Sellers wishlist and add-to-cart work",
+      "passed": true,
+      "width": 1920,
+      "gap_px": 40
+    }
+  ]
+}

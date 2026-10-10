@@ -1,0 +1,14 @@
+{
+  "only_homepage_addition": "best_sellers",
+  "existing_homepage_json_and_order_preserved": true,
+  "native_schema_names_and_values_checked": true,
+  "working_product_template_and_section_preserved": true,
+  "changed_files": [
+    "templates/index.json",
+    "sections/featured-products.liquid",
+    "sections/new-arrivals.liquid",
+    "sections/collection-card-grid.liquid",
+    "config/settings_schema.json"
+  ],
+  "unchanged_file_count": 99
+}
