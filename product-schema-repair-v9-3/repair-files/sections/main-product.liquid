@@ -1,0 +1,818 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_media = current_variant.featured_media | default: product.featured_media
+  assign product_form_id = 'ProductForm-' | append: section.id
+-%}
+
+{{ 'product-mobile-details.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-mobile-details.js' | asset_url }}" defer></script>
+
+<section style="--section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-accent: {{ section.settings.section_accent }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;" class="section main-product-section main-product-section--gallery-{{ section.settings.gallery_position }} main-product-section--mobile-gallery-{{ section.settings.mobile_gallery_position }}{% if section.settings.enable_mobile_details and section.settings.mobile_sticky_cart %} main-product-section--sticky-cart{% endif %}">
+  <div class="page-shell">
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div class="product-gallery__stage">
+          {%- if featured_media != blank -%}
+            {%- liquid
+              assign featured_image = featured_media.preview_image
+              assign featured_image_alt = featured_image.alt | default: product.title
+            -%}
+            {{
+              featured_image
+              | image_url: width: 1200
+              | image_tag:
+                class: 'product-gallery__main',
+                id: 'ProductMainImage',
+                alt: featured_image_alt,
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '480, 720, 960, 1200',
+                sizes: '(max-width: 989px) 100vw, 55vw'
+            }}
+          {%- else -%}
+            <div class="product-gallery__placeholder">{{ 'products.product.no_image' | t }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if product.media.size > 1 -%}
+          <div class="product-gallery__thumbs" aria-label="{{ 'accessibility.product_images' | t }}">
+            {%- for media in product.media -%}
+              {%- liquid
+                assign thumbnail = media.preview_image
+                assign thumbnail_alt = thumbnail.alt | default: product.title
+              -%}
+              <button
+                class="product-gallery__thumb{% if media.id == featured_media.id %} is-active{% endif %}"
+                type="button"
+                data-product-thumbnail
+                data-full-src="{{ thumbnail | image_url: width: 1200 }}"
+                data-alt="{{ thumbnail.alt | default: product.title | escape }}"
+                aria-label="{{ 'accessibility.view_image' | t: number: forloop.index, count: product.media.size }}"
+                aria-pressed="{% if media.id == featured_media.id %}true{% else %}false{% endif %}"
+              >
+                {{
+                  thumbnail
+                  | image_url: width: 180
+                  | image_tag:
+                    alt: thumbnail_alt,
+                    loading: 'lazy',
+                    width: 90,
+                    height: 90
+                }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="product-info-wrap">
+{% capture component_vendor %}
+        {%- if product.vendor != blank -%}
+          <p class="product-info__vendor">{{ product.vendor | escape }}</p>
+        {%- endif -%}
+
+{% endcapture %}
+{% capture component_title %}
+        <h1 class="product-info__title">{{ product.title | escape }}</h1>
+
+{% endcapture %}
+{% capture component_price %}
+        <div class="product-detail-price" data-product-price aria-live="polite">
+          {% render 'price', product: product, variant: current_variant %}
+        </div>
+
+{% endcapture %}
+{% capture component_description %}
+        {%- if product.description != blank and section.settings.enable_mobile_details != true or product.description != blank and section.settings.description_display == 'plain' -%}
+          <div class="product-info__description rte">
+            {{ product.description }}
+          </div>
+        {%- endif -%}
+
+{% endcapture %}
+{% capture component_buy_buttons %}
+        {%- form 'product', product, id: product_form_id, class: 'product-form' -%}
+          {%- if product.variants.size > 1 -%}
+            <div class="product-form__field">
+              <label class="product-form__label" for="Variant-{{ section.id }}">{{ 'products.product.choose_option' | t }}</label>
+              <select class="product-form__select" id="Variant-{{ section.id }}" name="id" data-variant-select>
+                {%- for variant in product.variants -%}
+                  {%- liquid
+                    assign variant_savings = 0
+                    if variant.compare_at_price > variant.price
+                      assign variant_savings = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price
+                    endif
+                  -%}
+                  <option
+                    value="{{ variant.id }}"
+                    data-price="{{ variant.price | money | escape }}"
+                    data-compare-price="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | escape }}{% endif %}"
+                    data-savings="{{ variant_savings }}"
+                    data-available="{{ variant.available }}"
+                    data-image-src="{% if variant.featured_media != blank %}{{ variant.featured_media.preview_image | image_url: width: 1200 }}{% endif %}"
+                    {% if variant.id == current_variant.id %}selected{% endif %}
+                  >
+                    {{ variant.title | escape }} — {{ variant.price | money }}{% unless variant.available %} — {{ 'products.product.sold_out' | t }}{% endunless %}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- else -%}
+            <input type="hidden" name="id" value="{{ current_variant.id }}">
+          {%- endif -%}
+
+{% if section.settings.show_quantity != false %}          <div class="product-form__field">
+            <label class="product-form__label" for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+            <input class="product-form__quantity" type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" inputmode="numeric">
+          </div>{% else %}<input type="hidden" name="quantity" value="1">{% endif %}
+
+          <button
+            type="submit"
+            name="add"
+            class="btn btn--primary product-form__submit"
+            data-product-submit
+            {% unless current_variant.available %}disabled aria-disabled="true"{% endunless %}
+          >
+            {%- if current_variant.available -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
+          </button>
+        {%- endform -%}
+
+{% endcapture %}
+{% capture component_details %}
+        {%- if section.settings.enable_mobile_details -%}
+          {% render 'product-mobile-details', product: product, section: section %}
+          {%- if section.settings.mobile_sticky_cart -%}
+            <div class="product-mobile-sticky-cart" data-mobile-sticky-cart data-product-form-id="{{ product_form_id }}" hidden>
+              <button type="submit" name="add" form="{{ product_form_id }}" class="btn btn--primary product-mobile-sticky-cart__button"{% unless current_variant.available %} disabled aria-disabled="true"{% endunless %}>
+                {% if current_variant.available %}{{ 'products.product.add_to_cart' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}
+              </button>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+
+{% endcapture %}
+{% capture component_trust %}
+        {%- unless section.settings.enable_mobile_details -%}
+        <div class="product-trust" aria-label="{{ 'sections.product_details.benefits' | t }}">
+          <span class="product-trust__item">{{ section.settings.trust_1 | escape }}</span>
+          <span class="product-trust__item">{{ section.settings.trust_2 | escape }}</span>
+          <span class="product-trust__item">{{ section.settings.trust_3 | escape }}</span>
+        </div>
+        {%- endunless -%}
+{% endcapture %}
+{%- liquid
+  assign has_component_blocks = section.settings.use_component_blocks
+  for block in section.blocks
+    case block.type
+      when 'vendor', 'title', 'price', 'description', 'buy_buttons', 'details', 'trust', 'wishlist', 'text', '@app'
+        assign has_component_blocks = true
+    endcase
+  endfor
+-%}
+{% if has_component_blocks %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'vendor' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_vendor }}</div>
+      {% when 'title' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_title }}</div>
+      {% when 'price' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_price }}</div>
+      {% when 'description' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_description }}</div>
+      {% when 'buy_buttons' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_buy_buttons }}</div>
+      {% when 'details' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_details }}</div>
+      {% when 'wishlist' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{% render 'wishlist-button', product: product %}</div>
+      {% when 'trust' %}<div class="product-editor-block" {{ block.shopify_attributes }}>{{ component_trust }}</div>
+      {% when 'text' %}<div class="product-editor-block rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+      {% when '@app' %}{% render block %}
+    {% endcase %}
+  {% endfor %}
+{% else %}
+{{ component_vendor }}
+{{ component_title }}
+{{ component_price }}
+{{ component_description }}
+{{ component_buy_buttons }}
+{% render 'wishlist-button', product: product %}
+{{ component_details }}
+{{ component_trust }}
+{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_component_blocks",
+      "label": "Use product information blocks",
+      "default": false,
+      "info": "Enable to show only the information blocks added below. Disable for the legacy layout when no component blocks are present."
+    },
+    {
+      "type": "header",
+      "content": "Product details and offers"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_details",
+      "label": "Show offers, details and benefits below Add to Cart",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Responsive layout for mobile, tablet and desktop. Offer text displays information only; configure actual discounts, gifts and shipping rules separately in Shopify."
+    },
+    {
+      "type": "header",
+      "content": "Legacy offers (used when Offer blocks are off)"
+    },
+    {
+      "type": "text",
+      "id": "mobile_offers_heading",
+      "label": "Offers heading",
+      "default": "Offers for you"
+    },
+    {
+      "type": "text",
+      "id": "mobile_offer_1",
+      "label": "Offer 1 (clear to hide)",
+      "default": "Free shipping above \u20b9599"
+    },
+    {
+      "type": "text",
+      "id": "mobile_offer_2",
+      "label": "Offer 2 (clear to hide)",
+      "default": "Free gift on orders above \u20b9699"
+    },
+    {
+      "type": "text",
+      "id": "mobile_offer_3",
+      "label": "Offer 3 (clear to hide)",
+      "default": "Free organiser on orders above \u20b91,199"
+    },
+    {
+      "type": "text",
+      "id": "mobile_offer_4",
+      "label": "Offer 4 (clear to hide)",
+      "default": "Get \u20b9100 off on orders above \u20b91,499"
+    },
+    {
+      "type": "header",
+      "content": "Expandable details"
+    },
+    {
+      "type": "text",
+      "id": "mobile_description_heading",
+      "label": "Description heading",
+      "default": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_description_open",
+      "label": "Open description initially",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "mobile_shipping_heading",
+      "label": "Shipping and returns heading",
+      "default": "Shipping & Returns"
+    },
+    {
+      "type": "richtext",
+      "id": "mobile_shipping_text",
+      "label": "Shipping and returns information",
+      "default": "<p>Shipping options and delivery estimates are shown at checkout. For return and exchange details, please refer to our store policies or contact us.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Legacy benefits (used when Benefit blocks are off)"
+    },
+    {
+      "type": "text",
+      "id": "mobile_benefit_1_title",
+      "label": "Returns benefit title (clear to hide)",
+      "default": "Easy returns"
+    },
+    {
+      "type": "text",
+      "id": "mobile_benefit_1_text",
+      "label": "Returns benefit detail",
+      "default": "As per our policy"
+    },
+    {
+      "type": "text",
+      "id": "mobile_benefit_2_title",
+      "label": "Shipping benefit title (clear to hide)",
+      "default": "Free shipping"
+    },
+    {
+      "type": "text",
+      "id": "mobile_benefit_2_text",
+      "label": "Shipping benefit detail",
+      "default": "On orders above \u20b9599"
+    },
+    {
+      "type": "text",
+      "id": "mobile_benefit_3_title",
+      "label": "COD benefit title (clear to hide)",
+      "default": "COD available"
+    },
+    {
+      "type": "text",
+      "id": "mobile_benefit_3_text",
+      "label": "COD benefit detail",
+      "default": "Check at checkout"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_sticky_cart",
+      "label": "Show sticky mobile Add to Cart after the main button scrolls away",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "use_offer_blocks",
+      "label": "Use Offer blocks instead of legacy offer fields",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use_benefit_blocks",
+      "label": "Use Benefit blocks instead of legacy benefit fields",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "description_display",
+      "label": "Description placement",
+      "options": [
+        {
+          "value": "accordion",
+          "label": "Expandable details"
+        },
+        {
+          "value": "plain",
+          "label": "Separate description block"
+        }
+      ],
+      "default": "accordion"
+    },
+    {
+      "type": "checkbox",
+      "id": "shipping_open",
+      "label": "Open Shipping & Returns initially",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "gallery_position",
+      "label": "Gallery position on desktop",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_gallery_position",
+      "label": "Gallery position on mobile",
+      "options": [
+        {
+          "value": "before",
+          "label": "Before product information"
+        },
+        {
+          "value": "after",
+          "label": "After product information"
+        }
+      ],
+      "default": "before"
+    },
+    {
+      "type": "range",
+      "id": "panel_radius",
+      "label": "Product panel corner radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "benefit_columns",
+      "label": "Benefit columns on desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "benefit_columns_mobile",
+      "label": "Benefit columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Fallback benefit 1",
+      "default": "Secure checkout"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Fallback benefit 2",
+      "default": "Carefully packed"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Fallback benefit 3",
+      "default": "Customer support"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "section_accent",
+      "label": "Accent colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "select",
+      "id": "benefit_1_icon",
+      "label": "Legacy benefit 1 icon",
+      "options": [
+        {
+          "value": "percent",
+          "label": "Percentage"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "cod",
+          "label": "Cash on delivery"
+        },
+        {
+          "value": "shield",
+          "label": "Shield"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "lock",
+          "label": "Lock"
+        }
+      ],
+      "default": "return"
+    },
+    {
+      "type": "select",
+      "id": "benefit_2_icon",
+      "label": "Legacy benefit 2 icon",
+      "options": [
+        {
+          "value": "percent",
+          "label": "Percentage"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "cod",
+          "label": "Cash on delivery"
+        },
+        {
+          "value": "shield",
+          "label": "Shield"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "lock",
+          "label": "Lock"
+        }
+      ],
+      "default": "truck"
+    },
+    {
+      "type": "select",
+      "id": "benefit_3_icon",
+      "label": "Legacy benefit 3 icon",
+      "options": [
+        {
+          "value": "percent",
+          "label": "Percentage"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "cod",
+          "label": "Cash on delivery"
+        },
+        {
+          "value": "shield",
+          "label": "Shield"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "lock",
+          "label": "Lock"
+        }
+      ],
+      "default": "cod"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    }
+  ],
+  "max_blocks": 40,
+  "blocks": [
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "title",
+      "name": "Product title",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "details",
+      "name": "Offers & benefits",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "trust",
+      "name": "Fallback trust messages",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "offer",
+      "name": "Offer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Offer text",
+          "default": "Your offer"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "percent",
+              "label": "Percentage"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "truck",
+              "label": "Shipping"
+            },
+            {
+              "value": "cod",
+              "label": "Cash on delivery"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            }
+          ],
+          "default": "percent"
+        }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Shopping benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Shopping benefit"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "percent",
+              "label": "Percentage"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "truck",
+              "label": "Shipping"
+            },
+            {
+              "value": "cod",
+              "label": "Cash on delivery"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            }
+          ],
+          "default": "shield"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Your product information</p>"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "wishlist",
+      "name": "Wishlist button",
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}
