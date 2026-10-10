@@ -1,0 +1,39 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer_brand_text": "Gujju Jewels",
+        "footer_description": "Gujju Jewels brings heritage-inspired oxidised jewellery to modern wardrobes—distinctive, versatile and made to be styled your way.",
+        "footer_menu_1": "footer",
+        "footer_menu_2": "",
+        "footer_menu_3": "",
+        "newsletter_heading": "Stay In The Loop",
+        "newsletter_description": "New drops, exclusive offers and styling ideas delivered to your inbox.",
+        "social_instagram": "",
+        "social_facebook": "",
+        "social_whatsapp": "",
+        "social_youtube": "",
+        "show_payment_icons": true,
+        "footer_bg": "#5c1828",
+        "footer_text": "#fff9ee",
+        "footer_accent": "#ecd39a",
+        "footer_heading": "#ecd39a",
+        "footer_gradient_enabled": true,
+        "footer_gradient_end": "#35101b"
+      }
+    },
+    "mobile-bottom-bar": {
+      "type": "mobile-bottom-bar",
+      "settings": {
+        "enabled": true
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "mobile-bottom-bar"
+  ]
+}

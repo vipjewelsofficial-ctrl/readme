@@ -1,0 +1,24 @@
+{
+  "patch_files": [
+    "assets/category-mobile-row.css",
+    "assets/wishlist.css",
+    "assets/wishlist.js",
+    "assets/mobile-bottom-bar.css",
+    "assets/mobile-bottom-bar.js",
+    "sections/footer-group.json",
+    "sections/header.liquid",
+    "sections/new-arrivals.liquid",
+    "sections/mobile-bottom-bar.liquid",
+    "templates/index.json"
+  ],
+  "unchanged_existing_files_when_applied_to_uploaded_baseline": 91,
+  "modified_existing_files": 7,
+  "new_ui_files": 3,
+  "product_template_included": false,
+  "main_product_section_included": false,
+  "global_settings_included": false,
+  "not_a_complete_theme": true,
+  "live_404_fixed": false,
+  "sha256": "d7e645495d2cf3ad3270b09a84f1ceb20c97ae8e77ff47f210e0e87eb2756620",
+  "zip_bytes": 18522
+}

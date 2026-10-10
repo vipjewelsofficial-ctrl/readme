@@ -1,0 +1,26 @@
+{
+  "working_zip_sha256": "54360432b658536020172c9cb8ee5269fcaa23e992cdef04ef5f440f20caf86d",
+  "v8_2_zip_sha256": "5b54ccc3af211685325935dab0a1aab75ec9c29d3e6680d447b66ab0c8487304",
+  "working_files": 98,
+  "v8_2_files": 104,
+  "added": [
+    "assets/mobile-bottom-bar.css",
+    "assets/mobile-bottom-bar.js",
+    "config/settings_data.json",
+    "sections/main-product.liquid",
+    "sections/mobile-bottom-bar.liquid",
+    "templates/product.json"
+  ],
+  "removed": [],
+  "changed": [
+    "assets/category-mobile-row.css",
+    "assets/wishlist.css",
+    "assets/wishlist.js",
+    "config/settings_schema.json",
+    "sections/footer-group.json",
+    "sections/header.liquid",
+    "sections/new-arrivals.liquid",
+    "templates/index.json"
+  ],
+  "unchanged_count": 90
+}
