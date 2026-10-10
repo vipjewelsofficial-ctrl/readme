@@ -1,0 +1,20 @@
+{
+  "original_file_count": 98,
+  "updated_file_count": 101,
+  "changed": [
+    "assets/category-mobile-row.css",
+    "assets/wishlist.css",
+    "assets/wishlist.js",
+    "sections/footer-group.json",
+    "sections/header.liquid",
+    "sections/new-arrivals.liquid",
+    "templates/index.json"
+  ],
+  "added": [
+    "assets/mobile-bottom-bar.css",
+    "assets/mobile-bottom-bar.js",
+    "sections/mobile-bottom-bar.liquid"
+  ],
+  "removed": [],
+  "byte_identical_existing_files": 91
+}

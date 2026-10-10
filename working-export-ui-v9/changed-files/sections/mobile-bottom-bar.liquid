@@ -1,0 +1,69 @@
+{%- if section.settings.enabled -%}
+  {%- liquid
+    assign collections_destination = section.settings.collections_link | default: routes.all_products_collection_url
+    assign account_destination = routes.account_login_url | default: routes.account_url
+    assign account_label = section.settings.login_label
+    if customer
+      assign account_destination = routes.account_url
+      assign account_label = section.settings.account_label
+    endif
+  -%}
+  {{ 'mobile-bottom-bar.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'mobile-bottom-bar.js' | asset_url }}" defer></script>
+  <nav class="mobile-bottom-bar" id="MobileBottomBar-{{ section.id }}" data-mobile-bottom-bar aria-label="{{ section.settings.navigation_label | escape }}" style="{% if section.settings.use_theme_colours %}--bottom-bar-bg: var(--color-ivory); --bottom-bar-text: var(--color-text-dark); --bottom-bar-accent: var(--color-primary);{% else %}--bottom-bar-bg: {{ section.settings.background_color }}; --bottom-bar-text: {{ section.settings.text_color }}; --bottom-bar-accent: {{ section.settings.accent_color }};{% endif %}">
+    <a class="mobile-bottom-bar__item" href="{{ routes.root_url }}"{% if request.page_type == 'index' %} aria-current="page"{% endif %}>
+      <span class="mobile-bottom-bar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <span class="mobile-bottom-bar__label">{{ section.settings.home_label | escape }}</span>
+    </a>
+    {% if section.settings.show_account %}
+      <a class="mobile-bottom-bar__item" href="{{ account_destination }}"{% if request.page_type contains 'customers' %} aria-current="page"{% endif %}>
+        <span class="mobile-bottom-bar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 21v-2a8 8 0 0 1 16 0v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <span class="mobile-bottom-bar__label">{{ account_label | escape }}</span>
+      </a>
+    {% endif %}
+    <a class="mobile-bottom-bar__item" href="{{ collections_destination }}"{% if request.page_type == 'collection' or request.page_type == 'list-collections' %} aria-current="page"{% endif %}>
+      <span class="mobile-bottom-bar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7"/></svg></span>
+      <span class="mobile-bottom-bar__label">{{ section.settings.collections_label | escape }}</span>
+    </a>
+    {% if settings.enable_wishlist != false and section.settings.show_wishlist %}
+      <button class="mobile-bottom-bar__item" type="button" data-wishlist-open aria-controls="WishlistDialog" aria-haspopup="dialog" hidden>
+        <span class="mobile-bottom-bar__icon">{% render 'icon', icon: 'heart' %}<span class="mobile-bottom-bar__badge" data-wishlist-count hidden>0</span></span>
+        <span class="mobile-bottom-bar__label">{{ section.settings.wishlist_label | escape }}</span>
+      </button>
+    {% endif %}
+    <a class="mobile-bottom-bar__item" href="{{ routes.cart_url }}"{% if request.page_type == 'cart' %} aria-current="page"{% endif %}>
+      <span class="mobile-bottom-bar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 3h3l3 13h11l3-10H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1" fill="currentColor"/><circle cx="19" cy="21" r="1" fill="currentColor"/></svg><span class="mobile-bottom-bar__badge header-cart-count"{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span></span>
+      <span class="mobile-bottom-bar__label">{{ section.settings.cart_label | escape }}</span>
+    </a>
+  </nav>
+  <div class="mobile-bottom-bar-spacer" aria-hidden="true"></div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Mobile bottom bar",
+  "class": "mobile-bottom-bar-section",
+  "limit": 1,
+  "enabled_on": { "groups": ["footer"] },
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Show mobile bottom bar", "default": true },
+    { "type": "paragraph", "content": "Visible below 990px. Uses Shopify customer accounts, the existing wishlist and the native cart. Product Add to Cart stays above this bar." },
+    { "type": "text", "id": "navigation_label", "label": "Navigation accessibility label", "default": "Mobile shopping navigation" },
+    { "type": "text", "id": "home_label", "label": "Home label", "default": "Home" },
+    { "type": "checkbox", "id": "show_account", "label": "Show account link", "default": true },
+    { "type": "text", "id": "login_label", "label": "Log in label", "default": "Log in" },
+    { "type": "text", "id": "account_label", "label": "Signed-in account label", "default": "Account" },
+    { "type": "paragraph", "content": "Enable customer accounts in Shopify Settings > Customer accounts so customers can log in." },
+    { "type": "text", "id": "collections_label", "label": "Collections label", "default": "Collections" },
+    { "type": "url", "id": "collections_link", "label": "Collections destination", "info": "Defaults to Shop All. Select your collection directory or a specific collection here." },
+    { "type": "checkbox", "id": "show_wishlist", "label": "Show wishlist", "default": true },
+    { "type": "text", "id": "wishlist_label", "label": "Wishlist label", "default": "Wishlist" },
+    { "type": "text", "id": "cart_label", "label": "Cart label", "default": "Cart" },
+    { "type": "checkbox", "id": "use_theme_colours", "label": "Use theme colours", "default": true },
+    { "type": "color", "id": "background_color", "label": "Custom background", "default": "#FFFDF9" },
+    { "type": "color", "id": "text_color", "label": "Custom text", "default": "#242424" },
+    { "type": "color", "id": "accent_color", "label": "Custom accent", "default": "#7A1F32" }
+  ],
+  "presets": [{ "name": "Mobile bottom bar" }]
+}
+{% endschema %}

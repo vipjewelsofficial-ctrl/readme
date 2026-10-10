@@ -1,0 +1,36 @@
+[
+  {
+    "type": "LiquidHtml",
+    "check": "OrphanedSnippet",
+    "message": "This snippet is not referenced by any other files",
+    "uri": "file:///workspace/theme-working-export-v9/theme/snippets/product-image.liquid",
+    "severity": 1,
+    "start": {
+      "index": 0,
+      "line": 0,
+      "character": 0
+    },
+    "end": {
+      "index": 1,
+      "line": 0,
+      "character": 1
+    }
+  },
+  {
+    "type": "LiquidHtml",
+    "check": "OrphanedSnippet",
+    "message": "This snippet is not referenced by any other files",
+    "uri": "file:///workspace/theme-working-export-v9/theme/snippets/product-mobile-details.liquid",
+    "severity": 1,
+    "start": {
+      "index": 0,
+      "line": 0,
+      "character": 0
+    },
+    "end": {
+      "index": 1,
+      "line": 0,
+      "character": 1
+    }
+  }
+]

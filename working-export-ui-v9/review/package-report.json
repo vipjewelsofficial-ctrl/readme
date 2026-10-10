@@ -1,0 +1,46 @@
+{
+  "source": {
+    "sha256": "15cc184291d18eb34fff12c15dcce82da456666c8d23b52ba7557f3b1b486b8b",
+    "files": 98,
+    "product_templates": [],
+    "main_product_section_exists": false,
+    "settings_data_exists": false
+  },
+  "scope": {
+    "original_file_count": 98,
+    "updated_file_count": 101,
+    "changed": [
+      "assets/category-mobile-row.css",
+      "assets/wishlist.css",
+      "assets/wishlist.js",
+      "sections/footer-group.json",
+      "sections/header.liquid",
+      "sections/new-arrivals.liquid",
+      "templates/index.json"
+    ],
+    "added": [
+      "assets/mobile-bottom-bar.css",
+      "assets/mobile-bottom-bar.js",
+      "sections/mobile-bottom-bar.liquid"
+    ],
+    "removed": [],
+    "byte_identical_existing_files": 91
+  },
+  "zip_file": "Gujju-Jewels-UI-Updates-v9.zip",
+  "zip_sha256": "75d8c529545c05d161b6a501b4dd46722a6bf89f76b2939e88b8c910a43326ae",
+  "zip_bytes": 4171865,
+  "browser_checks": {
+    "link-checks.json": 14,
+    "browser-checks.json": 16,
+    "header-checks.json": 31
+  },
+  "browser_checks_total": 61,
+  "theme_check_errors": 0,
+  "theme_check_warnings": 2,
+  "warnings_unchanged": true,
+  "product_page_rendering_tested": false,
+  "live_shopify_tested": false,
+  "live_404_fixed": false,
+  "source_product_template_missing": true,
+  "source_configuration_preserved": true
+}
