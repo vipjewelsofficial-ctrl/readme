@@ -1,0 +1,9 @@
+{%- if settings.enable_wishlist != false -%}
+<dialog class="wishlist-dialog" id="WishlistDialog" data-wishlist-dialog aria-labelledby="WishlistTitle" data-empty="{{ settings.wishlist_empty_text | escape }}" data-view-label="{{ 'general.wishlist.view' | t }}" data-remove-label="{{ 'general.wishlist.remove' | t }}" data-add-text="{{ 'general.wishlist.add' | t }}" data-saved-text="{{ 'general.wishlist.saved' | t }}" data-saved-message="{{ 'general.wishlist.saved_message' | t }}" data-removed-message="{{ 'general.wishlist.removed_message' | t }}" data-error-message="{{ 'general.wishlist.storage_error' | t }}" data-limit-message="{{ 'general.wishlist.limit' | t }}" data-count-label="{{ 'general.wishlist.count_label' | t: count: '[count]' }}">
+  <header class="wishlist-dialog__header"><h2 id="WishlistTitle">{{ settings.wishlist_heading | escape }}</h2><button type="button" class="wishlist-dialog__close" data-wishlist-close aria-label="{{ 'general.wishlist.close' | t }}">×</button></header>
+  <p class="wishlist-dialog__empty" data-wishlist-empty>{{ settings.wishlist_empty_text | escape }}</p>
+  <ul class="wishlist-dialog__list" data-wishlist-list role="list"></ul>
+  <p class="visually-hidden" role="status" aria-live="polite" data-wishlist-message></p>
+</dialog>
+<span class="visually-hidden" role="status" aria-live="polite" data-wishlist-message></span>
+{%- endif -%}

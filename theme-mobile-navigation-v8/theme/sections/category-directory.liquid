@@ -1,0 +1,653 @@
+{%- liquid
+  assign heading = section.settings.heading
+  assign subheading = section.settings.subheading
+  assign eyebrow = section.settings.eyebrow
+  assign mobile_layout = section.settings.mobile_layout | default: 'swipe'
+  assign category_image_sizes = '(max-width: 749px) 92vw, (max-width: 989px) 46vw, 280px'
+  if mobile_layout == 'swipe'
+    assign category_image_sizes = '(max-width: 989px) 128px, 280px'
+  endif
+-%}
+
+{{ 'category-mobile-row.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="category-directory section category-directory--{{ section.settings.image_shape }}" data-category-buttons="{{ section.settings.show_category_buttons }}" data-mobile-layout="{{ mobile_layout }}" data-row-heading="{{ section.settings.row_show_heading }}" data-row-eyebrow="{{ section.settings.row_show_eyebrow }}"
+  id="category-directory-{{ section.id }}"
+  style="--category-mobile-columns: {{ section.settings.columns_mobile }}; --category-tablet-columns: {{ section.settings.columns_tablet }}; --category-image-size: {{ section.settings.image_size }}px; --category-mobile-image-size: {{ section.settings.image_size_mobile }}px; --category-directory-bg: {{ section.settings.background_color }}; --category-directory-card: {{ section.settings.card_background }}; --category-directory-text: {{ section.settings.text_color }}; --category-directory-accent: {{ section.settings.accent_color }}; --category-directory-columns: {{ section.settings.columns_desktop }}; --section-bg: {{ section.settings.background_color }}; --section-text: {{ section.settings.text_color }}; --section-accent: {{ section.settings.accent_color }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  {% if heading != blank %}aria-labelledby="category-directory-heading-{{ section.id }}"{% else %}aria-label="Shop jewellery categories"{% endif %}
+>
+  <div class="container" style="--category-row-size: {{ section.settings.row_card_size | default: 92 }}px; --category-row-gap: {{ section.settings.row_gap | default: 12 }}px; --category-row-heading-size: {{ section.settings.row_heading_size | default: 24 }}px; --category-row-pt: {{ section.settings.row_padding_top | default: 16 }}px; --category-row-pb: {{ section.settings.row_padding_bottom | default: 20 }}px;">
+    {%- if eyebrow != blank or heading != blank or subheading != blank -%}
+      <div class="section-header category-directory__header">
+        {%- if eyebrow != blank -%}<p class="section-eyebrow">{{ eyebrow | escape }}</p>{%- endif -%}
+        {%- if heading != blank -%}<h2 class="section-title" id="category-directory-heading-{{ section.id }}">{{ heading | escape }}</h2>{%- endif -%}
+        {%- if subheading != blank -%}<p class="category-directory__subheading">{{ subheading | escape }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="category-directory__grid" role="list"{% if mobile_layout == 'swipe' %} tabindex="0" aria-label="{{ heading | default: 'Shop jewellery collections' | escape }}"{% endif %}>
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign parent_collection = block.settings.collection
+          assign parent_image = block.settings.image
+          if parent_image == blank and section.settings.use_collection_images and parent_collection != blank
+            assign parent_image = parent_collection.featured_image
+          endif
+
+          assign parent_title = block.settings.title
+          if parent_title == blank and parent_collection != blank
+            assign parent_title = parent_collection.title
+          endif
+          if parent_title == blank
+            assign parent_title = 'Jewellery Collection'
+          endif
+
+          assign parent_url = routes.all_products_collection_url
+          if parent_collection != blank
+            assign parent_url = parent_collection.url
+          elsif block.settings.link != blank
+            assign parent_url = block.settings.link
+          endif
+        -%}
+
+        <article class="category-directory__card" role="listitem" {{ block.shopify_attributes }}>
+          <a class="category-directory__media" href="{{ parent_url }}" aria-label="Shop {{ parent_title | escape }}">
+            {%- if parent_image != blank -%}
+              {{
+                parent_image
+                | image_url: width: 900
+                | image_tag:
+                  class: 'category-directory__image',
+                  loading: 'lazy',
+                  widths: '300, 450, 600, 750, 900',
+                  sizes: category_image_sizes,
+                  alt: parent_title
+              }}
+            {%- else -%}
+              {%- liquid
+                case parent_title
+                  when 'Earrings'
+                    assign demo_category_asset = 'category-earrings.jpg'
+                  when 'Necklaces'
+                    assign demo_category_asset = 'category-necklaces.jpg'
+                  when 'Bangles & Bracelets'
+                    assign demo_category_asset = 'category-bangles.jpg'
+                  when 'Rings'
+                    assign demo_category_asset = 'category-rings.jpg'
+                  when 'Jewellery Sets'
+                    assign demo_category_asset = 'category-sets.jpg'
+                  when 'Hair Accessories'
+                    assign demo_category_asset = 'category-hair.jpg'
+                  else
+                    assign demo_category_asset = 'demo-category-1.jpg'
+                endcase
+              -%}
+              <img
+                class="category-directory__image"
+                src="{{ demo_category_asset | asset_url }}"
+                alt="{{ parent_title | escape }}"
+                loading="lazy"
+                width="900"
+                height="1125"
+              >
+            {%- endif -%}
+            {%- if block.settings.badge != blank -%}
+              <span class="category-directory__badge">{{ block.settings.badge | escape }}</span>
+            {%- endif -%}
+          </a>
+
+          <div class="category-directory__content">
+            <div class="category-directory__title-row">
+              <h3 class="category-directory__title"><a href="{{ parent_url }}">{{ parent_title | escape }}</a></h3>
+              {%- if section.settings.show_product_counts and parent_collection != blank -%}
+                <span class="category-directory__count">{{ parent_collection.products_count }}</span>
+              {%- endif -%}
+            </div>
+
+            {%- if section.settings.show_descriptions and block.settings.description != blank -%}
+              <p class="category-directory__description">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+
+            {%- if section.settings.show_subcategories -%}
+              <ul class="category-directory__links" role="list">
+                {%- for index in (1..4) -%}
+                  {%- liquid
+                    assign collection_key = 'subcategory_' | append: index
+                    assign label_key = collection_key | append: '_label'
+                    assign sub_collection = block.settings[collection_key]
+                    assign sub_label = block.settings[label_key]
+                    if sub_label == blank and sub_collection != blank
+                      assign sub_label = sub_collection.title
+                    endif
+                    assign sub_url = routes.all_products_collection_url
+                    if sub_collection != blank
+                      assign sub_url = sub_collection.url
+                    endif
+                  -%}
+                  {%- if sub_label != blank -%}
+                    <li>
+                      <a class="category-directory__sublink{% if sub_collection == blank %} category-directory__sublink--unconnected{% endif %}" href="{{ sub_url }}">
+                        <span>{{ sub_label | escape }}</span>
+                        {%- if section.settings.show_product_counts and sub_collection != blank -%}
+                          <span class="category-directory__subcount">{{ sub_collection.products_count }}</span>
+                        {%- else -%}
+                          <span aria-hidden="true">→</span>
+                        {%- endif -%}
+                      </a>
+                      {%- if request.design_mode and sub_collection == blank -%}
+                        <span class="category-directory__editor-note">Select a collection</span>
+                      {%- endif -%}
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            <a class="category-directory__shop-link" href="{{ parent_url }}">
+              {{ block.settings.button_label | default: 'Shop category' | escape }}
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="section-cta">
+        <a class="btn btn--outline" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop Categories",
+  "tag": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Each card connects to one main Shopify collection and up to four subcategory collections. Create the collections in Shopify Products > Collections, then select them here."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Find your jewellery"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Explore jewellery by type."
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 6,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_collection_images",
+      "label": "Use collection images when no custom image is selected",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_descriptions",
+      "label": "Show category descriptions",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subcategories",
+      "label": "Show subcategory links",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_counts",
+      "label": "Show collection product counts",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Bottom button label",
+      "default": "Shop All Jewellery"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Bottom button link"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#F7F2EC"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category_buttons",
+      "label": "Show each category button",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Category image shape",
+      "options": [
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "header",
+      "content": "Compact row on phones and tablets"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Layout on phones and tablets",
+      "options": [
+        {
+          "value": "swipe",
+          "label": "Single swipeable row"
+        },
+        {
+          "value": "grid",
+          "label": "Original grid"
+        }
+      ],
+      "default": "swipe"
+    },
+    {
+      "type": "paragraph",
+      "content": "The row keeps all categories on one line below 990px. Desktop keeps the existing columns. Image size and column settings below apply to the original grid; use the row size and spacing controls for the swipeable row."
+    },
+    {
+      "type": "range",
+      "id": "row_card_size",
+      "label": "Category size in swipeable row",
+      "min": 72,
+      "max": 128,
+      "step": 4,
+      "unit": "px",
+      "default": 92
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "label": "Gap between categories in row",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "row_show_heading",
+      "label": "Show heading above swipeable row",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "row_show_eyebrow",
+      "label": "Show eyebrow above swipeable row",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "row_heading_size",
+      "label": "Heading size above swipeable row",
+      "min": 20,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "row_padding_top",
+      "label": "Top spacing for swipeable row",
+      "min": 0,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "row_padding_bottom",
+      "label": "Bottom spacing for swipeable row",
+      "min": 0,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns on tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Desktop image size",
+      "min": 100,
+      "max": 300,
+      "step": 5,
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "label": "Mobile image size",
+      "min": 100,
+      "max": 300,
+      "step": 5,
+      "default": 155
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_group",
+      "name": "Category group",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Main category"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom category image"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Main collection"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Fallback custom link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Custom title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop category"
+        },
+        {
+          "type": "header",
+          "content": "Subcategory 1"
+        },
+        {
+          "type": "collection",
+          "id": "subcategory_1",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "subcategory_1_label",
+          "label": "Custom label"
+        },
+        {
+          "type": "header",
+          "content": "Subcategory 2"
+        },
+        {
+          "type": "collection",
+          "id": "subcategory_2",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "subcategory_2_label",
+          "label": "Custom label"
+        },
+        {
+          "type": "header",
+          "content": "Subcategory 3"
+        },
+        {
+          "type": "collection",
+          "id": "subcategory_3",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "subcategory_3_label",
+          "label": "Custom label"
+        },
+        {
+          "type": "header",
+          "content": "Subcategory 4"
+        },
+        {
+          "type": "collection",
+          "id": "subcategory_4",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "subcategory_4_label",
+          "label": "Custom label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop Categories",
+      "blocks": [
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Necklaces",
+            "description": "Long, short, layered and pendant styles",
+            "subcategory_1_label": "Long Necklace Sets",
+            "subcategory_2_label": "Short Necklace Sets",
+            "subcategory_3_label": "Pendant Necklace Sets",
+            "subcategory_4_label": "Layered Necklaces"
+          }
+        },
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Chokers",
+            "description": "Statement necklines for every occasion",
+            "subcategory_1_label": "Choker Sets",
+            "subcategory_2_label": "Mirror-Work Chokers",
+            "subcategory_3_label": "Ghungroo Chokers",
+            "subcategory_4_label": "Multicolour Chokers"
+          }
+        },
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Earrings",
+            "description": "Traditional and statement earrings",
+            "subcategory_1_label": "Jhumkas",
+            "subcategory_2_label": "Chandbalis",
+            "subcategory_3_label": "Danglers",
+            "subcategory_4_label": "Studs"
+          }
+        },
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Kamarpatta",
+            "description": "Statement waist jewellery",
+            "subcategory_1_label": "Oxidised Kamarpatta",
+            "subcategory_2_label": "Chain Kamarpatta",
+            "subcategory_3_label": "Statement Kamarpatta"
+          }
+        },
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Kada & Bangles",
+            "description": "Stack, pair or wear one statement piece",
+            "subcategory_1_label": "Single Kada",
+            "subcategory_2_label": "Kada Pair",
+            "subcategory_3_label": "Bangle Sets"
+          }
+        },
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Rings",
+            "description": "Finishing details for every look",
+            "subcategory_1_label": "Adjustable Rings",
+            "subcategory_2_label": "Statement Rings",
+            "subcategory_3_label": "Oxidised Rings"
+          }
+        },
+        {
+          "type": "category_group",
+          "settings": {
+            "title": "Jewellery Sets",
+            "description": "Coordinated pieces that complete the look",
+            "subcategory_1_label": "Necklace & Earring Sets",
+            "subcategory_2_label": "Choker & Earring Sets",
+            "subcategory_3_label": "Complete Jewellery Sets"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

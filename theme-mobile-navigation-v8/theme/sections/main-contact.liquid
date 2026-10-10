@@ -1,0 +1,116 @@
+<section class="section" style="--section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-accent: {{ section.settings.section_accent }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"><div class="page-shell"><header class="page-header"><h1 class="page-title">{{ section.settings.heading | default: page.title | escape }}</h1></header>{% if page.content != blank %}<div class="rte">{{ page.content }}</div>{% endif %}{% form 'contact' %}{% if form.posted_successfully? %}<p role="status">{{ section.settings.success_text | escape }}</p>{% endif %}{{ form.errors | default_errors }}{% if section.settings.show_name != false %}<p><label for="ContactName">{{ section.settings.name_label | escape }}</label><input id="ContactName" type="text" name="contact[name]" autocomplete="name"></p>{% endif %}<p><label for="ContactEmail">{{ section.settings.email_label | escape }}</label><input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required></p>{% if section.settings.show_phone != false %}<p><label for="ContactPhone">{{ section.settings.phone_label | escape }}</label><input id="ContactPhone" type="tel" name="contact[phone]" autocomplete="tel"></p>{% endif %}<p><label for="ContactMessage">{{ section.settings.message_label | escape }}</label><textarea id="ContactMessage" name="contact[body]" rows="6" required></textarea></p><button class="btn btn--primary" type="submit">{{ section.settings.button_label | escape }}</button>{% endform %}</div></section>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading override"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_name",
+      "label": "Show name field",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show phone field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "Name label",
+      "default": "Name"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "phone_label",
+      "label": "Phone label",
+      "default": "Phone"
+    },
+    {
+      "type": "text",
+      "id": "message_label",
+      "label": "Message label",
+      "default": "Message"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit button",
+      "default": "Send message"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success message",
+      "default": "Thanks. We’ll get back to you soon."
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "section_accent",
+      "label": "Accent colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    }
+  ]
+}
+{% endschema %}

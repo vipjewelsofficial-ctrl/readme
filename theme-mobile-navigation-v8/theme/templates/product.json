@@ -1,0 +1,164 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "use_offer_blocks": true,
+        "use_benefit_blocks": true,
+        "use_component_blocks": true
+      },
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {}
+        },
+        "details": {
+          "type": "details",
+          "settings": {}
+        },
+        "trust": {
+          "type": "trust",
+          "settings": {}
+        },
+        "offer_1": {
+          "type": "offer",
+          "settings": {
+            "text": "Free shipping above \u20b9599",
+            "icon": "percent"
+          }
+        },
+        "offer_2": {
+          "type": "offer",
+          "settings": {
+            "text": "Free gift on orders above \u20b9699",
+            "icon": "percent"
+          }
+        },
+        "offer_3": {
+          "type": "offer",
+          "settings": {
+            "text": "Free organiser on orders above \u20b91,199",
+            "icon": "percent"
+          }
+        },
+        "offer_4": {
+          "type": "offer",
+          "settings": {
+            "text": "Get \u20b9100 off on orders above \u20b91,499",
+            "icon": "percent"
+          }
+        },
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Easy returns",
+            "text": "As per our policy",
+            "icon": "return"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Free shipping",
+            "text": "On orders above \u20b9599",
+            "icon": "truck"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "title": "COD available",
+            "text": "Check at checkout",
+            "icon": "cod"
+          }
+        },
+        "wishlist": {
+          "type": "wishlist",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "description",
+        "buy_buttons",
+        "wishlist",
+        "details",
+        "trust",
+        "offer_1",
+        "offer_2",
+        "offer_3",
+        "offer_4",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3"
+      ]
+    },
+    "mobile_related": {
+      "type": "mobile-product-recommendations",
+      "settings": {}
+    },
+    "mobile_faq": {
+      "type": "mobile-product-faq",
+      "settings": {},
+      "blocks": {
+        "tracking": {
+          "type": "question",
+          "settings": {
+            "question": "How can I track my order?",
+            "answer": "<p>If tracking is available for your order, use the tracking link in your shipping confirmation. Contact us with your order number if you need help.</p>"
+          }
+        },
+        "support": {
+          "type": "question",
+          "settings": {
+            "question": "How can I contact customer support?",
+            "answer": "<p>Visit our Contact Us page and send your question along with your order number, if applicable.</p>"
+          }
+        },
+        "returns": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer returns or exchanges?",
+            "answer": "<p>Please check the Returns &amp; Refunds policy linked above for eligibility and conditions, or contact us about your order.</p>"
+          }
+        },
+        "materials": {
+          "type": "question",
+          "settings": {
+            "question": "Is this jewellery suitable for sensitive skin?",
+            "answer": "<p>Materials vary by product. Check the product description before purchasing. If you have metal sensitivities, contact us about the specific piece.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tracking",
+        "support",
+        "returns",
+        "materials"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "mobile_related",
+    "mobile_faq"
+  ]
+}

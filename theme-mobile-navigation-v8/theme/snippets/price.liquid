@@ -1,0 +1,54 @@
+{%- comment -%}
+  Renders a formatted price.
+  Usage: {% render 'price', product: product %}
+  Accepts:
+    - product: {Object} Shopify product object
+    - variant: {Object} specific variant (optional, falls back to selected/first)
+{%- endcomment -%}
+
+{%- liquid
+  if variant
+    assign target = variant
+  else
+    assign target = product.selected_or_first_available_variant
+  endif
+
+  assign on_sale = false
+  if target.compare_at_price > target.price
+    assign on_sale = true
+  endif
+
+  assign price = target.price
+  assign compare_price = target.compare_at_price
+  assign compare_price_money = compare_price | money
+  assign price_min = product.price_min
+  assign price_min_money = price_min | money
+  if variant
+    assign price_varies = false
+  else
+    assign price_varies = product.price_varies
+  endif
+
+  assign savings = 0
+  if on_sale
+    assign savings = compare_price | minus: price | times: 100 | divided_by: compare_price
+  endif
+-%}
+
+<div class="price{% if on_sale %} price--on-sale{% endif %}">
+  {%- if price_varies -%}
+    <span class="price__from visually-hidden">{{ 'products.product.from_label' | t }}</span>
+    <span class="price__amount" aria-label="{{ 'products.product.price_from' | t: price: price_min_money | escape }}">
+      {{ price_min | money }}
+    </span>
+  {%- else -%}
+    <span class="price__amount" aria-label="{{ price | money }}">
+      {{ price | money }}
+    </span>
+  {%- endif -%}
+
+  {% if settings.show_compare_price != false %}<s class="price__compare" aria-label="{{ 'products.product.regular_price' | t: price: compare_price_money | escape }}"{% unless on_sale %} hidden{% endunless %}>
+    {%- if on_sale -%}{{ compare_price | money }}{%- endif -%}
+  </s>{% endif %}
+  {% if settings.show_savings != false %}<span class="price__savings" aria-label="{{ 'products.product.percent_off' | t: percent: savings | escape }}"{% unless on_sale %} hidden{% endunless %}>-{{ savings }}%</span>{% endif %}
+</div>

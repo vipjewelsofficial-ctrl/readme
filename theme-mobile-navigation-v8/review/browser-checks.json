@@ -1,0 +1,133 @@
+{
+  "live_shopify_tested": false,
+  "mock_cart_and_accounts": true,
+  "checks": [
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 320,
+      "heart_px": 32,
+      "gap_px": 24.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 360,
+      "heart_px": 32,
+      "gap_px": 24.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 390,
+      "heart_px": 32,
+      "gap_px": 24.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 430,
+      "heart_px": 32,
+      "gap_px": 24.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 768,
+      "heart_px": 32,
+      "gap_px": 24.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 989,
+      "heart_px": 32,
+      "gap_px": 24.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 990,
+      "heart_px": 44,
+      "gap_px": 120.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 1440,
+      "heart_px": 44,
+      "gap_px": 120.0
+    },
+    {
+      "check": "Responsive homepage, fixed navigation, smaller hearts, spacing, shared counts and autoplay",
+      "passed": true,
+      "width": 1920,
+      "heart_px": 44,
+      "gap_px": 120.0
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 989
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Cart quantity autosave, remove, totals, both counts and native checkout submit",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Cart quantity autosave, remove, totals, both counts and native checkout submit",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Editable bar visibility and optional items",
+      "passed": true,
+      "settings": {
+        "enabled": false
+      }
+    },
+    {
+      "check": "Editable bar visibility and optional items",
+      "passed": true,
+      "settings": {
+        "show_account": false
+      }
+    },
+    {
+      "check": "Editable bar visibility and optional items",
+      "passed": true,
+      "settings": {
+        "show_wishlist": false
+      }
+    },
+    {
+      "check": "Custom labels, colour and URL controls, resized height and editor unload cleanup",
+      "passed": true
+    },
+    {
+      "check": "Signed-in account label and Shopify account route",
+      "passed": true
+    }
+  ]
+}

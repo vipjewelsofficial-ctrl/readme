@@ -1,0 +1,584 @@
+{{ 'hero-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'hero-slider.js' | asset_url }}" defer></script>
+{%- liquid
+  assign slide_count = section.blocks.size
+  assign include_base = section.settings.include_base
+  if include_base != false or slide_count == 0
+    assign include_base = true
+    assign slide_count = slide_count | plus: 1
+  endif
+  assign block_count = section.blocks.size
+  assign slide_position = 0
+-%}
+<div class="hero-slider" id="hero-{{ section.id }}" data-hero-slider data-autoplay="{{ section.settings.autoplay }}" data-interval="{{ section.settings.slide_interval | times: 1000 }}" data-pause-label="{{ 'sections.slider.pause' | t }}" data-play-label="{{ 'sections.slider.play' | t }}" role="region" aria-roledescription="{{ 'sections.slider.slideshow' | t }}" aria-label="{{ section.settings.heading | default: shop.name | escape }}">
+  {%- for slide_index in (0..block_count) -%}
+    {%- if slide_index == 0 -%}
+      {%- if include_base -%}
+        {% render 'hero-slide', slide: section.settings, section: section, position: slide_position, total: slide_count, block_id: 'base' %}
+        {%- assign slide_position = slide_position | plus: 1 -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign block_index = slide_index | minus: 1 -%}
+      {%- assign block = section.blocks[block_index] -%}
+      {% render 'hero-slide', slide: block.settings, section: section, position: slide_position, total: slide_count, block_id: block.id, block_attributes: block.shopify_attributes %}
+      {%- assign slide_position = slide_position | plus: 1 -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if slide_count > 1 -%}
+    <div class="hero-slider__controls">
+      {% if section.settings.show_arrows %}<button type="button" data-slider-prev aria-label="{{ 'sections.slider.previous' | t }}">←</button>{% endif %}
+      {% if section.settings.show_dots %}<div class="hero-slider__dots">{% for index in (1..slide_count) %}<button type="button" data-slide-index="{{ index | minus: 1 }}" aria-label="{{ 'sections.slider.go_to' | t: number: index }}" aria-current="{% if index == 1 %}true{% else %}false{% endif %}"></button>{% endfor %}</div>{% endif %}
+      {% if section.settings.show_arrows %}<button type="button" data-slider-next aria-label="{{ 'sections.slider.next' | t }}">→</button>{% endif %}
+      {% if section.settings.autoplay %}<button type="button" data-slider-pause aria-pressed="false">{{ 'sections.slider.pause' | t }}</button>{% endif %}
+    </div>
+    <span class="visually-hidden" data-slider-status aria-live="polite" aria-atomic="true">1 / {{ slide_count }}</span>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Hero Image Slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Edit each Slide block to change its images, text and link. Add a second Slide to enable navigation and autoplay. Desktop and mobile images can be different."
+    },
+    {
+      "type": "header",
+      "content": "Slideshow and responsive layout"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "default": 600,
+      "label": "Minimum hero height",
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_base",
+      "label": "Include the first banner",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slide_interval",
+      "label": "Seconds between slides",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show previous / next arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show slide dots",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "height_mode",
+      "label": "Banner height",
+      "options": [
+        {
+          "value": "fixed",
+          "label": "Use height settings"
+        },
+        {
+          "value": "adapt",
+          "label": "Adapt to image proportions"
+        }
+      ],
+      "default": "fixed"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "min": 300,
+      "max": 900,
+      "step": 20,
+      "default": 680
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Fill / crop"
+        },
+        {
+          "value": "contain",
+          "label": "Show entire image"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "color",
+      "id": "mobile_panel_color",
+      "label": "Mobile panel colour",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "range",
+      "id": "mobile_panel_opacity",
+      "label": "Mobile panel opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 92
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_width",
+      "label": "Mobile content width",
+      "min": 280,
+      "max": 700,
+      "step": 20,
+      "default": 520
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "Mobile text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Legacy original slide"
+    },
+    {
+      "type": "paragraph",
+      "content": "The fields below are used only when Include original slide is enabled, or when no Slide blocks exist. The imported artwork is now in the first Slide block."
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image (recommended: 1920\u00d7900px)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image (recommended: 750\u00d7900px)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 70,
+      "step": 5,
+      "default": 30,
+      "label": "Image overlay opacity",
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Statement Silver, Crafted with Soul"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Oxidised jewellery inspired by Indian craft, made for modern wardrobes."
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_label",
+      "label": "Primary Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_label",
+      "label": "Secondary Button Label",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay colour",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "panel_color",
+      "label": "Text panel colour",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "range",
+      "id": "panel_opacity",
+      "label": "Text panel opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 90,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext colour",
+      "default": "#4F494B"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg",
+      "label": "Primary button background",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text",
+      "label": "Primary button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Text panel width",
+      "min": 360,
+      "max": 760,
+      "step": 20,
+      "default": 620,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "content_mode",
+      "label": "First banner content",
+      "options": [
+        {
+          "value": "overlay",
+          "label": "Theme text panel"
+        },
+        {
+          "value": "image",
+          "label": "Image only"
+        }
+      ],
+      "default": "overlay"
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "First banner image link"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "First banner image description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Image Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ],
+      "settings": {
+        "include_base": false,
+        "autoplay": true
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image (recommended: 1920\u00d7900px)"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image (recommended: 750\u00d7900px)"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 70,
+          "step": 5,
+          "default": 30,
+          "label": "Image overlay opacity",
+          "unit": "%"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Statement Silver, Crafted with Soul"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading Size",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ],
+          "default": "large"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Oxidised jewellery inspired by Indian craft, made for modern wardrobes."
+        },
+        {
+          "type": "header",
+          "content": "Buttons"
+        },
+        {
+          "type": "text",
+          "id": "btn_primary_label",
+          "label": "Primary Button Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "btn_primary_link",
+          "label": "Primary Button Link"
+        },
+        {
+          "type": "text",
+          "id": "btn_secondary_label",
+          "label": "Secondary Button Label",
+          "default": "New Arrivals"
+        },
+        {
+          "type": "url",
+          "id": "btn_secondary_link",
+          "label": "Secondary Button Link"
+        },
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Centre"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "header",
+          "content": "Hero colours"
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay colour",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "panel_color",
+          "label": "Text panel colour",
+          "default": "#FFFDF9"
+        },
+        {
+          "type": "range",
+          "id": "panel_opacity",
+          "label": "Text panel opacity",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "default": 90,
+          "unit": "%"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading colour",
+          "default": "#242424"
+        },
+        {
+          "type": "color",
+          "id": "subtext_color",
+          "label": "Subtext colour",
+          "default": "#4F494B"
+        },
+        {
+          "type": "color",
+          "id": "primary_button_bg",
+          "label": "Primary button background",
+          "default": "#7A1F32"
+        },
+        {
+          "type": "color",
+          "id": "primary_button_text",
+          "label": "Primary button text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "range",
+          "id": "content_width",
+          "label": "Text panel width",
+          "min": 360,
+          "max": 760,
+          "step": 20,
+          "default": 620,
+          "unit": "px"
+        },
+        {
+          "type": "select",
+          "id": "content_mode",
+          "label": "Content mode",
+          "options": [
+            {
+              "value": "overlay",
+              "label": "Theme text panel"
+            },
+            {
+              "value": "image",
+              "label": "Image only"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "url",
+          "id": "banner_link",
+          "label": "Image link"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

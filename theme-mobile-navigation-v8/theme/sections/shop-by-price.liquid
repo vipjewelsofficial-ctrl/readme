@@ -1,0 +1,230 @@
+<section
+  class="price-shop section"
+  id="shop-by-price-{{ section.id }}"
+  style="--price-shop-bg: {{ section.settings.background_color }}; --price-shop-text: {{ section.settings.text_color }}; --price-shop-accent: {{ section.settings.accent_color }}; --section-bg: {{ section.settings.background_color }}; --section-text: {{ section.settings.text_color }}; --section-accent: {{ section.settings.accent_color }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  {% if section.settings.heading != blank %}aria-labelledby="price-heading-{{ section.id }}"{% else %}aria-label="Shop by price"{% endif %}
+>
+  <div class="container">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-header price-shop__header">
+        {%- if section.settings.eyebrow != blank -%}<p class="section-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="section-title" id="price-heading-{{ section.id }}">{{ section.settings.heading | escape }}</h2>{%- endif -%}
+        {%- if section.settings.subheading != blank -%}<p class="price-shop__subheading">{{ section.settings.subheading | escape }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="price-shop__grid" style="--price-shop-columns: {{ section.settings.columns_desktop }};" role="list">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign destination = block.settings.link
+          if destination == blank and block.settings.collection != blank
+            assign destination = block.settings.collection.url
+          endif
+          if destination == blank
+            assign destination = routes.all_products_collection_url
+          endif
+        -%}
+        <a
+          class="price-shop__card"
+          href="{{ destination }}"
+          role="listitem"
+          style="--price-card-bg: {{ block.settings.background_color }}; --price-card-text: {{ block.settings.text_color }};"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.kicker != blank -%}<span class="price-shop__kicker">{{ block.settings.kicker | escape }}</span>{%- endif -%}
+          <span class="price-shop__label">{{ block.settings.label | escape }}</span>
+          {%- if block.settings.description != blank -%}<span class="price-shop__description">{{ block.settings.description | escape }}</span>{%- endif -%}
+          <span class="price-shop__arrow" aria-hidden="true">→</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop by Price",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Jewellery for every budget"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Price"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Find everyday favourites, statement pieces and premium picks."
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#F7F2EC"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Heading and text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "price_card",
+      "name": "Price card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Small label",
+          "default": "QUICK PICKS"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Price label",
+          "default": "Under ₹499"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Easy everyday add-ons"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Custom link (optional)"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Card background",
+          "default": "#FFFDF9"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Card text",
+          "default": "#242424"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by Price",
+      "blocks": [
+        {
+          "type": "price_card",
+          "settings": {
+            "kicker": "LITTLE DETAILS",
+            "label": "Under ₹299",
+            "description": "Rings and easy add-ons"
+          }
+        },
+        {
+          "type": "price_card",
+          "settings": {
+            "kicker": "EVERYDAY FAVOURITES",
+            "label": "Under ₹499",
+            "description": "Earrings, bangles and more"
+          }
+        },
+        {
+          "type": "price_card",
+          "settings": {
+            "kicker": "MOST LOVED",
+            "label": "Under ₹799",
+            "description": "Chokers and necklaces"
+          }
+        },
+        {
+          "type": "price_card",
+          "settings": {
+            "kicker": "COMPLETE THE LOOK",
+            "label": "Premium Sets",
+            "description": "Special occasion combinations"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

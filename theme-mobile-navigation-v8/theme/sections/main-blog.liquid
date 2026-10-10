@@ -1,0 +1,144 @@
+<section class="section main-blog-section" style="--section-bg: {{ section.settings.section_background }}; --section-text: {{ section.settings.section_text }}; --section-accent: {{ section.settings.section_accent }}; --section-mobile-pt: {{ section.settings.padding_top_mobile }}px; --section-mobile-pb: {{ section.settings.padding_bottom_mobile }}px; --section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px; --products-mobile-columns: {{ section.settings.columns_mobile }};">
+<div class="page-shell"><header class="page-header"><h1 class="page-title">{{ blog.title | escape }}</h1></header>
+{% paginate blog.articles by section.settings.articles_per_page %}
+<div class="products-grid products-grid--{{ section.settings.columns_desktop }}-col" role="list">
+{% for article in blog.articles %}<article role="listitem">
+{% if section.settings.show_images and article.image %}<a href="{{ article.url }}">{{ article.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: article.title }}</a>{% endif %}
+<h2><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+{% if section.settings.show_excerpt != false %}<p>{{ article.excerpt_or_content | strip_html | truncate: section.settings.excerpt_length }}</p>{% endif %}
+<a href="{{ article.url }}">{{ section.settings.read_more_label | escape }}</a></article>{% endfor %}
+</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div></section>
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "label": "Articles per page",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Desktop columns",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Mobile columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "excerpt_length",
+      "label": "Excerpt length",
+      "min": 20,
+      "max": 300,
+      "step": 20,
+      "default": 180
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpts",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_images",
+      "label": "Show article images",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "read_more_label",
+      "label": "Read more label",
+      "default": "Read more"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFFDF9"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Text colour",
+      "default": "#242424"
+    },
+    {
+      "type": "color",
+      "id": "section_accent",
+      "label": "Accent colour",
+      "default": "#7A1F32"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 20,
+      "max": 140,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "default": 48
+    }
+  ]
+}
+{% endschema %}

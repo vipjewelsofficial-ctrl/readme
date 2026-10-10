@@ -1,0 +1,7 @@
+{%- if settings.enable_wishlist != false and product != blank -%}
+  {%- assign wishlist_image = product.featured_image -%}
+  <button type="button" class="wishlist-toggle{% if compact %} wishlist-toggle--compact{% endif %}" data-wishlist-product data-product-id="{{ product.id }}" data-product-url="{{ product.url | escape }}" data-product-title="{{ product.title | escape }}"{% if wishlist_image != blank %} data-product-image="{{ wishlist_image | image_url: width: 400 | escape }}"{% endif %} data-add-label="{{ 'general.wishlist.add_label' | t: product: product.title | escape }}" data-remove-label="{{ 'general.wishlist.remove_label' | t: product: product.title | escape }}" aria-label="{{ 'general.wishlist.add_label' | t: product: product.title | escape }}" aria-pressed="false" hidden>
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+    {% unless compact %}<span data-wishlist-toggle-label>{{ 'general.wishlist.add' | t }}</span>{% endunless %}
+  </button>
+{%- endif -%}

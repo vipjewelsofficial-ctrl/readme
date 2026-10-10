@@ -1,0 +1,15 @@
+{
+  "package": "Gujju-Jewels-Mobile-Navigation-v8.zip",
+  "zip_bytes": 4179552,
+  "sha256": "eaedf7feef99643a9d58a8b3bc86a8059f2488e2179c76738de614df406041b4",
+  "zip_integrity_valid": true,
+  "theme_files": 104,
+  "input_files": 98,
+  "unchanged_input_files": 92,
+  "modified_input_files": 6,
+  "added_files": 6,
+  "browser_checks_passed": 21,
+  "theme_check_errors": 0,
+  "theme_check_existing_warnings": 2,
+  "live_shopify_tested": false
+}

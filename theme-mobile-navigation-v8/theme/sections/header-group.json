@@ -1,0 +1,40 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "announcement_text": "New arrivals are here \u2014 discover the latest Gujju Jewels styles",
+        "announcement_link": "",
+        "show_marquee": false,
+        "bg_color": "#7a1f32",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "Gujju Jewels",
+        "logo_width": 190,
+        "mobile_logo_width": 170,
+        "use_builtin_menu": true,
+        "menu": "main-menu",
+        "show_sale_badge": true,
+        "sale_menu_title": "Hot Deals",
+        "sale_badge_text": "SALE",
+        "show_account": true,
+        "desktop_bg_color": "#fffdf9",
+        "desktop_text_color": "#242424",
+        "brand_color": "#7a1f32",
+        "mobile_bg_color": "#fffdf9",
+        "mobile_text_color": "#242424",
+        "border_color": "#e8e2dc"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

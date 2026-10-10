@@ -1,0 +1,58 @@
+{%- liquid
+  assign desktop_image = slide.desktop_image | default: slide.mobile_image
+  assign mobile_image = slide.mobile_image | default: desktop_image
+  assign image_alt = slide.image_alt | default: desktop_image.alt | default: slide.heading
+  assign image_loading = 'lazy'
+  assign image_priority = 'auto'
+  if position == 0
+    assign image_loading = 'eager'
+    assign image_priority = 'high'
+  endif
+  assign desktop_ratio = desktop_image.aspect_ratio | default: 2.1333
+  assign mobile_ratio = mobile_image.aspect_ratio | default: desktop_ratio
+  assign content_mode = slide.content_mode | default: 'overlay'
+  assign banner_link = slide.banner_link
+  if content_mode == 'image' and banner_link == blank
+    assign banner_link = slide.btn_primary_link | default: routes.all_products_collection_url
+  endif
+-%}
+<section class="hero hero__slide hero__slide--{{ section.settings.height_mode }} hero__slide--{{ content_mode }}" data-hero-slide data-block-id="{{ block_id }}" {% if position > 0 %}hidden{% endif %} {{ block_attributes }}
+  style="--hero-height: {{ section.settings.min_height }}px; --hero-mobile-height: {{ section.settings.mobile_height }}px; --hero-ratio: {{ desktop_ratio }}; --hero-mobile-ratio: {{ mobile_ratio }}; --hero-heading: {{ slide.heading_color }}; --hero-subtext: {{ slide.subtext_color }}; --hero-panel: {{ slide.panel_color }}; --hero-panel-opacity: {{ slide.panel_opacity }}%; --hero-content-width: {{ slide.content_width }}px; --hero-overlay: {{ slide.overlay_color }}; --hero-primary-bg: {{ slide.primary_button_bg }}; --hero-primary-text: {{ slide.primary_button_text }}; --hero-mobile-panel: {{ section.settings.mobile_panel_color }}; --hero-mobile-opacity: {{ section.settings.mobile_panel_opacity }}%; --hero-mobile-width: {{ section.settings.mobile_content_width }}px; --hero-mobile-align: {{ section.settings.mobile_text_alignment }}; --hero-fit: {{ section.settings.image_fit }};"
+  role="group" aria-roledescription="{{ 'sections.slider.slide' | t }}" aria-label="{{ position | plus: 1 }} / {{ total }}">
+  <div class="hero__media">
+    <picture>
+      {%- if mobile_image != blank -%}
+        <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 375 }} 375w, {{ mobile_image | image_url: width: 750 }} 750w" sizes="100vw">
+      {%- else -%}
+        <source media="(max-width: 749px)" srcset="{{ 'demo-hero-mobile.jpg' | asset_url }}">
+      {%- endif -%}
+      {%- if desktop_image != blank -%}
+        {{ desktop_image | image_url: width: 1920 | image_tag: class: 'hero__img', loading: image_loading, fetchpriority: image_priority, alt: image_alt, widths: '375,750,1024,1440,1920', sizes: '100vw' }}
+      {%- else -%}
+        <img class="hero__img" src="{{ 'demo-hero-desktop.jpg' | asset_url }}" alt="{{ image_alt | escape }}" loading="{{ image_loading }}" fetchpriority="{{ image_priority }}" width="1920" height="900">
+      {%- endif -%}
+    </picture>
+    {% if content_mode == 'overlay' %}<div class="hero__overlay" style="opacity: {{ slide.overlay_opacity | divided_by: 100.0 }};"></div>{% endif %}
+  </div>
+  {%- if content_mode == 'image' -%}
+    {%- if slide.heading != blank -%}
+      {% if position == 0 %}<h1 class="visually-hidden">{{ slide.heading | escape }}</h1>{% else %}<h2 class="visually-hidden">{{ slide.heading | escape }}</h2>{% endif %}
+    {%- endif -%}
+    {%- if banner_link != blank -%}<a class="hero__image-link" href="{{ banner_link }}" aria-label="{{ slide.btn_primary_label | default: slide.heading | default: shop.name | escape }}"></a>{%- endif -%}
+  {%- else -%}
+    <div class="hero__content hero__content--{{ slide.content_position }}">
+      <div class="hero__content-inner">
+        {%- if slide.heading != blank -%}
+          {% if position == 0 %}<h1 class="hero__heading hero__heading--{{ slide.heading_size }}">{{ slide.heading | escape }}</h1>{% else %}<h2 class="hero__heading hero__heading--{{ slide.heading_size }}">{{ slide.heading | escape }}</h2>{% endif %}
+        {%- endif -%}
+        {% if slide.subtext != blank %}<p class="hero__subtext">{{ slide.subtext | escape }}</p>{% endif %}
+        {% if slide.btn_primary_label != blank or slide.btn_secondary_label != blank %}
+          <div class="hero__btns">
+            {% if slide.btn_primary_label != blank %}<a href="{{ slide.btn_primary_link | default: routes.all_products_collection_url }}" class="btn btn--primary hero__btn">{{ slide.btn_primary_label | escape }}</a>{% endif %}
+            {% if slide.btn_secondary_label != blank %}<a href="{{ slide.btn_secondary_link | default: routes.all_products_collection_url }}" class="btn btn--secondary hero__btn">{{ slide.btn_secondary_label | escape }}</a>{% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
