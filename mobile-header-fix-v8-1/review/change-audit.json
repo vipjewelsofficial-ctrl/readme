@@ -1,0 +1,10 @@
+{
+  "changed_files": [
+    "sections/header.liquid",
+    "assets/wishlist.css"
+  ],
+  "unchanged_files": 102,
+  "total_files": 104,
+  "merchant_settings_and_image_references_unchanged": true,
+  "cart_wishlist_slider_and_bottom_bar_js_unchanged": true
+}

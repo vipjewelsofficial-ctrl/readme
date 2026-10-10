@@ -1,0 +1,15 @@
+{
+  "filename": "Gujju-Jewels-Centered-Mobile-Header-v8.1.zip",
+  "sha256": "6b88ab9e8063317c57b03e956105f5d96f9164d3a13b0f0e0e207bdf46e696d6",
+  "bytes": 4179629,
+  "theme_files": 104,
+  "changed_files": [
+    "sections/header.liquid",
+    "assets/wishlist.css"
+  ],
+  "unchanged_from_v8": 102,
+  "header_checks_passed": 31,
+  "theme_check_errors": 0,
+  "theme_check_existing_warnings": 2,
+  "live_shopify_tested": false
+}
