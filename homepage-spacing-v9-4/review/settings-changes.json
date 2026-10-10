@@ -1,0 +1,206 @@
+[
+  {
+    "section": "categories",
+    "setting": "padding_top",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "categories",
+    "setting": "padding_bottom",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "categories",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "categories",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "categories",
+    "setting": "row_padding_top",
+    "before": 16,
+    "after": 12
+  },
+  {
+    "section": "categories",
+    "setting": "row_padding_bottom",
+    "before": 8,
+    "after": 12
+  },
+  {
+    "section": "new_arrivals",
+    "setting": "padding_top",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "new_arrivals",
+    "setting": "padding_bottom",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "new_arrivals",
+    "setting": "padding_top_mobile",
+    "before": 16,
+    "after": 12
+  },
+  {
+    "section": "new_arrivals",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "styles",
+    "setting": "padding_top",
+    "before": 70,
+    "after": 20
+  },
+  {
+    "section": "styles",
+    "setting": "padding_bottom",
+    "before": 70,
+    "after": 20
+  },
+  {
+    "section": "styles",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "styles",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "trust",
+    "setting": "padding_top",
+    "before": 50,
+    "after": 20
+  },
+  {
+    "section": "trust",
+    "setting": "padding_bottom",
+    "before": 50,
+    "after": 20
+  },
+  {
+    "section": "trust",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "trust",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "trending",
+    "setting": "padding_top",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "trending",
+    "setting": "padding_bottom",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "trending",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "trending",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "reviews",
+    "setting": "padding_top",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "reviews",
+    "setting": "padding_bottom",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "reviews",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "reviews",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "social",
+    "setting": "padding_top",
+    "before": 70,
+    "after": 20
+  },
+  {
+    "section": "social",
+    "setting": "padding_bottom",
+    "before": 70,
+    "after": 20
+  },
+  {
+    "section": "social",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "social",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "faq",
+    "setting": "padding_top",
+    "before": 50,
+    "after": 20
+  },
+  {
+    "section": "faq",
+    "setting": "padding_bottom",
+    "before": 60,
+    "after": 20
+  },
+  {
+    "section": "faq",
+    "setting": "padding_top_mobile",
+    "before": 72,
+    "after": 12
+  },
+  {
+    "section": "faq",
+    "setting": "padding_bottom_mobile",
+    "before": 72,
+    "after": 12
+  }
+]

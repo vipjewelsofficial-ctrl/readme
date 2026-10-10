@@ -1,0 +1,140 @@
+{
+  "live_shopify_tested": false,
+  "checks": [
+    {
+      "width": 320,
+      "before_gap_px": {
+        "arrivals_styles": 144,
+        "styles_confidence": 144,
+        "confidence_trending": 144
+      },
+      "after_gap_px": {
+        "arrivals_styles": 24,
+        "styles_confidence": 24,
+        "confidence_trending": 24
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 360,
+      "before_gap_px": {
+        "arrivals_styles": 144,
+        "styles_confidence": 144,
+        "confidence_trending": 144
+      },
+      "after_gap_px": {
+        "arrivals_styles": 24,
+        "styles_confidence": 24,
+        "confidence_trending": 24
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 390,
+      "before_gap_px": {
+        "arrivals_styles": 144,
+        "styles_confidence": 144,
+        "confidence_trending": 144
+      },
+      "after_gap_px": {
+        "arrivals_styles": 24,
+        "styles_confidence": 24,
+        "confidence_trending": 24
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 430,
+      "before_gap_px": {
+        "arrivals_styles": 144,
+        "styles_confidence": 144,
+        "confidence_trending": 144
+      },
+      "after_gap_px": {
+        "arrivals_styles": 24,
+        "styles_confidence": 24,
+        "confidence_trending": 24
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 768,
+      "before_gap_px": {
+        "arrivals_styles": 144,
+        "styles_confidence": 144,
+        "confidence_trending": 144
+      },
+      "after_gap_px": {
+        "arrivals_styles": 24,
+        "styles_confidence": 24,
+        "confidence_trending": 24
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 989,
+      "before_gap_px": {
+        "arrivals_styles": 130,
+        "styles_confidence": 120,
+        "confidence_trending": 110
+      },
+      "after_gap_px": {
+        "arrivals_styles": 40,
+        "styles_confidence": 40,
+        "confidence_trending": 40
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 990,
+      "before_gap_px": {
+        "arrivals_styles": 130,
+        "styles_confidence": 120,
+        "confidence_trending": 110
+      },
+      "after_gap_px": {
+        "arrivals_styles": 40,
+        "styles_confidence": 40,
+        "confidence_trending": 40
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1440,
+      "before_gap_px": {
+        "arrivals_styles": 130,
+        "styles_confidence": 120,
+        "confidence_trending": 110
+      },
+      "after_gap_px": {
+        "arrivals_styles": 40,
+        "styles_confidence": 40,
+        "confidence_trending": 40
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1920,
+      "before_gap_px": {
+        "arrivals_styles": 130,
+        "styles_confidence": 120,
+        "confidence_trending": 110
+      },
+      "after_gap_px": {
+        "arrivals_styles": 40,
+        "styles_confidence": 40,
+        "confidence_trending": 40
+      },
+      "all_visible_sections_retained": true,
+      "page_overflow": false
+    }
+  ]
+}
