@@ -1,5 +1,7 @@
 # Theme downloads
 
+For **Shop by Category**, apply **[Gujju-Jewels-Mobile-Category-Row-Fix.zip](Gujju-Jewels-Mobile-Category-Row-Fix.zip)** through Edit code. It adds a compact swipeable row on phones/tablets with Shopify size/spacing/heading controls and preserves desktop columns, saved categories and the rest of the theme. Read the [category patch instructions](../mobile-category-row-fix/README.md).
+
 For an already installed v7 theme, apply **[Gujju-Jewels-Responsive-Header-Slider-Fix.zip](Gujju-Jewels-Responsive-Header-Slider-Fix.zip)** through Edit code. This three-asset patch fixes mobile logo/heart spacing, keeps only slider dots (below the artwork on mobile), improves wishlist panel layout and includes the autoplay correction. It preserves images/settings added since v7. Read the [patch instructions](../responsive-header-slider-fix/README.md).
 
 The latest complete theme is **[Gujju-Jewels-Slider-Wishlist-v7.zip](Gujju-Jewels-Slider-Wishlist-v7.zip)**. It includes the editable hero slideshow, a free browser-saved wishlist and the four remaining editor fixes. Read the [v7 setup guide](../theme-slider-wishlist-v7/README.md). All 100 theme files are included. The original artwork is retained as the first Slide; select a second image in Shopify to start cycling slides.

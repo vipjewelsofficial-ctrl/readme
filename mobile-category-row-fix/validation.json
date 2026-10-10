@@ -1,0 +1,119 @@
+{
+  "local_browser_tests": true,
+  "live_shopify_tested": false,
+  "checks": [
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 360
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 989
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 990
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Single row on mobile/tablet; original desktop geometry and collection links",
+      "passed": true,
+      "width": 1920
+    },
+    {
+      "test": "Category section takes substantially less vertical space",
+      "passed": true,
+      "before_px": 820.828125,
+      "after_px": 223.59375
+    },
+    {
+      "test": "Native touch swipe, keyboard scrolling and focus reveal all eight categories",
+      "passed": true
+    },
+    {
+      "test": "Original grid option exactly preserves prior layout",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Original grid option exactly preserves prior layout",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Original grid option exactly preserves prior layout",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Shopify row size, gap, heading, spacing and image shape controls",
+      "passed": true,
+      "shape": "circle"
+    },
+    {
+      "test": "Shopify row size, gap, heading, spacing and image shape controls",
+      "passed": true,
+      "shape": "square"
+    },
+    {
+      "test": "Shopify row size, gap, heading, spacing and image shape controls",
+      "passed": true,
+      "shape": "portrait"
+    },
+    {
+      "test": "Optional mobile heading can be hidden",
+      "passed": true
+    },
+    {
+      "test": "Existing category buttons and links remain available",
+      "passed": true
+    },
+    {
+      "test": "Adjacent hero autoplay, uncropped artwork, dots and wishlist work with row",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Adjacent hero autoplay, uncropped artwork, dots and wishlist work with row",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Empty and single-category cases have no errors",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "test": "Empty and single-category cases have no errors",
+      "passed": true,
+      "count": 1
+    }
+  ]
+}

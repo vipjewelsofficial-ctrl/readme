@@ -1,0 +1,15 @@
+{
+  "category_only": true,
+  "existing_files_changed": [
+    "sections/category-directory.liquid"
+  ],
+  "new_assets": [
+    "assets/category-mobile-row.css"
+  ],
+  "other_theme_files_unchanged": 99,
+  "saved_settings_and_templates_unchanged": true,
+  "zip_integrity": true,
+  "zip_sha256": "82e23cdb5d7d83bfdd601da9ca80e2a82d0b15d10e43cc7e6b1bdbf175949dc3",
+  "zip_bytes": 6813,
+  "local_browser_checks_passed": 23
+}
