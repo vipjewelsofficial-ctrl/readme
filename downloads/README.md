@@ -1,5 +1,7 @@
 # Theme downloads
 
+**[Gujju-Jewels-Product-Template-Repair-v9.2.zip](Gujju-Jewels-Product-Template-Repair-v9.2.zip)** is the full 104-file repair built from the actual published export. It restores the missing product template/section and global controls, adds version 9.2.0, and preserves 100 existing files. Read the [v9.2 installation and verification guide](../product-template-repair-v9-2/README.md). The [two product files only](Gujju-Jewels-Product-Files-Only-v9.2.zip) are an Edit code patch, not a complete theme.
+
 **[Gujju-Jewels-Product-Restored-v9.1.zip](Gujju-Jewels-Product-Restored-v9.1.zip)** restores the missing product template/main section and global settings controls while retaining the v9 interface updates. It has 104 theme files and passes 79 local browser checks; live Shopify preview remains necessary. Read the [v9.1 repair guide](../product-restored-v9-1/README.md).
 
 For **Shop by Category**, apply **[Gujju-Jewels-Mobile-Category-Row-Fix.zip](Gujju-Jewels-Mobile-Category-Row-Fix.zip)** through Edit code. It adds a compact swipeable row on phones/tablets with Shopify size/spacing/heading controls and preserves desktop columns, saved categories and the rest of the theme. Read the [category patch instructions](../mobile-category-row-fix/README.md).

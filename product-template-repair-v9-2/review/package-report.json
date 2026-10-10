@@ -1,0 +1,33 @@
+{
+  "root_cause_in_uploaded_export": "Default product template and main product section are missing; the file payload matches the earlier v9 UI archive rather than delivered v9.1.",
+  "how_the_old_contents_reached_published_theme": "Not established; theme name does not verify source contents.",
+  "browser_checks_passed": 79,
+  "checks": {
+    "browser-checks.json": 21,
+    "header-checks.json": 31,
+    "link-checks.json": 14,
+    "product-checks.json": 13
+  },
+  "theme_check_errors": 0,
+  "theme_check_warnings": 2,
+  "zip_entries": 104,
+  "zip_integrity_verified": true,
+  "zip_equals_tested_files": true,
+  "sha256": "513176ad9b71cee0f0af3654cba02c726c13b342706edb3fd176867071de4a08",
+  "bytes": 4179370,
+  "theme_version": "9.2.0",
+  "live_shopify_tested": false,
+  "merchant_repaired_theme_preview_verified": false,
+  "scope": {
+    "added": [
+      "config/settings_data.json",
+      "sections/main-product.liquid",
+      "templates/product.json"
+    ],
+    "modified": [
+      "config/settings_schema.json"
+    ],
+    "removed": [],
+    "unchanged": 100
+  }
+}

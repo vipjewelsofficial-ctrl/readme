@@ -1,0 +1,11 @@
+{
+  "baseline_failed_as_expected": true,
+  "baseline_missing": [
+    "templates/product.json",
+    "sections/main-product.liquid",
+    "config/settings_data.json"
+  ],
+  "repaired_required_files_present": true,
+  "default_product_uses_main_product": true,
+  "version_marker": "9.2.0"
+}

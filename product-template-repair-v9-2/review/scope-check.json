@@ -1,0 +1,12 @@
+{
+  "added": [
+    "config/settings_data.json",
+    "sections/main-product.liquid",
+    "templates/product.json"
+  ],
+  "modified": [
+    "config/settings_schema.json"
+  ],
+  "removed": [],
+  "unchanged": 100
+}

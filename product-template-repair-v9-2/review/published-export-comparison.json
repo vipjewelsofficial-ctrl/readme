@@ -1,0 +1,17 @@
+{
+  "upload_size": 4171865,
+  "upload_sha256": "f7d82b488cc9bb29df4abf1cefb9ecb30bfb3827606ba3b04a141771408b3d16",
+  "actual_files": 101,
+  "delivered_v9_1_files": 104,
+  "missing": [
+    "config/settings_data.json",
+    "sections/main-product.liquid",
+    "templates/product.json"
+  ],
+  "added": [],
+  "modified": [
+    "config/settings_schema.json"
+  ],
+  "unchanged": 100,
+  "matches_v9_ui_contents": true
+}
