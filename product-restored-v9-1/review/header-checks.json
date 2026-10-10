@@ -1,0 +1,314 @@
+{
+  "live_shopify_tested": false,
+  "checks": [
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 280
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 360
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 989
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 990
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Centered compact mobile header; menu/search, wishlist and shared cart counts; original desktop geometry",
+      "passed": true,
+      "width": 1920
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 280,
+      "options": {
+        "show_account_mobile": true,
+        "logo_alignment": "left"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 280,
+      "options": {
+        "logo_mode": "text",
+        "logo_text": "Gujju Jewels"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 280,
+      "options": {
+        "logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        },
+        "mobile_logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        }
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 280,
+      "options": {},
+      "globals": {
+        "enable_wishlist": false
+      }
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 320,
+      "options": {
+        "show_account_mobile": true,
+        "logo_alignment": "left"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 320,
+      "options": {
+        "logo_mode": "text",
+        "logo_text": "Gujju Jewels"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 320,
+      "options": {
+        "logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        },
+        "mobile_logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        }
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 320,
+      "options": {},
+      "globals": {
+        "enable_wishlist": false
+      }
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 390,
+      "options": {
+        "show_account_mobile": true,
+        "logo_alignment": "left"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 390,
+      "options": {
+        "logo_mode": "text",
+        "logo_text": "Gujju Jewels"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 390,
+      "options": {
+        "logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        },
+        "mobile_logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        }
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 390,
+      "options": {},
+      "globals": {
+        "enable_wishlist": false
+      }
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 768,
+      "options": {
+        "show_account_mobile": true,
+        "logo_alignment": "left"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 768,
+      "options": {
+        "logo_mode": "text",
+        "logo_text": "Gujju Jewels"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 768,
+      "options": {
+        "logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        },
+        "mobile_logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        }
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 768,
+      "options": {},
+      "globals": {
+        "enable_wishlist": false
+      }
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 989,
+      "options": {
+        "show_account_mobile": true,
+        "logo_alignment": "left"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 989,
+      "options": {
+        "logo_mode": "text",
+        "logo_text": "Gujju Jewels"
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 989,
+      "options": {
+        "logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        },
+        "mobile_logo": {
+          "src": "/assets/demo-hero-desktop.jpg",
+          "alt": "Local sample jewellery",
+          "width": 1920,
+          "height": 900,
+          "aspect_ratio": 2.1333333333333333
+        }
+      },
+      "globals": {}
+    },
+    {
+      "check": "Native logo options, left desktop alignment, optional account and wishlist settings remain responsive",
+      "passed": true,
+      "width": 989,
+      "options": {},
+      "globals": {
+        "enable_wishlist": false
+      }
+    },
+    {
+      "check": "Resize switches desktop icons to the two-icon mobile header",
+      "passed": true
+    }
+  ]
+}

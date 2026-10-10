@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "browser-checks.json": 21,
+    "header-checks.json": 31,
+    "link-checks.json": 14,
+    "product-checks.json": 13
+  },
+  "browser_checks_passed": 79,
+  "theme_check_errors": 0,
+  "theme_check_warnings": 2,
+  "product_template_rendered_locally": true,
+  "live_shopify_tested": false,
+  "live_404_verified_fixed": false,
+  "zip_entries": 104,
+  "zip_integrity_verified": true,
+  "zip_equals_tested_files": true,
+  "sha256": "73d7480077ee2ee97b3b5a2611a686312f63ddab3e835556ff8e838f9aeb72a2",
+  "scope": {
+    "added": [
+      "config/settings_data.json",
+      "sections/main-product.liquid",
+      "templates/product.json"
+    ],
+    "modified": [
+      "config/settings_schema.json"
+    ],
+    "removed": [],
+    "unchanged": 100
+  }
+}

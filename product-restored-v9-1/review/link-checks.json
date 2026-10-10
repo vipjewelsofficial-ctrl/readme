@@ -1,0 +1,84 @@
+{
+  "live_store_tested": false,
+  "baseline": {
+    "original_script": true,
+    "stale_saved_url": "/products/old-handle",
+    "result": "404 reproduced on controlled route"
+  },
+  "checks": [
+    {
+      "check": "View product navigates to an existing product route",
+      "passed": true,
+      "width": 390,
+      "saved_link": "fresh"
+    },
+    {
+      "check": "View product navigates to an existing product route",
+      "passed": true,
+      "width": 390,
+      "saved_link": "old handle"
+    },
+    {
+      "check": "View product navigates to an existing product route",
+      "passed": true,
+      "width": 390,
+      "saved_link": "old collection"
+    },
+    {
+      "check": "View product navigates to an existing product route",
+      "passed": true,
+      "width": 1440,
+      "saved_link": "fresh"
+    },
+    {
+      "check": "View product navigates to an existing product route",
+      "passed": true,
+      "width": 1440,
+      "saved_link": "old handle"
+    },
+    {
+      "check": "View product navigates to an existing product route",
+      "passed": true,
+      "width": 1440,
+      "saved_link": "old collection"
+    },
+    {
+      "check": "Collection-independent link retains locale and variant query",
+      "passed": true,
+      "path": "/products/current-handle?variant=12"
+    },
+    {
+      "check": "Collection-independent link retains locale and variant query",
+      "passed": true,
+      "path": "/hi/products/current-handle?variant=12"
+    },
+    {
+      "check": "Product title and image also use the updated link",
+      "passed": true,
+      "selector": ".wishlist-dialog__title"
+    },
+    {
+      "check": "Product title and image also use the updated link",
+      "passed": true,
+      "selector": ".wishlist-dialog__item > a"
+    },
+    {
+      "check": "New Shopify sections refresh an open drawer; removal and focus still work",
+      "passed": true
+    },
+    {
+      "check": "Cross-tab storage updates refresh stale links without losing product IDs",
+      "passed": true
+    },
+    {
+      "check": "Malformed, duplicate and external stored entries remain guarded",
+      "passed": true,
+      "input_type": "str"
+    },
+    {
+      "check": "Malformed, duplicate and external stored entries remain guarded",
+      "passed": true,
+      "input_type": "list"
+    }
+  ]
+}
