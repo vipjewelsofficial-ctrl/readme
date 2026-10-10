@@ -1,0 +1,12 @@
+{
+  "theme_files": 104,
+  "changed_files": [
+    "assets/wishlist.js"
+  ],
+  "byte_identical_files": 103,
+  "zip_bytes": 4179888,
+  "sha256": "5b54ccc3af211685325935dab0a1aab75ec9c29d3e6680d447b66ab0c8487304",
+  "live_store_tested": false,
+  "link_checks": 14,
+  "regression_checks": 21
+}
