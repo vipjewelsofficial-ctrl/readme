@@ -1,0 +1,71 @@
+{
+  "type": "collection-card-grid",
+  "blocks": {
+    "style_oxidised": {
+      "type": "collection_card",
+      "settings": {
+        "collection": "",
+        "link": "",
+        "title": "Oxidised",
+        "description": "Heritage-inspired silver-tone favourites",
+        "badge": ""
+      }
+    },
+    "style_traditional": {
+      "type": "collection_card",
+      "settings": {
+        "collection": "",
+        "link": "",
+        "title": "Traditional",
+        "description": "Classic Indian jewellery styling",
+        "badge": ""
+      }
+    },
+    "style_statement": {
+      "type": "collection_card",
+      "settings": {
+        "collection": "",
+        "link": "",
+        "title": "Statement",
+        "description": "Bold pieces that complete the look",
+        "badge": ""
+      }
+    },
+    "style_everyday": {
+      "type": "collection_card",
+      "settings": {
+        "collection": "",
+        "link": "",
+        "title": "Everyday",
+        "description": "Easy pieces for repeat wear",
+        "badge": ""
+      }
+    }
+  },
+  "block_order": [
+    "style_oxidised",
+    "style_traditional",
+    "style_statement",
+    "style_everyday"
+  ],
+  "settings": {
+    "eyebrow": "Find your look",
+    "heading": "Shop by Style",
+    "subheading": "Explore jewellery by the mood and finish you love.",
+    "card_style": "landscape",
+    "columns_desktop": 4,
+    "columns_mobile": "2",
+    "use_collection_images": false,
+    "show_descriptions": false,
+    "button_label": "Explore All Styles",
+    "button_link": "",
+    "background_color": "#fffdf9",
+    "card_background": "#f7f2ec",
+    "text_color": "#242424",
+    "accent_color": "#7a1f32",
+    "padding_top": 20,
+    "padding_bottom": 20,
+    "padding_top_mobile": 12,
+    "padding_bottom_mobile": 12
+  }
+}

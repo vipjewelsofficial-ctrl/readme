@@ -1,0 +1,79 @@
+{
+  "live_shopify_tested": false,
+  "other_three_category_images_use_local_fixtures": true,
+  "checks": [
+    {
+      "check": "Only Shop by Style removed; all other homepage content and relative order retained",
+      "passed": true
+    },
+    {
+      "check": "Four category labels and requested replacement order",
+      "passed": true
+    },
+    {
+      "check": "Accessories fallback uses bundled kada photo",
+      "passed": true
+    },
+    {
+      "check": "Accessories uses its collection image when available",
+      "passed": true
+    },
+    {
+      "check": "Accessories custom image picker can override the collection image",
+      "passed": true
+    },
+    {
+      "check": "Accessories retains the header menu destination if its collection is unassigned",
+      "passed": true
+    },
+    {
+      "check": "Footer still renders its original menu entries; Wall Cladding is not filtered",
+      "passed": true
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 360
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 989
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 990
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Four responsive categories, matching Accessories menu URL and no Shop by Style",
+      "passed": true,
+      "width": 1920
+    }
+  ]
+}

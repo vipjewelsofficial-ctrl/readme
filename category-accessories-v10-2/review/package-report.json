@@ -1,0 +1,12 @@
+{
+  "archive": "Gujju-Jewels-Accessories-Category-Update-v10.2.zip",
+  "files": 104,
+  "bytes": 4179937,
+  "sha256": "33b2bbd809459032df0eacebd4d10b3d8288bf0c76312546c36dad300d2f1709",
+  "all_source_files_roundtrip": true,
+  "zip_crc_valid": true,
+  "required_product_and_global_config_files_present": true,
+  "targeted_checks_passed": 16,
+  "responsive_widths_checked": 9,
+  "live_shopify_tested": false
+}

@@ -1,0 +1,25 @@
+{
+  "file_count": 104,
+  "changed_files": [
+    "config/settings_schema.json",
+    "sections/category-directory.liquid",
+    "templates/index.json"
+  ],
+  "unchanged_files": 101,
+  "homepage_removal": "Shop by Style",
+  "removed_categories": [
+    "Necklaces",
+    "Jewellery Sets"
+  ],
+  "category_order": [
+    "Accessories",
+    "Gold Tone Jewellery",
+    "Oxidised Silver Jewellery",
+    "Mangalsutra"
+  ],
+  "accessories_destination": "/collections/accessories",
+  "accessories_image": "Existing collection featured image, or bundled category-bangles.jpg fallback; editable custom image supported",
+  "footer_and_header_byte_identical": true,
+  "product_and_saved_global_settings_byte_identical": true,
+  "all_other_homepage_content_and_relative_order_preserved": true
+}
