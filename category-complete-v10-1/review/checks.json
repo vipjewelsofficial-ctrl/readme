@@ -1,0 +1,64 @@
+{
+  "live_shopify_tested": false,
+  "layout_uses_fixture_images": true,
+  "native_image_file_availability_unverified": true,
+  "existing_collection_handles_unverified": true,
+  "all_other_homepage_sections_and_settings_preserved": true,
+  "missing_collection_uses_safe_shop_all_fallback": true,
+  "checks": [
+    {
+      "width": 320,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 360,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 390,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 430,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 768,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 989,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 990,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1440,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1920,
+      "category_count": 5,
+      "labels_links_and_layout_valid": true,
+      "page_overflow": false
+    }
+  ]
+}

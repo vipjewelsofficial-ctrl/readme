@@ -1,0 +1,18 @@
+{
+  "source": "merchant export dated 20 October 2026",
+  "source_files": 103,
+  "complete_theme_files": 104,
+  "added_files": [
+    "config/settings_data.json"
+  ],
+  "changed_existing_files": [
+    "config/settings_schema.json",
+    "templates/index.json"
+  ],
+  "unchanged_existing_files": 101,
+  "all_other_homepage_content_preserved": true,
+  "header_menu_and_product_cart_wishlist_slider_files_preserved": true,
+  "settings_restored_from": "last complete delivered v10 source; theme metadata updated to 10.1.0",
+  "live_shopify_tested": false,
+  "category_images_and_collection_handles_need_native_preview": true
+}

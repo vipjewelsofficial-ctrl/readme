@@ -1,0 +1,75 @@
+{
+  "live_shopify_tested": false,
+  "product_template_rendered": true,
+  "checks": [
+    {
+      "check": "Restored template renders title, gallery, variants, quantity and wishlist without overflow or JS errors",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "check": "Restored template renders title, gallery, variants, quantity and wishlist without overflow or JS errors",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Restored template renders title, gallery, variants, quantity and wishlist without overflow or JS errors",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "check": "Restored template renders title, gallery, variants, quantity and wishlist without overflow or JS errors",
+      "passed": true,
+      "width": 989
+    },
+    {
+      "check": "Restored template renders title, gallery, variants, quantity and wishlist without overflow or JS errors",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Product card and wishlist navigate to the restored rendered product template",
+      "passed": true,
+      "width": 390,
+      "selector": ".product-card__image-link"
+    },
+    {
+      "check": "Product card and wishlist navigate to the restored rendered product template",
+      "passed": true,
+      "width": 390,
+      "selector": ".product-card__title-link"
+    },
+    {
+      "check": "Product card and wishlist navigate to the restored rendered product template",
+      "passed": true,
+      "width": 390,
+      "selector": ".wishlist-dialog__actions a"
+    },
+    {
+      "check": "Product card and wishlist navigate to the restored rendered product template",
+      "passed": true,
+      "width": 1440,
+      "selector": ".product-card__image-link"
+    },
+    {
+      "check": "Product card and wishlist navigate to the restored rendered product template",
+      "passed": true,
+      "width": 1440,
+      "selector": ".product-card__title-link"
+    },
+    {
+      "check": "Product card and wishlist navigate to the restored rendered product template",
+      "passed": true,
+      "width": 1440,
+      "selector": ".wishlist-dialog__actions a"
+    },
+    {
+      "check": "Single variant uses native hidden variant ID and quantity submission",
+      "passed": true
+    },
+    {
+      "check": "Unavailable product cannot be added through the native product button",
+      "passed": true
+    }
+  ]
+}

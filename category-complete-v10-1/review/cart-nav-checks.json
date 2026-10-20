@@ -1,0 +1,70 @@
+{
+  "live_shopify_tested": false,
+  "mock_cart_and_accounts": true,
+  "checks": [
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 989
+    },
+    {
+      "check": "Product sticky button stays above navigation; variant and native form behaviour preserved",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Cart quantity autosave, remove, totals, both counts and native checkout submit",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "check": "Cart quantity autosave, remove, totals, both counts and native checkout submit",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "check": "Editable bar visibility and optional items",
+      "passed": true,
+      "settings": {
+        "enabled": false
+      }
+    },
+    {
+      "check": "Editable bar visibility and optional items",
+      "passed": true,
+      "settings": {
+        "show_account": false
+      }
+    },
+    {
+      "check": "Editable bar visibility and optional items",
+      "passed": true,
+      "settings": {
+        "show_wishlist": false
+      }
+    },
+    {
+      "check": "Custom labels, colour and URL controls, resized height and editor unload cleanup",
+      "passed": true
+    },
+    {
+      "check": "Signed-in account label and Shopify account route",
+      "passed": true
+    }
+  ]
+}

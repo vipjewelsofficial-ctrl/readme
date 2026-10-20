@@ -1,0 +1,10 @@
+{
+  "archive": "Gujju-Jewels-Complete-Category-Theme-v10.1.zip",
+  "files": 104,
+  "bytes": 4180271,
+  "sha256": "58678b5a6c39f8bee6b0bfff417295cb68dfe5320f50b73ee98d4e350b316788",
+  "required_product_and_global_config_files_present": true,
+  "crc_and_source_roundtrip_passed": true,
+  "local_checks_passed": 34,
+  "live_shopify_tested": false
+}
