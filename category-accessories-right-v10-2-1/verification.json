@@ -1,0 +1,18 @@
+{
+  "baseline": "Gujju-Jewels-Accessories-Category-Update-v10.2.zip",
+  "updated": "Gujju-Jewels-Accessories-Right-v10.2.1.zip",
+  "files": 104,
+  "identical_files": 103,
+  "changed_files": [
+    "templates/index.json"
+  ],
+  "only_json_difference": "sections.categories.block_order",
+  "category_order": [
+    "cat_gold_tone",
+    "cat_oxidised",
+    "cat_mangalsutra",
+    "cat_accessories"
+  ],
+  "zip_crc": "passed",
+  "sha256": "930e39048aad4734f20da741a676caac90e89afdcb5ea0ac5403d7f40547189f"
+}
