@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Necklaces",
+    "collection_handle": "necklaces",
+    "source_product_title": "Traditional Gold-Tone Temple Necklace with Statement Pendant & Pink Green Stone Detailing",
+    "source_product_handle": "traditional-gold-tone-temple-necklace",
+    "image_picker_reference": "shopify://shop_images/ChatGPTImageOct7_2026_04_15_00PM-1.png",
+    "source_cdn_url": "https://cdn.shopify.com/s/files/1/0754/0696/6980/files/ChatGPTImageOct7_2026_04_15_00PM-1.png?v=1791373931",
+    "image_selection_evidence": "Product title and image reference from merchant CSV; live CDN fetch blocked by environment proxy."
+  },
+  {
+    "category": "Jewellery Sets",
+    "collection_handle": "necklace-sets",
+    "source_product_title": "Traditional Gold-Tone Choker Necklace Set with Red & Green Stones & Pearl Drops",
+    "source_product_handle": "traditional-gold-tone-choker-necklace-set",
+    "image_picker_reference": "shopify://shop_images/Luxury_Gold_Choker_Jewelry_Flat_Lay.png",
+    "source_cdn_url": "https://cdn.shopify.com/s/files/1/0754/0696/6980/files/Luxury_Gold_Choker_Jewelry_Flat_Lay.png?v=1791289603",
+    "image_selection_evidence": "Product title and image reference from merchant CSV; live CDN fetch blocked by environment proxy."
+  },
+  {
+    "category": "Gold Tone Jewellery",
+    "collection_handle": "gold-tone-jewellery",
+    "source_product_title": "Traditional Gold-Tone Temple Necklace Set with Green & Pink Stones and Pearl Drops",
+    "source_product_handle": "traditional-gold-tone-temple-necklace-set",
+    "image_picker_reference": "shopify://shop_images/ChatGPTImageOct7_2026_05_05_47PM-1.png",
+    "source_cdn_url": "https://cdn.shopify.com/s/files/1/0754/0696/6980/files/ChatGPTImageOct7_2026_05_05_47PM-1.png?v=1791373533",
+    "image_selection_evidence": "Product title and image reference from merchant CSV; live CDN fetch blocked by environment proxy."
+  },
+  {
+    "category": "Oxidised Silver Jewellery",
+    "collection_handle": "oxidised-jewellery",
+    "source_product_title": "Oxidised Silver Pearl Layered Necklace Set with Pink & Green Stones and Matching Earrings for Women | Traditional Ethnic Jewellery",
+    "source_product_handle": "oxidised-silver-pearl-layered-necklace-set",
+    "image_picker_reference": "shopify://shop_images/ChatGPTImageOct7_2026_10_13_25PM-4.png",
+    "source_cdn_url": "https://cdn.shopify.com/s/files/1/0754/0696/6980/files/ChatGPTImageOct7_2026_10_13_25PM-4.png?v=1791445395",
+    "image_selection_evidence": "Product title and image reference from merchant CSV; live CDN fetch blocked by environment proxy."
+  },
+  {
+    "category": "Mangalsutra",
+    "collection_handle": "mangalsutras",
+    "source_product_title": "Traditional Gold-Tone Mangalsutra Necklace with Black Beads & Temple Pendant",
+    "source_product_handle": "traditional-gold-tone-mangalsutra-necklace",
+    "image_picker_reference": "shopify://shop_images/ChatGPTImageOct7_2026_04_46_03PM-1.png",
+    "source_cdn_url": "https://cdn.shopify.com/s/files/1/0754/0696/6980/files/ChatGPTImageOct7_2026_04_46_03PM-1.png?v=1791373629",
+    "image_selection_evidence": "Product title and image reference from merchant CSV; live CDN fetch blocked by environment proxy."
+  }
+]
